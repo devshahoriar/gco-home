@@ -1,0 +1,3 @@
+.slick-dots li button:before {
+  @apply dark:!text-white
+}

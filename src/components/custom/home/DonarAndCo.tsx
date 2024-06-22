@@ -13,6 +13,7 @@ import image7 from '@/img/donor/One-Tree-Planted-logo-1024x683.jpg'
 import image8 from '@/img/donor/microsoft-logo.jpg'
 import image9 from '@/img/donor/nsbd.jpeg'
 import Image from 'next/image'
+import '@/styles/donar.css'
 
 
 const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9]
@@ -72,7 +73,7 @@ const DonarAndCo = () => {
         Donor & Collaborators
       </h1>
       <div className='mt-10 mx-0 md:mx-20 xl:mx-32'>
-        <Slider {...settings} className=''>
+        <Slider {...settings} className='' >
           {images.map((img, index) => (
             <SlideItem key={index} src={img} />
           ))}
