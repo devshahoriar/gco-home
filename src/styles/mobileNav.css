@@ -1,0 +1,19 @@
+.css-1wvake5{
+  position: fixed !important;
+  height: 100%;
+  top: 0px;
+  z-index: 100;
+  left: -250px;
+}
+.ps-sidebar-root{
+  @apply !border-none
+}
+.ps-sidebar-container{
+  @apply  !bg-background dark:!bg-neutral-900 dark:!text-white
+}
+.ps-menu-button{
+  @apply hover:!bg-main hover:!text-white
+}
+.ps-submenu-content{
+  @apply !bg-white bg-opacity-10
+}
