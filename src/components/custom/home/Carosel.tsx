@@ -7,12 +7,37 @@ import img1 from '@/img/carosel/1 (1).jpg'
 import img2 from '@/img/carosel/1 (2).jpg'
 import img3 from '@/img/carosel/1 (3).jpg'
 import { useState } from 'react'
+import { TextAnimate } from '@/components/ui/aimate/TextAnimate'
+
+const typs = [
+  'fadeIn',
+  'fadeInUp',
+  'popIn',
+  'shiftInUp',
+  'rollIn',
+  'whipIn',
+  'whipInUp',
+  'calmInUp',
+]
+
+
+
 
 const SlideItem = ({ src, inview }: any) => {
   return (
-    <div className="h-[30vh] md:h-[40vh] xl:h-[60vh] rounded-md overflow-hidden">
+    <div className="h-[30vh] md:h-[50vh] xl:h-[60vh] rounded-md overflow-hidden relative md:mt-5">
+      {inview && (
+        <section className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <TextAnimate
+            text="This is the test text that will be animated"
+            type={typs[Math.floor(Math.random() * typs.length)] as any}
+          />
+        </section>
+      )}
       <Image
-        className={`h-full w-full object-cover rounded-md transition-all ease-in-out duration-1000 ${inview ? 'scale-110' : 'scale-100'}`}
+        className={`h-full w-full object-cover rounded-md  transition-all duration-2500 ease-in-out  ${
+          inview ? 'scale-110' : 'scale-100'
+        }`}
         src={src}
         alt="Picture of the author"
         width={500}
@@ -29,9 +54,9 @@ function SimpleSlider() {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 10000,
     slidesToShow: 1,
     slidesToScroll: 1,
   }

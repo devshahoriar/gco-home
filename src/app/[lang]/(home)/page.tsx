@@ -1,6 +1,6 @@
 import Carosel from '@/components/custom/home/Carosel'
 import DonarAndCo from '@/components/custom/home/DonarAndCo'
-import { Button } from '@/components/ui/button'
+import AnimatedNumber from '@/components/ui/aimate/AnimatedNumber'
 import React from 'react'
 
 const HomePage = async () => {
@@ -8,6 +8,7 @@ const HomePage = async () => {
     <div className="container">
       <Carosel />
       <DonarAndCo />
+      <AnimatedNumber damping={50}  value={1200} />
     </div>
   )
 }

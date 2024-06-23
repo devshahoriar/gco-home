@@ -1,0 +1,7 @@
+.animText{
+  @apply text-xl md:!text-4xl text-white  text-center xl:!text-6xl
+}
+
+.animateNumber{
+  @apply !text-6xl font-bold
+}

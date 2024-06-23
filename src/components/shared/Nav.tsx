@@ -9,7 +9,7 @@ const MoNav = dynamic(() => import('../custom/Navigation/MobileNav'),{
 
 const Nav = () => {
   return (
-    <nav className="container flex items-center justify-between">
+    <nav className="container flex items-center justify-between md:mt-5">
       <Logo />
       <DesktopNav />
       <MoNav />
