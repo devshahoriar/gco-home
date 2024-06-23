@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-import withPlaiceholder from '@plaiceholder/next'
 const nextConfig = {
   reactStrictMode: false,
   experimental: {
