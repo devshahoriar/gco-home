@@ -14,8 +14,8 @@ import ModeToggle from '@/components/shared/ThemToggole'
 
 export default function NavigationMenuDemo() {
   return (
-    <div className="hidden lg:flex items-center">
-      <Menubar className="border-none shadow-none dark:bg-transparent ">
+    <div className="hidden lg:flex items-center mr-5">
+      <Menubar className="border-none shadow-none dark:bg-transparent">
         {MenuData.map((item) => {
           if (item?.submenu?.length) {
             return (

@@ -4,13 +4,15 @@ import { I18nProviderClient } from '@/locales/client'
 import dynamic from 'next/dynamic'
 import { ReactElement } from 'react'
 import Marquee from 'react-fast-marquee'
+import ThemeProviderClient from '@/components/shared/theme-provider'
+import TopBar from '@/components/shared/TopBar'
 
-const ThemeProviderClient = dynamic(
-  () => import('@/components/shared/theme-provider'),
-  {
-    ssr: false,
-  }
-)
+// const ThemeProviderClient = dynamic(
+//   () => import('@/components/shared/theme-provider'),
+//   {
+//     ssr: false,
+//   }
+// )
 
 const SubLayout = ({
   params: { lang },
@@ -27,13 +29,15 @@ const SubLayout = ({
       disableTransitionOnChange
     >
       <I18nProviderClient locale={lang}>
-        <Marquee
+        {/* this is notish when need uncomment and edit */}
+        {/* <Marquee
           className="text-red-500 container bg-red-50 dark:bg-opacity-10"
           pauseOnHover
           autoFill
         >
           any notice here -
-        </Marquee>
+        </Marquee> */}
+        <TopBar />
         <Nav />
         <main>{children}</main>
       </I18nProviderClient>

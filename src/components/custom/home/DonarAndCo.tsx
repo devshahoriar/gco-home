@@ -14,6 +14,7 @@ import image8 from '@/img/donor/microsoft-logo.jpg'
 import image9 from '@/img/donor/nsbd.jpeg'
 import Image from 'next/image'
 import '@/styles/donar.css'
+import BlurIn from '@/components/ui/aimate/blur-in'
 
 
 const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9]
@@ -35,9 +36,9 @@ const DonarAndCo = () => {
     dots: true,
     speed: 500,
     autoplaySpeed: 2000,
-    slidesToShow: 5,
+    slidesToShow: 7,
     slidesToScroll: 1,
-    initialSlide: 3,
+    initialSlide: 2,
     arrows: false,
     autoplay: true,
     infinite: true,
@@ -45,18 +46,18 @@ const DonarAndCo = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 7,
         },
       },{
         breakpoint: 800,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 5,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
         },
       },
       {
@@ -69,10 +70,9 @@ const DonarAndCo = () => {
   }
   return (
     <section className="container my-20">
-      <h1 className="text-center text-2xl font-semibold md:text-3xl">
-        Donor & Collaborators
-      </h1>
-      <div className='mt-10 mx-0 md:mx-20 xl:mx-32'>
+      <BlurIn className="text-center !text-2xl font-semibold md:!text-3xl" word='Donor & Collaborators'/>
+  
+      <div className='mt-10 mx-0 md:mx-20 xl:mx-52'>
         <Slider {...settings} className='' >
           {images.map((img, index) => (
             <SlideItem key={index} src={img} />
