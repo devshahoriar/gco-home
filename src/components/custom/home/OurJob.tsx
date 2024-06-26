@@ -1,4 +1,5 @@
-import { AnimatButton } from '@/components/ui/aimate/animateButton'
+
+import { AnimatButton } from '@/components/ui/aimate/AnimateButton'
 import { ScanEye, TvMinimal, icons } from 'lucide-react'
 import { ReactNode } from 'react'
 
