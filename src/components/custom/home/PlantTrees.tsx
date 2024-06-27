@@ -33,7 +33,7 @@ const ItemCard = ({ src, title }: { src: any; title: String }) => {
 
 export const PlantTrees = () => {
   return (
-    <div className="my-10 container">
+    <div className="my-10 container pb-10">
       <BlurIn
         word="Where we work"
         className="text-center !text-2xl font-semibold md:!text-3xl"

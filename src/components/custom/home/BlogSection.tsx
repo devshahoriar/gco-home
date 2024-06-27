@@ -21,7 +21,7 @@ const BlogSection = () => {
         <div className="mt-10">
           <BlurIn
             className="!text-2xl font-semibold md:!text-3xl !pt-10 !text-start"
-            word="News and blogs"
+            word="News and Blogs"
           />
         </div>
         <div className="mt-10 md:flex md:gap-5">
@@ -83,7 +83,7 @@ const BigNews = ({
       </p>
       <div className="h-[200px] sm:h-[300px] w-full ">
         <Image
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover rounded"
           width={1000}
           height={1000}
           src={image}
@@ -114,12 +114,12 @@ const ItemNews = ({
 }) => {
   return (
     <div className="relative rounded-md p-3 overflow-hidden border border-opacity-45 flex backdrop-blur-md">
-      <p className="absolute top-2 right-2 bg-red-600 px-2 py-1 text-white rounded drop-shadow-md text-xs">
+      <p className="absolute top-2 right-3 bg-red-600 px-2 py-1 text-white rounded drop-shadow-md text-xs">
         New
       </p>
       <div className=" aspect-square h-[100px] sm:h-[150px] md:h-[100px]">
         <Image
-          className="w-full h-full object-cover rounded-md"
+          className="w-full h-full object-cover rounded"
           width={1000}
           height={1000}
           src={image}

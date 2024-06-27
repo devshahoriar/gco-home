@@ -1,18 +1,9 @@
 'use client'
 import Nav from '@/components/shared/Nav'
 import { I18nProviderClient } from '@/locales/client'
-import dynamic from 'next/dynamic'
 import { ReactElement } from 'react'
-import Marquee from 'react-fast-marquee'
 import ThemeProviderClient from '@/components/shared/theme-provider'
 import TopBar from '@/components/shared/TopBar'
-
-// const ThemeProviderClient = dynamic(
-//   () => import('@/components/shared/theme-provider'),
-//   {
-//     ssr: false,
-//   }
-// )
 
 const SubLayout = ({
   params: { lang },

@@ -22,7 +22,7 @@ const ItemCard = ({
   return (
     <div className="relative rounded-md p-3 overflow-hidden border border-main border-opacity-45 sm:w-[clamp(250px,400px,500px)]">
       <BorderBeam className="-z-10" />
-      <div className="h-[200px] w-full md:h-[150px] ">
+      <div className="h-[200px] w-full md:h-[230px] ">
         <Image
           className="w-full h-full object-cover rounded-t-md"
           width={1000}

@@ -1,15 +1,27 @@
 'use client'
 import { useState } from 'react'
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar'
-import { Menu as MenuBar, X } from 'lucide-react'
+import { Menu as MenuBar, Moon, Sun, X } from 'lucide-react'
 import MenuData from './Data'
 import Logo from '../Logo'
 import Link from 'next/link'
 import '@/styles/mobileNav.css'
+import { useTheme } from 'next-themes'
+import { Button } from '@/components/ui/button'
 
 const MobileNav = () => {
   const [toggled, setToggled] = useState(false)
   const [subOpen, setSubOpen] = useState('')
+  const { setTheme, theme } = useTheme()
+
+  const handleTheme = () => {
+    if (theme === 'dark') {
+      setTheme('light')
+    } else {
+      setTheme('dark')
+    }
+  }
+
   return (
     <div className="block lg:hidden relative">
       {toggled ? (
@@ -35,6 +47,22 @@ const MobileNav = () => {
         <div className="p-2">
           <Logo />
         </div>
+        <div className="mx-5 mb-1">
+          <div className="flex items-center">
+            <p>Theme: </p>
+            <Button
+              onClick={handleTheme}
+              className="text-black dark:text-white flex items-center"
+              variant="link"
+              size="default"
+            >
+              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+          </div>
+        </div>
+        <div className='border border-main  mb-5'/>
         <Menu>
           {MenuData.map((item) => {
             if (item?.submenu?.length) {
