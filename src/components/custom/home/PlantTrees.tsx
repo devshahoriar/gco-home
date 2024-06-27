@@ -1,10 +1,18 @@
+'use client'
 import BlurIn from '@/components/ui/aimate/blur-in'
 import ShineBorder from '@/components/ui/aimate/shine-border'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const ItemCard = ({ src, title }: { src: any; title: String }) => {
   return (
-    <ShineBorder
+    <motion.div 
+    initial={{ scale: 0.5 }}
+    whileInView={{ scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+    >
+      <ShineBorder
       className="aspect-square !w-[200px] md:!w-[300px] relative  overflow-hidden group"
       color={['#A07CFE', '#FE8FB5', '#FFBE7B']}
     >
@@ -19,12 +27,13 @@ const ItemCard = ({ src, title }: { src: any; title: String }) => {
         {title}
       </div>
     </ShineBorder>
+    </motion.div>
   )
 }
 
 export const PlantTrees = () => {
   return (
-    <div className="my-10">
+    <div className="my-10 container">
       <BlurIn
         word="Where we work"
         className="text-center !text-2xl font-semibold md:!text-3xl"

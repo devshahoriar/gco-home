@@ -8,7 +8,7 @@ import {
   useSpring,
   useTransform,
 } from 'framer-motion'
-import '@/styles/animateStyles.css'
+import { cn } from '@/lib/utils'
 
 interface AnimatedNumberProps {
   value: number
@@ -19,6 +19,8 @@ interface AnimatedNumberProps {
   format?: (value: number) => string
   onAnimationStart?: () => void
   onAnimationComplete?: () => void
+
+  className?: string
 }
 
 export default function AnimatedNumber({
@@ -27,6 +29,7 @@ export default function AnimatedNumber({
   stiffness = 100,
   damping = 15,
   precision = 0,
+  className,
   format = (num) => num.toLocaleString(),
   onAnimationStart,
   onAnimationComplete,
@@ -53,7 +56,7 @@ export default function AnimatedNumber({
   }, [isInView, spring, value])
 
   return (
-    <motion.span ref={ref} className="animateNumber">
+    <motion.span ref={ref} className={cn('text-base', className)}>
       {display}
     </motion.span>
   )

@@ -1,18 +1,20 @@
+import BlogSection from '@/components/custom/home/BlogSection'
 import Carosel from '@/components/custom/home/Carosel'
 import DonarAndCo from '@/components/custom/home/DonarAndCo'
+import JoinOurMission from '@/components/custom/home/JoinOurMission'
 import OurJob from '@/components/custom/home/OurJob'
 import { PlantTrees } from '@/components/custom/home/PlantTrees'
-import AnimatedNumber from '@/components/ui/aimate/AnimatedNumber'
 import React from 'react'
 
 const HomePage = async () => {
   return (
-    <div className="container">
+    <div className="">
       <Carosel />
       <OurJob />
       <DonarAndCo />
       <PlantTrees />
-      {/* <AnimatedNumber damping={50}  value={1200} /> */}
+      <JoinOurMission />
+      <BlogSection />
     </div>
   )
 }

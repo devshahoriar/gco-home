@@ -25,7 +25,7 @@ const typs = [
 
 const SlideItem = ({ src, inview }: any) => {
   return (
-    <div className="h-[30vh] md:h-[50vh] xl:h-[60vh] overflow-hidden relative md:mt-5">
+    <div className="h-[300px] sm:h-[400px] md:h-[550px] xl:h-[600px] overflow-hidden relative md:mt-5">
       {inview && (
         <section className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <TextAnimate
@@ -61,7 +61,7 @@ function SimpleSlider() {
   }
   const [currentPos, setCurrentPos] = useState(0)
   return (
-    <div className="slider-container">
+    <div className="slider-container container">
       <Slider {...settings} afterChange={(x) => setCurrentPos(x)}>
         {/* <SlideItem src={img1} inview={currentPos === 0} /> */}
         <SlideItem src={img2} inview={currentPos === 0} />
