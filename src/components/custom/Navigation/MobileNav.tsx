@@ -48,21 +48,22 @@ const MobileNav = () => {
           <Logo />
         </div>
         <div className="mx-5 mb-1">
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
             <p>Theme: </p>
+           
             <Button
-              onClick={handleTheme}
-              className="text-black dark:text-white flex items-center"
-              variant="link"
-              size="default"
-            >
-              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
+            className="rounded-full w-8 h-8 bg-background"
+            variant="outline"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          >
+            <Sun className="w-[1.2rem] h-[1.2rem] rotate-90 scale-0 transition-transform ease-in-out duration-500 dark:rotate-0 dark:scale-100" />
+            <Moon className="absolute w-[1.2rem] h-[1.2rem] rotate-0 scale-1000 transition-transform ease-in-out duration-500 dark:-rotate-90 dark:scale-0" />
+            <span className="sr-only">Switch Theme</span>
+          </Button>
           </div>
         </div>
-        <div className='border border-main  mb-5'/>
+        <div className="border border-main  mb-5" />
         <Menu>
           {MenuData.map((item) => {
             if (item?.submenu?.length) {
@@ -78,8 +79,7 @@ const MobileNav = () => {
                       component={<Link href={subItm.url} />}
                       key={subItm.id}
                     >
-                      {' '}
-                      {subItm.title}{' '}
+                      {subItm.title}
                     </MenuItem>
                   ))}
                 </SubMenu>

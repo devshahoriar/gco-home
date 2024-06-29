@@ -15,16 +15,15 @@ const CardItem = ({
 }) => {
   return (
     <div className="flex flex-col items-center w-[80%] sm:w-[400px] md:w-[500px] ">
-      
       <div className="bg-main size-10 md:size-14 flex justify-center items-center text-white rounded-sm z-20">
         {icon}
       </div>
       <div className="flex flex-col items-center bg-slate-300  dark:bg-slate-800 bg-opacity-40 dark:bg-opacity-40 gap-5 py-10 -mt-5 rounded-md relative overflow-hidden">
-      <DotPattern
-        className={cn(
-          "[mask-image:radial-gradient(200px_circle_at_center,white,transparent)]",
-        )}
-      />
+        <DotPattern
+          className={cn(
+            '[mask-image:radial-gradient(200px_circle_at_center,white,transparent)]'
+          )}
+        />
         <h2 className="text-xl md:text-2xl font-semibold">{title}</h2>
         <p className="line-clamp-4 text-center text-sm w-[80%] ">
           {description}

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -50,12 +49,26 @@
   }
 }
 
-
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground dark:!bg-neutral-900 dark:!text-white
+    @apply bg-background text-foreground dark:!bg-neutral-900 dark:!text-white;
+  }
+  ::-moz-selection {
+    background: #5cb02f;
+  }
+
+  ::selection {
+    background: #5cb02f;
+  }
+  .grbg {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 0) 0%,
+      rgba(0, 0, 0, 1) 49%
+    );
   }
 }

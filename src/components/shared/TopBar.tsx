@@ -7,7 +7,7 @@ import SocialIcon from './SocialIcon'
 
 const TopBar = () => {
   return (
-    <div className="container hidden md:flex justify-between my-5 px-10 items-center">
+    <div className="container hidden md:flex justify-between my-3 px-10 items-center">
       <div>
         <ShimmerButton className="flex gap-2 font-semibold items-center  !text-white  px-3 py-1 rounded-2xl">
           Treelanching

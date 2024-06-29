@@ -25,7 +25,7 @@ const typs = [
 
 const SlideItem = ({ src, inview }: any) => {
   return (
-    <div className="h-[300px] sm:h-[400px] md:h-[550px] xl:h-[600px] overflow-hidden relative md:mt-5">
+    <div className="h-[300px] sm:h-[350px] md:h-[500px] xl:h-[550px] overflow-hidden relative md:mt-5">
       {inview && (
         <section className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <TextAnimate

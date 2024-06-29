@@ -3,10 +3,10 @@ import AnimatedNumber from '@/components/ui/aimate/AnimatedNumber'
 import BlurIn from '@/components/ui/aimate/blur-in'
 import { BorderBeam } from '@/components/ui/aimate/border-beam'
 import Meteors from '@/components/ui/aimate/meteors'
+import ShinyButton from '@/components/ui/aimate/shiny-button'
+import { Coins } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
-
-
 
 const ItemCard = ({
   title,
@@ -45,14 +45,22 @@ const ItemCard = ({
             style={{ width: progress + '%' }}
           ></div>
         </div>
-        <div className="flex justify-between text-center -mt-4">
+        <div className="flex justify-between text-center -mt-2 items-center">
           <div className="">
-            <AnimatedNumber className='text-lg font-bold' damping={50} value={progress} />
+            <AnimatedNumber
+              className="text-base font-bold"
+              damping={50}
+              value={progress}
+            />
             <p className="text-xs">Complate</p>
           </div>
-          <div>
-          <AnimatedNumber className='text-lg font-bold' damping={50}  value={10} />
-            <p className="text-xs">Persion</p>
+          <div className='flex items-center'>
+          <ShinyButton>
+          <div className='flex gap-2'>
+            <p>donation</p>
+            <Coins className='size-5 text-main2' />
+          </div>
+        </ShinyButton>
           </div>
         </div>
       </div>

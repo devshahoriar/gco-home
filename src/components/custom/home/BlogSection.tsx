@@ -15,7 +15,7 @@ const BlogSection = () => {
         maxOpacity={0.5}
         duration={2}
         repeatDelay={1}
-        className="opacity-20"
+        className="opacity-50"
       />
       <div className="container px-10 pt-12 pb-20">
         <div className="mt-10">
@@ -31,7 +31,7 @@ const BlogSection = () => {
             image="/img/1.jpg"
           />
 
-          <ScrollArea className="h-[500px] w-full mt-10 md:mt-0 md:w-1/2">
+          <ScrollArea className="h-[500px] w-full mt-10 md:mt-0 md:w-1/2 shadow-xl">
             <div className="flex-col flex gap-5 ">
               <ItemNews
                 title="The best way to plant a tree"
@@ -77,7 +77,7 @@ const BigNews = ({
   image: string
 }) => {
   return (
-    <div className="relative rounded-md p-3 overflow-hidden border  border-opacity-45 drop-shadow-xl shadow-white backdrop-blur-md md:w-1/2 ">
+    <div className="relative rounded-md p-3 overflow-hidden border  border-opacity-45 shadow-xl backdrop-blur-md md:w-1/2 ">
       <p className="absolute top-4 left-4 bg-red-600 px-5 py-1 text-white rounded drop-shadow-md">
         Trend
       </p>
@@ -113,8 +113,8 @@ const ItemNews = ({
   image: string
 }) => {
   return (
-    <div className="relative rounded-md p-3 overflow-hidden border border-opacity-45 flex backdrop-blur-md">
-      <p className="absolute top-2 right-3 bg-red-600 px-2 py-1 text-white rounded drop-shadow-md text-xs">
+    <div className="relative rounded-md p-3 overflow-hidden border border-opacity-45 flex backdrop-blur-md shadow-lg">
+      <p className="absolute top-2 right-3 bg-red-600 px-2 py-1 text-white rounded drop-shadow-md text-xs z-10">
         New
       </p>
       <div className=" aspect-square h-[100px] sm:h-[150px] md:h-[100px]">
