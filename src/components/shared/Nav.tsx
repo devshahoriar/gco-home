@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../custom/Logo'
+import Logo from './Logo'
 import DesktopNav from '../custom/Navigation/DesktopNav'
 import dynamic from 'next/dynamic'
 

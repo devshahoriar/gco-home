@@ -4,6 +4,7 @@ import { I18nProviderClient } from "@/locales/client";
 import type { ReactElement } from "react";
 import ThemeProviderClient from "@/components/shared/theme-provider";
 import TopBar from "@/components/shared/TopBar";
+import Footer from "@/components/shared/Footer";
 
 const SubLayout = ({
 	params: { lang },
@@ -31,6 +32,7 @@ const SubLayout = ({
 				<TopBar />
 				<Nav />
 				<main>{children}</main>
+				<Footer />
 			</I18nProviderClient>
 		</ThemeProviderClient>
 	);
