@@ -36,7 +36,7 @@ const ContractUs = () => {
 						<iframe
 							title="map"
 							className="h-full w-full"
-							src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Rosemont+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+							src="https://maps.google.com/maps?q=Global%20Gommunity%20Organization%2C%20bagha&t=m&z=9&output=embed&iwloc=near"
 						/>
 					</div>
 				</div>
@@ -55,7 +55,7 @@ const FooterAddressItem = ({
 	text: string;
 }) => {
 	return (
-		<div className="bg-slate-300 flex justify-center items-center flex-col aspect-square gap-2">
+		<div className="bg-slate-300 dark:bg-slate-700 flex justify-center items-center flex-col aspect-square gap-2">
 			<div className="[&>*]:size-8">{icon}</div>
 			<h3 className="text-lg md:text-base font-semibold">{title}</h3>
 			<p>{text}</p>

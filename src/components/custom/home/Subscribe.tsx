@@ -7,7 +7,7 @@ const Subscribe = () => {
 			<div className="container px-4 sm:flex sm:justify-center">
 				<div className="sm:max-w-[600px]">
 					<div className="text-center space-y-2 mb-5 md:space-y-5">
-						<h2 className="text-xl font-bold">Subscribe to our newsletter</h2>
+						<h2 className="text-xl md:text-3xl font-bold">Subscribe to our newsletter</h2>
 						<p>
 							Subscribe to our newsletter and get updates on our latest
 							campaigns
