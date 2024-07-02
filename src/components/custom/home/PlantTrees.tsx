@@ -13,7 +13,7 @@ const ItemCard = ({ src, title }: { src: any; title: String }) => {
     transition={{ duration: 0.5 }}
     >
       <ShineBorder
-      className="aspect-square !w-[200px] md:!w-[300px] relative  overflow-hidden group"
+      className="aspect-square !w-[200px] md:!w-[200px] relative  overflow-hidden group"
       color={['#A07CFE', '#FE8FB5', '#FFBE7B']}
     >
       <Image
