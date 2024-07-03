@@ -9,7 +9,7 @@ const Donate = () => {
   const [dfDoante, setDfDonate] = useState(1)
   return (
     <div className="w-full lg:w-1/2 space-y-4">
-      <div className="border-b space-y-2">
+      <div className="border-b space-y-2 border-stone-400">
         <h1 className="text-xl">PLANT TREES WHERE THEY'RE NEEDED MOST</h1>
         <p className="text-xs">ONE DOLLAR. ONE TREE.</p>
       </div>
@@ -34,7 +34,7 @@ const Donate = () => {
           </li>
         </ul>
       </div>
-      <div className="border p-3 w-[100%] md:w-[530px] space-y-3">
+      <div className="border border-main p-3 w-[100%] md:w-[530px] space-y-3">
         <div className="flex justify-between gap-2">
           <button className="w-1/2 bg-main py-2 rounded-[2px] text-white font-semibold">
             One Time Donation
@@ -88,21 +88,22 @@ const Donate = () => {
               onClick={() => setDfDonate(0)}
               className={cn(
                 'hover:bg-main bg-white text-black border py-2 rounded-[2px] hover:text-white font-semibold',
-                dfDoante === 0 && 'bg-main text-white'
+                dfDoante > 50 && 'bg-main text-white'
               )}
             >
               other
             </button>
           </div>
         </div>
-        <div className="flex border items-center font-semibold">
-          <p className="border-r p-2">$</p>
+        <div className="flex border border-stone-400 items-center font-semibold">
+          <p className="border-r p-2 border-stone-400">$</p>
           <input
             value={dfDoante !== 0 ? dfDoante : ''}
-            className="flex-1 border-none outline-none text-base mx-2"
+            className="flex-1 border-none outline-none text-base mx-2 bg-transparent"
             type="text"
+            onChange={(e) => setDfDonate(parseInt(e.target.value))}
           />
-          <p className="border-l p-2">TAKA</p>
+          <p className="border-l p-2 border-stone-400">TAKA</p>
         </div>
       </div>
       <div className="flex text-lg font-semibold items-center gap-5">
@@ -111,8 +112,10 @@ const Donate = () => {
           Donate
         </button>
       </div>
-      <div className='border-b pb-5'>
-        <p className='text-xs'>Want to plant somewhere else? Click here to see all our projects!</p>
+      <div className="border-b pb-5 border-stone-400">
+        <p className="text-xs">
+          Want to plant somewhere else? Click here to see all our projects!
+        </p>
       </div>
     </div>
   )
