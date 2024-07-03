@@ -13,7 +13,7 @@ const trees = [img1, img2, img3, img4]
 const DonateSlide = () => {
   const [index, setIndex] = useState(0)
   return (
-    <div className="w-full md:w-1/2">
+    <div className="w-full lg:w-1/2">
       <motion.div
         key={index}
         initial={{ opacity: 0 }}

@@ -1,13 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client'
 
+import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { useState } from 'react'
 
 const Donate = () => {
   const [dfDoante, setDfDonate] = useState(1)
   return (
-    <div className="w-full md:w-1/2 space-y-4">
+    <div className="w-full lg:w-1/2 space-y-4">
       <div className="border-b space-y-2">
         <h1 className="text-xl">PLANT TREES WHERE THEY'RE NEEDED MOST</h1>
         <p className="text-xs">ONE DOLLAR. ONE TREE.</p>
@@ -104,7 +105,15 @@ const Donate = () => {
           <p className="border-l p-2">TAKA</p>
         </div>
       </div>
-      <div></div>
+      <div className="flex text-lg font-semibold items-center gap-5">
+        <p>$ {dfDoante} taka</p>
+        <button className=" bg-red-600 py-2 rounded-[2px] text-white font-semibold px-3">
+          Donate
+        </button>
+      </div>
+      <div className='border-b pb-5'>
+        <p className='text-xs'>Want to plant somewhere else? Click here to see all our projects!</p>
+      </div>
     </div>
   )
 }
