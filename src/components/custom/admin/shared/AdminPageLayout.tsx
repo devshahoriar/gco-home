@@ -8,7 +8,7 @@ const AdminPageLayout = ({
   title: String
 }) => {
   return (
-    <div className="container my-5 px-3 md:px-0">
+    <div className="container my-5 px-3">
       <h1 className="text-lg font-bold">{title}</h1>
       {children}
     </div>

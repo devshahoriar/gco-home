@@ -26,7 +26,7 @@ const HomePage = async () => {
 			<Donate />
 			<Instagram />
 			<Subscribe />
-			<ContractUs />
+			{/* <ContractUs /> */}
 		</>
 	);
 };

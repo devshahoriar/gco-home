@@ -19,7 +19,7 @@ const MagicContainer = dynamic(
 const Instagram = () => {
   return (
     <section>
-      <div className="container">
+      <div className="container px-3">
         <div className="mt-10">
           <BlurIn
             className="!text-2xl font-semibold md:!text-3xl !py-10 text-center"

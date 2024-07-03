@@ -4,9 +4,13 @@ import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import {
   ChevronLeft,
+  Globe,
+  Home,
   LogOut,
+  Moon,
   Notebook,
   NotebookPen,
+  Sun,
   Warehouse,
 } from 'lucide-react'
 import { useState } from 'react'
@@ -14,9 +18,12 @@ import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar'
 import '@/styles/adminSideBar.css'
 import { usePathname, useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
+import { useTheme } from 'next-themes'
 
 const AdminSideBar = ({ toggled, setToggled }: any) => {
   const path = usePathname()
+  const router = useRouter()
+  const { setTheme, themes, theme } = useTheme()
 
   const [collapsed, setCollapsed] = useState(false)
   return (
@@ -29,12 +36,6 @@ const AdminSideBar = ({ toggled, setToggled }: any) => {
       toggled={toggled}
       breakPoint="md"
     >
-      <button
-        onClick={() => setCollapsed(!collapsed)}
-        className="absolute right-1 top-4  p-2 rounded-full flex dark:bg-black justify-center items-center hover:shadow-lg active:scale-95 bg-white"
-      >
-        <ChevronLeft />
-      </button>
       <Logo className="xl:!w-[200px]" />
       <div className="mt-10 flex flex-col justify-between h-[calc(100vh-120px)] px-2">
         <ScrollArea>
@@ -45,7 +46,7 @@ const AdminSideBar = ({ toggled, setToggled }: any) => {
               active={'/admin' === path}
             >
               {!collapsed && 'Home'}
-              <Warehouse className="size-5" />
+              <Home className="size-5" />
             </SideBarLinkButton>
             <SideBarLinkButton
               setToggled={setToggled}
@@ -65,15 +66,48 @@ const AdminSideBar = ({ toggled, setToggled }: any) => {
 
               <NotebookPen className="size-5" />
             </SideBarLinkButton>
+            <Button
+              variant="outline"
+              className="w-full flex justify-center gap-4 items-center bg-red-500 text-white"
+            >
+              {!collapsed && 'Logout'}
+              <LogOut className="size-4" />
+            </Button>
           </div>
         </ScrollArea>
-        <div className="px-2">
+        <div className="px-2 space-y-2">
           <Button
             variant="outline"
             className="w-full flex justify-center gap-4 items-center"
+            onClick={() => router.push('/')}
           >
-            {!collapsed && 'Logout'}
-            <LogOut className="size-4" />
+            {!collapsed && 'Back to site'}
+            <Globe className={cn('size-5')} />
+          </Button>
+          <Button
+            variant="outline"
+            className="w-full flex justify-center gap-4 items-center"
+            onClick={() => setCollapsed(!collapsed)}
+          >
+            {!collapsed && 'Collaps'}
+            <ChevronLeft
+              className={cn(
+                'size-5 transition-transform',
+                collapsed && 'rotate-180'
+              )}
+            />
+          </Button>
+          <Button
+            variant="outline"
+            className="w-full flex justify-center gap-4 items-center"
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+          >
+            {!collapsed && theme}
+            {theme === 'light' ? (
+              <Sun className="size-5" />
+            ) : (
+              <Moon className="size-5" />
+            )}
           </Button>
         </div>
       </div>
@@ -91,7 +125,7 @@ const SideBarLinkButton = ({ children, active, link, setToggled }: any) => {
       }}
       className={cn(
         'flex items-center w-full gap-3 text',
-        !active && 'bg-zinc-600'
+        !active && 'bg-zinc-600 dark:text-white'
       )}
     >
       {children}

@@ -20,7 +20,7 @@ const ItemCard = ({
 	progress: number;
 }) => {
 	return (
-		<div className="relative rounded-md p-3 overflow-hidden border border-main border-opacity-45 w-[80%] md:w-[250px]">
+		<div className="relative rounded-md p-3 overflow-hidden border border-main border-opacity-45 w-[95%] md:w-[250px]">
 			<BorderBeam className="-z-10" />
 			<div className="h-[150px] w-full md:h-[160px] ">
 				<Image

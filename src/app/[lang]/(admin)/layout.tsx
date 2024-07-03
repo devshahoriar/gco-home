@@ -1,8 +1,10 @@
 'use client'
 import AdminNav from '@/components/custom/admin/shared/Nav'
-import AdminSideBar from '@/components/custom/admin/shared/SideBar'
 import { useState, type ReactElement } from 'react'
 import ThemeProviderClient from "@/components/shared/theme-provider";
+import dynamic from 'next/dynamic'
+
+const AdminSideBar = dynamic(()=> import('@/components/custom/admin/shared/SideBar'),{ssr: false})
 
 const AdminLayout = ({
   params: { lang },
