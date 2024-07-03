@@ -14,7 +14,7 @@ const CardItem = ({
   description: String
 }) => {
   return (
-    <div className="flex flex-col items-center w-[80%] sm:w-[400px] md:w-[500px] ">
+    <div className="flex flex-col items-center w-[80%] sm:w-[200px] md:w-[250px] ">
       <div className="bg-main size-10 md:size-14 flex justify-center items-center text-white rounded-sm z-20">
         {icon}
       </div>

@@ -20,9 +20,9 @@ const ItemCard = ({
 	progress: number;
 }) => {
 	return (
-		<div className="relative rounded-md p-3 overflow-hidden border border-main border-opacity-45 sm:w-[clamp(200px,300px,400px)]">
+		<div className="relative rounded-md p-3 overflow-hidden border border-main border-opacity-45 w-[80%] md:w-[250px]">
 			<BorderBeam className="-z-10" />
-			<div className="h-[200px] w-full md:h-[180px] ">
+			<div className="h-[150px] w-full md:h-[160px] ">
 				<Image
 					className="w-full h-full object-cover rounded-t-md"
 					width={1000}
@@ -52,7 +52,7 @@ const ItemCard = ({
 						<p className="text-xs">Complate</p>
 					</div>
 					<div className="flex items-center">
-						<ShinyButton className="!scale-90">
+						<ShinyButton className="!scale-75 ">
 							<div className="flex gap-2">
 								<p>donation</p>
 								<Coins className="size-5 text-main2" />
@@ -74,7 +74,7 @@ const JoinOurMission = () => {
 					className="text-center !text-2xl font-semibold md:!text-3xl !pt-10"
 					word="Join Our mission"
 				/>
-				<div className="flex flex-col gap-8 mt-10 md:mt-14 mx-10 sm:flex-wrap sm:flex-row sm:justify-center">
+				<div className="flex flex-col gap-8 mt-10 md:mt-14 mx-10 sm:flex-wrap sm:flex-row justify-center items-center">
 					<ItemCard
 						title="Plant Trees "
 						description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,

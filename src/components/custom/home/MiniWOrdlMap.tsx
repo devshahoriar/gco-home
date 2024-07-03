@@ -61,7 +61,7 @@ const MiniWOrdlMap = () => {
           </p>
         </div>
         <div className="flex justify-center md:items-center md:w-[60%]">
-          <div className="mt-10 md:mt-0 w-[90%] md:w-full">
+          <div className="mt-10 md:mt-0 w-[90%] md:w-full h-[400px]">
             <Image
               className="h-full w-full object-cover"
               width={1000}
