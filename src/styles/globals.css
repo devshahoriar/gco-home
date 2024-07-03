@@ -71,4 +71,13 @@
       rgba(0, 0, 0, 1) 49%
     );
   }
+
+ 
+
+
+}
+
+.checklist li::marker {
+  content: '✓';
+  color: green;
 }

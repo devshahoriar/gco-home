@@ -28,7 +28,7 @@ const ShinyButton = ({
   className,
 }: {
   children: ReactNode
-  className?: String
+  className?: string
 }) => {
   return (
     <motion.button

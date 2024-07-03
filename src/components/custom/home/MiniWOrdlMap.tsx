@@ -5,7 +5,7 @@ const MiniWOrdlMap = () => {
   return (
     <section className="my-10 md:my-20 container">
       <div className='md:flex md:items-center'>
-        <div className="flex flex-col items-center md:items-start">
+        <div className="flex flex-col items-center md:items-start md:w-[40%]">
           <h1 className="text-center w-[80%] text-main font-bold text-2xl md:text-start">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut,
             aperiam!
@@ -22,9 +22,9 @@ const MiniWOrdlMap = () => {
                 value={80}
                 gaugePrimaryColor="rgb(92 176 47)"
                 gaugeSecondaryColor="rgba(0, 0, 0, 0.1)"
-                className='md:size-32'
+                className='md:size-24'
               />
-              <p className="text-center font-thin text-sm md:mt-3">
+              <p className="text-center font-thin text-sm md:mt-3 md:w-[60%]">
                 Lorem ipsum dolor sit amet.
               </p>
             </div>
@@ -35,9 +35,9 @@ const MiniWOrdlMap = () => {
                 value={40}
                 gaugePrimaryColor="rgb(92 176 47)"
                 gaugeSecondaryColor="rgba(0, 0, 0, 0.1)"
-                className='md:size-32'
+                className='md:size-24'
               />
-              <p className="text-center font-thin text-sm md:mt-3">
+             <p className="text-center font-thin text-sm md:mt-3 md:w-[60%]">
                 Lorem ipsum dolor sit amet.
               </p>
             </div>
@@ -48,9 +48,9 @@ const MiniWOrdlMap = () => {
                 value={60}
                 gaugePrimaryColor="rgb(92 176 47)"
                 gaugeSecondaryColor="rgba(0, 0, 0, 0.1)"
-                className='md:size-32'
+                className='md:size-24'
               />
-              <p className="text-center font-thin text-sm md:mt-3">
+              <p className="text-center font-thin text-sm md:mt-3 md:w-[60%]">
                 Lorem ipsum dolor sit amet.
               </p>
             </div>
@@ -60,7 +60,7 @@ const MiniWOrdlMap = () => {
             minima!
           </p>
         </div>
-        <div className="flex justify-center md:items-center md:w-[40%]">
+        <div className="flex justify-center md:items-center md:w-[60%]">
           <div className="mt-10 md:mt-0 w-[90%] md:w-full">
             <Image
               className="h-full w-full object-cover"

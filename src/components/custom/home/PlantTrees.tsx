@@ -4,7 +4,8 @@ import ShineBorder from '@/components/ui/aimate/shine-border'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-const ItemCard = ({ src, title }: { src: any; title: String }) => {
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+const ItemCard = ({ src, title }: { src: any; title: string }) => {
   return (
     <motion.div 
     initial={{ scale: 0.5 }}

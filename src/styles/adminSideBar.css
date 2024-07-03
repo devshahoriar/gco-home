@@ -1,0 +1,6 @@
+.ps-sidebar-root {
+  @apply !border-none;
+}
+.ps-sidebar-container {
+  @apply !bg-background dark:!bg-neutral-800 dark:!text-white;
+}

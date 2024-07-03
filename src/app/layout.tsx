@@ -16,7 +16,8 @@ export const metadata: Metadata = {
       : `http://localhost:${process.env.PORT || 3000}`
   ),
   title: 'Global Community Organization',
-  description: 'Global Community Organization · Mission · To develop healthy, standardized, improved living system and sustainable environment is the only goal.',
+  description:
+    'Global Community Organization · Mission · To develop healthy, standardized, improved living system and sustainable environment is the only goal.',
 }
 
 export default function RootLayout({
