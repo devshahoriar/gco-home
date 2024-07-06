@@ -21,7 +21,7 @@ const images = [image1, image2, image3, image4, image5, image6, image7, image8, 
 
 const SlideItem = ({ src }: any) => {
   return (
-    <div className="size-28 rounded-md overflow-hidden mx-auto">
+    <div className="size-40 rounded-md overflow-hidden mx-auto">
       <Image
         className="h-full w-full object-contain rounded-md"
         src={src}
@@ -72,7 +72,7 @@ const DonarAndCo = () => {
     <section className="container my-20">
       <BlurIn className="text-center !text-2xl font-semibold md:!text-3xl" word='Donor & Collaborators'/>
   
-      <div className='mt-10 mx-0 md:mx-20 xl:mx-52'>
+      <div className='mt-10 mx-0 md:mx-0 xl:mx-0'>
         <Slider {...settings} className='' >
           {images.map((img, index) => (
             <SlideItem key={index} src={img} />

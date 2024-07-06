@@ -18,7 +18,7 @@ const CardItem = ({
       <div className="bg-main size-10 md:size-14 flex justify-center items-center text-white rounded-sm z-20">
         {icon}
       </div>
-      <div className="flex flex-col items-center bg-slate-300  dark:bg-slate-800 bg-opacity-40 dark:bg-opacity-40 gap-5 py-10 -mt-5 rounded-md relative overflow-hidden">
+      <div className="flex flex-col items-center bg-slate-300  dark:bg-slate-800 bg-opacity-70 dark:bg-opacity-40 gap-5 py-10 -mt-5 rounded-md relative overflow-hidden">
         <DotPattern
           className={cn(
             '[mask-image:radial-gradient(200px_circle_at_center,white,transparent)]'
@@ -41,7 +41,7 @@ const CardItem = ({
 
 const OurJob = () => {
   return (
-    <div className="container flex flex-col items-center mt-10 gap-10 sm:flex-row sm:flex-wrap sm:justify-center md:mt-20 md:pb-10">
+    <div className="container flex flex-col items-center mt-10 gap-10 sm:flex-row sm:flex-wrap sm:justify-center md:mt-20 md:pb-10 !-mt-[120px]">
       <CardItem
         icon={<ScanEye />}
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,

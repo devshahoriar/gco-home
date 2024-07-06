@@ -34,12 +34,14 @@ const ItemCard = ({ src, title }: { src: any; title: string }) => {
 
 export const PlantTrees = () => {
   return (
-    <div className="my-10 container pb-10">
+    <div className="my-10 container pb-0">
       <BlurIn
         word="Where we work"
         className="text-center !text-2xl font-semibold md:!text-3xl"
       />
-      <div className="flex flex-wrap justify-center gap-10 mt-10">
+      <div className="flex flex-wrap justify-center gap-5 mt-10">
+        <ItemCard src="/treep/af.jpg" title="Bangladesh" />
+        <ItemCard src="/treep/bd.jpg" title="India" />
         <ItemCard src="/treep/af.jpg" title="Bangladesh" />
         <ItemCard src="/treep/bd.jpg" title="India" />
         <ItemCard src="/treep/in.jpg" title="USA" />
