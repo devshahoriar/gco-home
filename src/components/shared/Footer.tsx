@@ -3,7 +3,7 @@ const Footer = () => {
 	return (
 		<>
 			<section className="bg-gray-800 text-white text-center py-10 sm:py-20 lg:py-10">
-				<div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-start gap-10">
+				<div className="container px-5 md:px-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-start gap-10">
 					<FooterItem title="Authorized BY">
 						<div className="flex gap-3">
 							<img

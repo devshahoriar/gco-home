@@ -13,6 +13,8 @@ import Subscribe from "@/components/custom/home/Subscribe";
 import React from "react";
 
 const HomePage = async () => {
+	console.log('shuvo from server');
+	
 	return (
 		<>
 			<Carosel />

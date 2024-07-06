@@ -24,6 +24,8 @@ const typs = [
 
 
 const SlideItem = ({ src, inview }: any) => {
+  
+    
   return (
     <div className="h-[300px] sm:h-[350px] md:h-[500px] xl:h-[550px] overflow-hidden relative md:mt-5">
       {inview && (

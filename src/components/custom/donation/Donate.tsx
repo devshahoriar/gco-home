@@ -99,7 +99,7 @@ const Donate = () => {
           <p className="border-r p-2 border-stone-400">$</p>
           <input
             value={dfDoante !== 0 ? dfDoante : ''}
-            className="flex-1 border-none outline-none text-base mx-2 bg-transparent"
+            className="sm:flex-1 w-[80%]  sm:w-fitborder-none outline-none text-base mx-2 bg-transparent"
             type="text"
             onChange={(e) => setDfDonate(parseInt(e.target.value))}
           />

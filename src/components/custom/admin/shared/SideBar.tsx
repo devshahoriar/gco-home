@@ -123,6 +123,7 @@ const SideBarLinkButton = ({ children, active, link, setToggled }: any) => {
         navigation.push(link)
         setToggled(false)
       }}
+ 
       className={cn(
         'flex items-center w-full gap-3 text',
         !active && 'bg-zinc-600 dark:text-white'
