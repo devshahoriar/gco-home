@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const MiniWOrdlMap = () => {
   return (
-    <section className="my-10 md:my-20 container">
+    <section className="my-10 md:my-20 container px-3">
       <div className='md:flex md:items-center'>
         <div className="flex flex-col items-center md:items-start md:w-[40%]">
           <h1 className="text-center w-[80%] text-main font-bold text-2xl md:text-start">

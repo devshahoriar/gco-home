@@ -81,3 +81,7 @@
   content: '✓';
   color: green;
 }
+
+.topsocial a{
+  @apply hover:text-main
+}

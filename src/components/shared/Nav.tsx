@@ -1,19 +1,12 @@
-import React from 'react'
-import Logo from './Logo'
+import MobileNav from '../custom/Navigation/MobileNav'
 import DesktopNav from '../custom/Navigation/DesktopNav'
-import dynamic from 'next/dynamic'
-
-const MoNav = dynamic(() => import('../custom/Navigation/MobileNav'),{
-  ssr: false
-})
 
 const Nav = () => {
   return (
-    <nav className="container flex items-center justify-between">
-      <Logo />
+    <section className='bg-purple-700 md:bg-transparent'>
+      <MobileNav />
       <DesktopNav />
-      <MoNav />
-    </nav>
+    </section>
   )
 }
 
