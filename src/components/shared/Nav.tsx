@@ -3,7 +3,7 @@ import DesktopNav from '../custom/Navigation/DesktopNav'
 
 const Nav = () => {
   return (
-    <section className='bg-purple-700 md:bg-transparent'>
+    <section className='bg-purple-700 md:bg-neutral-600 md:text-white relative'>
       <MobileNav />
       <DesktopNav />
     </section>

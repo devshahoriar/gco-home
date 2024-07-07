@@ -3,25 +3,16 @@
 
 import Logo from '@/components/shared/Logo'
 import { cn } from '@/lib/utils'
-import {
-  ArrowDown,
-  ArrowDownAZ,
-  ChevronDown,
-  Menu,
-  Search,
-  ShoppingBag,
-  X,
-} from 'lucide-react'
-import Image from 'next/image'
+import { ChevronDown, Menu, Search, ShoppingBag, X } from 'lucide-react'
 import Link from 'next/link'
-import path from 'path'
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const MobileNav = () => {
   const [mobileNav, setMobileNav] = useState(false)
   return (
     <nav className="md:hidden container flex justify-between items-center text-white h-10 relative">
-      <div className="flex fixed top-0 left-0 justify-between items-center text-white h-10 w-full px-[4px] bg-purple-700 !z-50">
+      <div className="flex fixed top-0 left-0 justify-between items-center text-white h-10 w-full px-[5px] bg-purple-700 !z-50">
         <button onClick={() => setMobileNav((r) => !r)}>
           {mobileNav ? <X /> : <Menu />}
         </button>
@@ -35,124 +26,143 @@ const MobileNav = () => {
           </button>
         </div>
       </div>
-      {mobileNav && (
-        <div className="absolute top-full left-0 right-0 w-full bg-black bg-opacity-80 z-50 h-[calc(100vh-50px)] overflow-x-auto">
-          <div className="px-[20px] pb-10">
-            <div className="flex justify-center mt-3">
-              <button className="bg-pink-700 uppercase font-bold w-full  rounded-[2px] py-1">
-                Donate
-              </button>
+      <AnimatePresence>
+        {mobileNav && (
+          <motion.div
+            animate={{
+              opacity: 1,
+              transition: {
+                duration: 0.5,
+              },
+            }}
+            exit={{
+              opacity: 0,
+              transition: {
+                duration: 0.5,
+              },
+            }}
+            initial={{
+              opacity: 0,
+            }}
+            className="absolute top-full left-0 right-0 w-full bg-black bg-opacity-80 z-50 h-[calc(100vh-50px)] overflow-x-auto"
+          >
+            <div className="px-[20px] pb-10">
+              <div className="flex justify-center mt-3">
+                <button className="bg-pink-700 uppercase font-bold w-full  rounded-[2px] py-1">
+                  Donate
+                </button>
+              </div>
+              <div className="flex mt-3 w-full flex-col gap-5 text-stone-300">
+                <MobileNavItem title="Tree plant">
+                  <Child title="by region">
+                    {Array.from({ length: 6 }).map((_, i) => (
+                      <LinkItem key={i} title={'link ' + i} path="#" />
+                    ))}
+                  </Child>
+                  <Child title="by Impact">
+                    {Array.from({ length: 2 }).map((_, i) => (
+                      <LinkItem key={i} title={'link ' + i} path="#" />
+                    ))}
+                  </Child>
+                  <Child title="For others">
+                    {Array.from({ length: 10 }).map((_, i) => (
+                      <LinkItem key={i} title={'link ' + i} path="#" />
+                    ))}
+                  </Child>
+                  <ImageBox
+                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  />
+                </MobileNavItem>
+                <MobileNavItem title="About">
+                  <Child title="Our organization">
+                    {Array.from({ length: 2 }).map((_, i) => (
+                      <LinkItem key={i} title={'link ' + i} path="#" />
+                    ))}
+                  </Child>
+                  <Child title="Our impact">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <LinkItem key={i} title={'link ' + i} path="#" />
+                    ))}
+                  </Child>
+                  <ImageBox
+                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  />
+                  <ImageBox
+                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  />
+                </MobileNavItem>
+                <MobileNavItem title="Get involbed">
+                  <Child title="Our organization">
+                    {Array.from({ length: 2 }).map((_, i) => (
+                      <LinkItem key={i} title={'link ' + i} path="#" />
+                    ))}
+                  </Child>
+                  <Child title="Our impact">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <LinkItem key={i} title={'link ' + i} path="#" />
+                    ))}
+                  </Child>
+                  <ImageBox
+                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  />
+                  <ImageBox
+                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  />
+                </MobileNavItem>
+                <MobileNavItem title="Learn">
+                  <Child title="Our organization">
+                    {Array.from({ length: 2 }).map((_, i) => (
+                      <LinkItem key={i} title={'link ' + i} path="#" />
+                    ))}
+                  </Child>
+                  <Child title="Our impact">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <LinkItem key={i} title={'link ' + i} path="#" />
+                    ))}
+                  </Child>
+                  <ImageBox
+                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  />
+                  <ImageBox
+                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  />
+                </MobileNavItem>
+                <MobileNavItem title="Shop">
+                  <Child title="Our organization">
+                    {Array.from({ length: 2 }).map((_, i) => (
+                      <LinkItem key={i} title={'link ' + i} path="#" />
+                    ))}
+                  </Child>
+                  <Child title="Our impact">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <LinkItem key={i} title={'link ' + i} path="#" />
+                    ))}
+                  </Child>
+                  <ImageBox
+                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  />
+                  <ImageBox
+                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  />
+                </MobileNavItem>
+                <LinkIndItem title="Contact" path="#" />
+                <LinkIndItem title="Login" path="#" />
+                <LinkIndItem title="018-2487-8880" path="#" />
+                <LinkIndItem title="Newsleter" path="#" />
+              </div>
             </div>
-            <div className="flex mt-3 w-full flex-col gap-5 text-stone-300">
-              <MobileNavItem title="Tree plant">
-                <Child title="by region">
-                  {Array.from({ length: 6 }).map((_, i) => (
-                    <LinkItem key={i} title={'link ' + i} path="#" />
-                  ))}
-                </Child>
-                <Child title="by Impact">
-                  {Array.from({ length: 2 }).map((_, i) => (
-                    <LinkItem key={i} title={'link ' + i} path="#" />
-                  ))}
-                </Child>
-                <Child title="For others">
-                  {Array.from({ length: 10 }).map((_, i) => (
-                    <LinkItem key={i} title={'link ' + i} path="#" />
-                  ))}
-                </Child>
-                <ImageBox
-                  title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                  src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
-              </MobileNavItem>
-              <MobileNavItem title="About">
-                <Child title="Our organization">
-                  {Array.from({ length: 2 }).map((_, i) => (
-                    <LinkItem key={i} title={'link ' + i} path="#" />
-                  ))}
-                </Child>
-                <Child title="Our impact">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <LinkItem key={i} title={'link ' + i} path="#" />
-                  ))}
-                </Child>
-                <ImageBox
-                  title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                  src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
-                <ImageBox
-                  title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                  src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
-              </MobileNavItem>
-              <MobileNavItem title="Get involbed">
-                <Child title="Our organization">
-                  {Array.from({ length: 2 }).map((_, i) => (
-                    <LinkItem key={i} title={'link ' + i} path="#" />
-                  ))}
-                </Child>
-                <Child title="Our impact">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <LinkItem key={i} title={'link ' + i} path="#" />
-                  ))}
-                </Child>
-                <ImageBox
-                  title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                  src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
-                <ImageBox
-                  title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                  src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
-              </MobileNavItem>
-              <MobileNavItem title="Learn">
-                <Child title="Our organization">
-                  {Array.from({ length: 2 }).map((_, i) => (
-                    <LinkItem key={i} title={'link ' + i} path="#" />
-                  ))}
-                </Child>
-                <Child title="Our impact">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <LinkItem key={i} title={'link ' + i} path="#" />
-                  ))}
-                </Child>
-                <ImageBox
-                  title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                  src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
-                <ImageBox
-                  title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                  src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
-              </MobileNavItem>
-              <MobileNavItem title="Shop">
-                <Child title="Our organization">
-                  {Array.from({ length: 2 }).map((_, i) => (
-                    <LinkItem key={i} title={'link ' + i} path="#" />
-                  ))}
-                </Child>
-                <Child title="Our impact">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <LinkItem key={i} title={'link ' + i} path="#" />
-                  ))}
-                </Child>
-                <ImageBox
-                  title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                  src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
-                <ImageBox
-                  title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                  src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
-              </MobileNavItem>
-              <LinkIndItem title="Contact" path="#" />
-              <LinkIndItem title="Login" path="#" />
-              <LinkIndItem title="018-2487-8880" path="#" />
-              <LinkIndItem title="Newsleter" path="#" />
-            </div>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   )
 }

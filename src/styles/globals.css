@@ -85,3 +85,8 @@
 .topsocial a{
   @apply hover:text-main
 }
+.desktopLink:hover  .desktopLinkContent,.desktopLinkContent:hover {
+  @apply !opacity-100 !z-40 !pointer-events-auto
+
+}
+

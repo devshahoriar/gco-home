@@ -16,7 +16,7 @@ const TopBar = () => {
     <section className="bg-main2 hidden md:block">
       <div className="container flex justify-between h-10 items-center">
         <div className="flex items-center text-white gap-5 text-xs uppercase">
-          <div className="flex items-center topsocial gap-4 [&>*]:text-white [&>a>svg]:size-4 ">
+          <div className="flex items-center topsocial gap-4 [&>*]:text-white [&>a>svg]:size-4 ml-2 ">
             <a href="#">
               <Mail />
             </a>
