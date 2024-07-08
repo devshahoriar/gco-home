@@ -12,28 +12,150 @@ const DesktopNav = () => {
         <div className="flex justify-between items-center ">
           <Logo className="w-[150px]" />
           <div className="flex flex-row gap-5 ">
-            <NavItem path="#" title="This is link 1">
+            <NavItem path="#" title="Plant Trees">
               <div className="flex justify-between">
-                <NavListItem path="#" title="This is link 1">
-                  <LinkItem path="#" title="Link 1" />
-                  <LinkItem path="#" title="Link 1" />
-                  <LinkItem path="#" title="Link 1" />
-                  <LinkItem path="#" title="Link 1" />
+                <NavListItem path="#" title="By region">
+                  <LinkItem path="#" title="North America" />
+                  <LinkItem path="#" title="Latin America" />
+                  <LinkItem path="#" title="Africa" />
+                  <LinkItem path="#" title="Asia" />
+                  <LinkItem path="#" title="Europe" />
+                  <LinkItem path="#" title="The pacific" />
+                  <LinkItem path="#" title="Plant trees for impact" />
                 </NavListItem>
-                <NavListItem path="#" title="This is link 1">
-                  Shuvo
+                <NavListItem path="#" title="By impact">
+                  <LinkItem path="#" title="Urban forestry" />
+                  <LinkItem path="#" title="Monarch" />
+                  <LinkItem path="#" title="Forest fire found" />
+                  <LinkItem path="#" title="Mangrovies" />
+                  <LinkItem path="#" title="Watersheds" />
+                  <LinkItem path="#" title="Woman" />
                 </NavListItem>
-                <NavListItem path="#" title="This is link 1">
-                  Shuvo
+                <NavListItem path="#" title="For others">
+                  <LinkItem path="#" title="gift trees" />
+                  <LinkItem path="#" title="gift trees is memory" />
+                  <LinkItem path="#" title="How to leave a legacy" />
                 </NavListItem>
                 <ImageBox
-                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                    src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  />
+                  linkTitle="Plant Trees"
+                  title="Plant trees for impact and help restore ecosystems around the world! "
+                  src="https://onetreeplanted.org/cdn/shop/files/plant-trees-for-impact-main-img_5000x.jpg?v=1709925481"
+                />
               </div>
             </NavItem>
-            <NavItem path="#" title="This is link 1">
-              Shuvo2
+            <NavItem path="#" title="About">
+              <div className="flex justify-between">
+                <NavListItem path="#" title="Our Organization">
+                  <LinkItem path="#" title="Our Vision" />
+                  <LinkItem path="#" title="Our Model" />
+                  <LinkItem path="#" title="Newsroom" />
+                  <LinkItem path="#" title="Faq" />
+                </NavListItem>
+                <NavListItem path="#" title="Our Impact">
+                  <LinkItem path="#" title="2023 recap" />
+                  <LinkItem path="#" title="2022 recap" />
+                  <LinkItem path="#" title="2021 recap" />
+                  <LinkItem path="#" title="2020 recap" />
+                  <LinkItem path="#" title="2019 recap" />
+                </NavListItem>
+                <ImageBox
+                  linkTitle="Visit our Newsroom"
+                  title="Stay up to date on major announcements, exciting collaborations, and more."
+                  src="https://onetreeplanted.org/cdn/shop/files/newsroom-promo_5000x.jpg?v=1690489113"
+                />
+                <ImageBox
+                  linkTitle="Learn More"
+                  title="We make it simple for anyone to plant trees, and together we can make an incredible impact. "
+                  src="https://onetreeplanted.org/cdn/shop/files/Our_Vision-megamenu_images_4500x.webp?v=1674767633"
+                />
+              </div>
+            </NavItem>
+            <NavItem path="#" title="Get Involved">
+              <div className="flex justify-between">
+                <NavListItem path="#" title="Businesses">
+                  <LinkItem path="#" title="Become A Partner" />
+                  <LinkItem path="#" title="Partners" />
+                  <LinkItem path="#" title="Cryptocurrency" />
+                  <LinkItem path="#" title="Sports Sustainability" />
+                </NavListItem>
+                <NavListItem path="#" title="Individuals">
+                  <LinkItem path="#" title="Monthly Giving" />
+                  <LinkItem path="#" title="Planned Giving" />
+                  <LinkItem path="#" title="Become A Tree Ambassador" />
+                  <LinkItem path="#" title="Teachers & Parents" />
+                </NavListItem>
+                <ImageBox
+                  linkTitle="Learn More"
+                  title="Become a business partner to improve your company’s sustainability initiatives and make an impact. "
+                  src="https://onetreeplanted.org/cdn/shop/files/Business_Sustainability-megamenu_images_4500x.webp?v=1674767903"
+                />
+                <ImageBox
+                  linkTitle="Learn More"
+                  title="See how your support and leadership can help us fund reforestation efforts across the globe. "
+                  src="https://onetreeplanted.org/cdn/shop/files/philanthropic-giving_4500x.jpg?v=1689881074"
+                />
+              </div>
+            </NavItem>
+            <NavItem path="#" title="Learn">
+              <div className="flex justify-between">
+                <div className="flex flex-col gap-5">
+                  <NavListItem path="#" title="About Trees">
+                    <LinkItem path="#" title="Why Trees?" />
+                    <LinkItem path="#" title="Tree Species" />
+                    <LinkItem path="#" title="Tree Facta" />
+                    <div className="border-b w-[100px]" />
+                    <LinkItem path="#" title="Reforestation" />
+                    <LinkItem path="#" title="Deforestation" />
+                    <LinkItem path="#" title="Climate Change" />
+                  </NavListItem>
+                  <NavListItem path="#" title="Our Blog">
+                    <LinkItem path="#" title="Project Stories" />
+                    <LinkItem path="#" title="Partner Stories" />
+                  </NavListItem>
+                </div>
+                <div className="flex flex-col gap-10">
+                  <NavListItem path="#" title="Education">
+                    <LinkItem path="#" title="Projects" />
+                    <LinkItem path="#" title="Urban Forestry" />
+                  </NavListItem>
+                  <NavListItem path="#" title="Resources">
+                    <LinkItem path="#" title="Videos" />
+                    <LinkItem path="#" title="Photos" />
+                    <LinkItem path="#" title="SdGS" />
+                    <LinkItem path="#" title="Maps" />
+                  </NavListItem>
+                </div>
+                <ImageBox
+                  linkTitle="Learn More"
+                  title="Read about stories from the field, interesting facts about trees and get your healthy dose of nature. "
+                  src="https://onetreeplanted.org/cdn/shop/files/Our-Blog-megamenu-images_4000x.webp?v=1676321660"
+                />
+                <ImageBox
+                  linkTitle="Learn More"
+                  title="Comprised of lesson plans, learning modules, resources, and activities, our T.R.E.E.S. School Program is the perfect addition to your curriculum. "
+                  src="https://onetreeplanted.org/cdn/shop/files/EE_megamenu_images_4500x.webp?v=1674843679"
+                />
+              </div>
+            </NavItem>
+            <NavItem path="#" title="Shop">
+              <div className="flex justify-between">
+                <NavListItem path="#" title="By Collection">
+                  <LinkItem path="#" title="Apparel" />
+                  <LinkItem path="#" title="Accessories" />
+                  <LinkItem path="#" title="Personalized Greeting Cards" />
+                  <LinkItem path="#" title="Tree Kits" />
+                </NavListItem>
+                <ImageBox
+                  linkTitle="Shop now"
+                  title="Our fan-favorite Reforestation T-Shirt. Wear it with pride to show your support of reforesting our planet, one tree at a time. "
+                  src="https://onetreeplanted.org/cdn/shop/files/Mega_Menu_Image_2_1_a5088b7a-fa61-4d0b-9c6a-8a32dfb8adfd_4500x.jpg?v=1699972315"
+                />
+                <ImageBox
+                  linkTitle="Gift a tree"
+                  title="Give the gift that lasts a lifetime! Choose an image, write your personalized message and select a delivery date to gift a tree. "
+                  src="https://onetreeplanted.org/cdn/shop/files/gift-trees-mega-menu_2x_cb75d577-44b5-4b97-9796-04c5f4d3a921_2500x.jpg?v=1681420564"
+                />
+              </div>
             </NavItem>
           </div>
         </div>
@@ -71,8 +193,8 @@ const NavItem = ({
         <ChevronDown className="size-4" />
       </Link>
       <div className="absolute top-[80%]  bg-opacity-80 w-screen left-0 desktopLinkContent opacity-0 z-40 pointer-events-none transition-opacity duration-300 ease-in-out">
-        <div className="bg-black bg-opacity-80 mt-[12px] h-[500px]">
-          <div className="container px-10 pt-8">{children}</div>
+        <div className="bg-black bg-opacity-80 mt-[12px] h-[500px] overflow-x-auto">
+          <div className="container px-10 pt-8 ">{children}</div>
         </div>
       </div>
     </div>
@@ -90,14 +212,23 @@ const NavListItem = ({
 }) => {
   return (
     <div>
-      <Link className='text-xl underline underline-offset-[20px] opacity-80 hover:opacity-100 hover:drop-shadow-lg hover:shadow-white' href={path}>{title}</Link>
-      <div className='flex flex-col mt-10 gap-5 ml-5'>{children}</div>
+      <Link
+        className="text-xl underline underline-offset-[20px]  opacity-80 hover:opacity-100 hover:drop-shadow-lg hover:shadow-white"
+        href={path}
+      >
+        {title}
+      </Link>
+      <div className="flex flex-col mt-10 gap-5 ml-5">{children}</div>
     </div>
   )
 }
 
 const LinkItem = ({ path, title }: { path: string; title: string }) => {
-  return <Link className='opacity-80 hover:opacity-100' href={path}>{title}</Link>
+  return (
+    <Link className="opacity-80 hover:opacity-100" href={path}>
+      {title}
+    </Link>
+  )
 }
 
 const ImageBox = ({
@@ -107,8 +238,8 @@ const ImageBox = ({
   linkTitle = 'this is link title',
 }: any) => {
   return (
-    <div className="ml-5 mt-3 w-[24vw]">
-      <div className='aspect-square '>
+    <div className="ml-5 mt-3 w-[24vw] max-w-[300px]">
+      <div className="aspect-square ">
         <img
           className="h-full w-full object-cover"
           width={500}
@@ -117,7 +248,7 @@ const ImageBox = ({
           alt={title}
         />
       </div>
-      <h1 className="text-sm">{title}</h1>
+      <h1 className="text-sm mt-3">{title}</h1>
       <Link className="text-sm underline" href={path}>
         {linkTitle}
       </Link>
