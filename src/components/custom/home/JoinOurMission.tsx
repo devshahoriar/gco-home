@@ -4,6 +4,7 @@ import BlurIn from '@/components/ui/aimate/blur-in'
 import { BorderBeam } from '@/components/ui/aimate/border-beam'
 import Meteors from '@/components/ui/aimate/meteors'
 import ShinyButton from '@/components/ui/aimate/shiny-button'
+import SiteButton from '@/components/ui/SiteButton'
 import { Coins } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
@@ -113,12 +114,11 @@ optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis"
           />
         </div>
         <div className="flex justify-center mt-10">
-          <AnimatButton
-            variant="ringHover"
-            className="bg-main2 text-white rounded-sm px-3 py-2 mt-5 text-sm active:scale-95"
+          <SiteButton
+            className=" px-6"
           >
             View all
-          </AnimatButton>
+          </SiteButton>
         </div>
       </div>
     </section>

@@ -48,7 +48,7 @@ const MobileNav = () => {
           >
             <div className="px-[20px] pb-10">
               <div className="flex justify-center mt-3">
-                <button className="bg-pink-700 uppercase font-bold w-full  rounded-[2px] py-1">
+                <button className="bg-white text-black uppercase font-bold w-full  rounded-[2px] py-1">
                   Donate
                 </button>
               </div>

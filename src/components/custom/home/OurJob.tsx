@@ -1,5 +1,6 @@
 import { AnimatButton } from '@/components/ui/aimate/AnimateButton'
 import DotPattern from '@/components/ui/aimate/dot-pattern'
+import SiteButton from '@/components/ui/SiteButton'
 import { cn } from '@/lib/utils'
 import { ScanEye, TvMinimal, icons } from 'lucide-react'
 import { ReactNode } from 'react'
@@ -28,12 +29,7 @@ const CardItem = ({
         <p className="line-clamp-4 text-center text-sm w-[80%] ">
           {description}
         </p>
-        <AnimatButton
-          variant="ringHover"
-          className="bg-main2 text-white rounded-sm px-3 py-2 mt-5 text-sm active:scale-95"
-        >
-          Read More
-        </AnimatButton>
+        <SiteButton className='px-6'>Read More</SiteButton>
       </div>
     </div>
   )
