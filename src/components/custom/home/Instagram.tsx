@@ -48,7 +48,7 @@ const SocialItem = () => {
         .map((_, i) => (
           <div
             key={i}
-            className="w-[calc(50%-20px)] sm:w-[calc(33%-20px)] md:w-[calc(25%-20px)]"
+            className="w-[calc(50%-20px)] sm:w-[calc(33%-20px)] lg:w-[calc(25%-20px)]"
           >
             <img className='w-full h-full object-cover' src={"https://picsum.photos/800?q="+i} alt="" />
           </div>
