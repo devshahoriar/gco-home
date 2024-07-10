@@ -24,7 +24,8 @@ const config = {
       },
       colors: {
         main: '#5CB02F',
-        main2: '#0F7AC0',
+        main2: '#009edb',
+        bgMain: "#4d4d4d",
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

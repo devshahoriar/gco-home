@@ -1,5 +1,6 @@
 import BlurIn from '@/components/ui/aimate/blur-in'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import SiteButton from '@/components/ui/SiteButton'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 const GridPattern = dynamic(
@@ -62,6 +63,13 @@ const BlogSection = () => {
           </ScrollArea>
         </div>
       </div>
+      <div className="flex justify-center pb-5">
+          <SiteButton
+            className=" px-6"
+          >
+            View all
+          </SiteButton>
+        </div>
     </section>
   )
 }

@@ -20,6 +20,7 @@ const TopBar = () => {
             <a href="#">
               <Mail />
             </a>
+         
             <a href="#">
               <Facebook />
             </a>
@@ -41,12 +42,12 @@ const TopBar = () => {
         <div className="flex gap-3 items-center text-white uppercase text-sm">
           <Link
             href="#"
-            className="bg-red-700 h-10 px-3 flex items-center hover:bg-red-800"
+            className="bg-white  text-bgMain h-10 px-3 flex items-center hover:bg-bgMain hover:text-white"
           >
             Donate
           </Link>
           <Link
-            className=" h-10 px-1 flex items-center gap-2 hover:text-main"
+            className=" h-10 px-1 flex items-center gap-2 hover:text-black"
             href="#"
           >
             <User className="size-4" />
@@ -54,7 +55,7 @@ const TopBar = () => {
           </Link>
           <button
             className="flex gap-1
-           items-center bg-red-700 h-10 px-2 hover:bg-red-800"
+           items-center bg-white  text-bgMain hover:bg-bgMain hover:text-white h-10 px-2"
           >
             <ShoppingBag className="size-5" />0
           </button>

@@ -68,7 +68,7 @@ const ItemCard = ({
 
 const JoinOurMission = () => {
   return (
-    <section className="w-full bg-main2 bg-opacity-10 py-10 relative overflow-hidden">
+    <section className="w-full bg-bgMain bg-opacity-10 py-10 relative overflow-hidden">
       <Meteors />
       <div className="container z-30 relative">
         <BlurIn
@@ -113,13 +113,7 @@ optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis"
             progress={10} // 80%
           />
         </div>
-        <div className="flex justify-center mt-10">
-          <SiteButton
-            className=" px-6"
-          >
-            View all
-          </SiteButton>
-        </div>
+        
       </div>
     </section>
   )

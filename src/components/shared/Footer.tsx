@@ -19,7 +19,7 @@ import {
 /* eslint-disable @next/next/no-img-element */
 const Footer = () => {
   return (
-    <section className="bg-gray-800 text-white">
+    <section className="bg-bgMain text-white">
       <MobileFooter />
       <DesktopFooter />
       <BootomBar />
@@ -344,8 +344,9 @@ const DesktopFooter = () => {
 
 const BootomBar = () => {
   return (
-    <div className="container flex justify-center py-5">
+    <div className="container flex justify-around items-center  flex-col-reverse lg:flex-row py-5 gap-3 lg:gap-0">
       <p>©2023 GCO all rights are reserved.</p>
+      <img className='object-cover h-10' src="/payment.png" alt="payment" />
     </div>
   )
 }

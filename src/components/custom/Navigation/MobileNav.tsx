@@ -12,7 +12,7 @@ const MobileNav = () => {
   const [mobileNav, setMobileNav] = useState(false)
   return (
     <nav className="md:hidden container flex justify-between items-center text-white h-10 relative">
-      <div className="flex fixed top-0 left-0 justify-between items-center text-white h-10 w-full px-[5px] bg-purple-700 !z-50">
+      <div className="flex fixed top-0 left-0 justify-between items-center text-white h-10 w-full px-[5px] bg-bgMain !z-50">
         <button
           onClick={() => {
             setMobileNav((r) => !r)
@@ -29,7 +29,7 @@ const MobileNav = () => {
           <button>
             <Search className="size-4" />
           </button>
-          <button className="flex gap-1 items-center text-xs bg-red-600 h-10 px-2">
+          <button className="flex gap-1 items-center text-xs bg-white  text-bgMain hover:bg-bgMain hover:text-white h-10 px-2">
             <ShoppingBag className="size-4" />0
           </button>
         </div>

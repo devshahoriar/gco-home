@@ -37,7 +37,7 @@ const CardItem = ({
 
 const OurJob = () => {
   return (
-    <div className="container flex flex-col items-center mt-10 gap-10 sm:flex-row sm:flex-wrap sm:justify-center md:mt-20 md:pb-10 !-mt-[120px]">
+    <div className="container flex flex-col items-center gap-10 sm:flex-row sm:flex-wrap sm:justify-center  md:pb-10 -mt-[100px] md:-mt-[120px]">
       <CardItem
         icon={<ScanEye />}
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,

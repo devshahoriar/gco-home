@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import BlurIn from '@/components/ui/aimate/blur-in'
+import SiteButton from '@/components/ui/SiteButton'
 import { TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Tabs } from '@radix-ui/react-tabs'
 
@@ -18,7 +19,7 @@ const Instagram = () => {
             <div className="flex justify-center">
               <TabsList>
                 <TabsTrigger value="fb">Facebook</TabsTrigger>
-                <TabsTrigger value="ins">Instagram</TabsTrigger>
+                <TabsTrigger value="ins">X Twitter</TabsTrigger>
               </TabsList>
             </div>
             <div className="w-full">
@@ -27,11 +28,18 @@ const Instagram = () => {
                 <SocialItem key="fb" />
               </TabsContent>
               <TabsContent value="ins">
-                ins
+                x
               <SocialItem key='ins'  />
               </TabsContent>
             </div>
           </Tabs>
+        </div>
+        <div className="flex justify-center pb-2 mt-5">
+          <SiteButton
+            className=" px-6"
+          >
+            Show More
+          </SiteButton>
         </div>
       </div>
     </section>
