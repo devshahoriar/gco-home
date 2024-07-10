@@ -13,7 +13,15 @@ const MobileNav = () => {
   return (
     <nav className="md:hidden container flex justify-between items-center text-white h-10 relative">
       <div className="flex fixed top-0 left-0 justify-between items-center text-white h-10 w-full px-[5px] bg-purple-700 !z-50">
-        <button onClick={() => setMobileNav((r) => !r)}>
+        <button
+          onClick={() => {
+            setMobileNav((r) => !r)
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            })
+          }}
+        >
           {mobileNav ? <X /> : <Menu />}
         </button>
         <Logo className="w-[100px]" />
@@ -72,67 +80,66 @@ const MobileNav = () => {
                     <LinkItem path="#" title="Woman" />
                   </Child>
                   <Child path="#" title="For others">
-                  <LinkItem path="#" title="gift trees" />
-                  <LinkItem path="#" title="gift trees is memory" />
-                  <LinkItem path="#" title="How to leave a legacy" />
-                </Child>
-                <ImageBox
-                  linkTitle="Plant Trees"
-                  title="Plant trees for impact and help restore ecosystems around the world! "
-                  src="https://onetreeplanted.org/cdn/shop/files/plant-trees-for-impact-main-img_5000x.jpg?v=1709925481"
-                />
+                    <LinkItem path="#" title="gift trees" />
+                    <LinkItem path="#" title="gift trees is memory" />
+                    <LinkItem path="#" title="How to leave a legacy" />
+                  </Child>
+                  <ImageBox
+                    linkTitle="Plant Trees"
+                    title="Plant trees for impact and help restore ecosystems around the world! "
+                    src="https://onetreeplanted.org/cdn/shop/files/plant-trees-for-impact-main-img_5000x.jpg?v=1709925481"
+                  />
                 </MobileNavItem>
                 <MobileNavItem title="About">
-                <Child path="#" title="Our Organization">
-                  <LinkItem path="#" title="Our Vision" />
-                  <LinkItem path="#" title="Our Model" />
-                  <LinkItem path="#" title="Newsroom" />
-                  <LinkItem path="#" title="Faq" />
-                </Child>
-                <Child path="#" title="Our Impact">
-                  <LinkItem path="#" title="2023 recap" />
-                  <LinkItem path="#" title="2022 recap" />
-                  <LinkItem path="#" title="2021 recap" />
-                  <LinkItem path="#" title="2020 recap" />
-                  <LinkItem path="#" title="2019 recap" />
-                </Child>
-                <ImageBox
-                  linkTitle="Visit our Newsroom"
-                  title="Stay up to date on major announcements, exciting collaborations, and more."
-                  src="https://onetreeplanted.org/cdn/shop/files/newsroom-promo_5000x.jpg?v=1690489113"
-                />
-                <ImageBox
-                  linkTitle="Learn More"
-                  title="We make it simple for anyone to plant trees, and together we can make an incredible impact. "
-                  src="https://onetreeplanted.org/cdn/shop/files/Our_Vision-megamenu_images_4500x.webp?v=1674767633"
-                />
+                  <Child path="#" title="Our Organization">
+                    <LinkItem path="#" title="Our Vision" />
+                    <LinkItem path="#" title="Our Model" />
+                    <LinkItem path="#" title="Newsroom" />
+                    <LinkItem path="#" title="Faq" />
+                  </Child>
+                  <Child path="#" title="Our Impact">
+                    <LinkItem path="#" title="2023 recap" />
+                    <LinkItem path="#" title="2022 recap" />
+                    <LinkItem path="#" title="2021 recap" />
+                    <LinkItem path="#" title="2020 recap" />
+                    <LinkItem path="#" title="2019 recap" />
+                  </Child>
+                  <ImageBox
+                    linkTitle="Visit our Newsroom"
+                    title="Stay up to date on major announcements, exciting collaborations, and more."
+                    src="https://onetreeplanted.org/cdn/shop/files/newsroom-promo_5000x.jpg?v=1690489113"
+                  />
+                  <ImageBox
+                    linkTitle="Learn More"
+                    title="We make it simple for anyone to plant trees, and together we can make an incredible impact. "
+                    src="https://onetreeplanted.org/cdn/shop/files/Our_Vision-megamenu_images_4500x.webp?v=1674767633"
+                  />
                 </MobileNavItem>
                 <MobileNavItem title="Get involbed">
-                <Child path="#" title="Businesses">
-                  <LinkItem path="#" title="Become A Partner" />
-                  <LinkItem path="#" title="Partners" />
-                  <LinkItem path="#" title="Cryptocurrency" />
-                  <LinkItem path="#" title="Sports Sustainability" />
-                </Child>
-                <Child path="#" title="Individuals">
-                  <LinkItem path="#" title="Monthly Giving" />
-                  <LinkItem path="#" title="Planned Giving" />
-                  <LinkItem path="#" title="Become A Tree Ambassador" />
-                  <LinkItem path="#" title="Teachers & Parents" />
-                </Child>
-                <ImageBox
-                  linkTitle="Learn More"
-                  title="Become a business partner to improve your company’s sustainability initiatives and make an impact. "
-                  src="https://onetreeplanted.org/cdn/shop/files/Business_Sustainability-megamenu_images_4500x.webp?v=1674767903"
-                />
-                <ImageBox
-                  linkTitle="Learn More"
-                  title="See how your support and leadership can help us fund reforestation efforts across the globe. "
-                  src="https://onetreeplanted.org/cdn/shop/files/philanthropic-giving_4500x.jpg?v=1689881074"
-                />
+                  <Child path="#" title="Businesses">
+                    <LinkItem path="#" title="Become A Partner" />
+                    <LinkItem path="#" title="Partners" />
+                    <LinkItem path="#" title="Cryptocurrency" />
+                    <LinkItem path="#" title="Sports Sustainability" />
+                  </Child>
+                  <Child path="#" title="Individuals">
+                    <LinkItem path="#" title="Monthly Giving" />
+                    <LinkItem path="#" title="Planned Giving" />
+                    <LinkItem path="#" title="Become A Tree Ambassador" />
+                    <LinkItem path="#" title="Teachers & Parents" />
+                  </Child>
+                  <ImageBox
+                    linkTitle="Learn More"
+                    title="Become a business partner to improve your company’s sustainability initiatives and make an impact. "
+                    src="https://onetreeplanted.org/cdn/shop/files/Business_Sustainability-megamenu_images_4500x.webp?v=1674767903"
+                  />
+                  <ImageBox
+                    linkTitle="Learn More"
+                    title="See how your support and leadership can help us fund reforestation efforts across the globe. "
+                    src="https://onetreeplanted.org/cdn/shop/files/philanthropic-giving_4500x.jpg?v=1689881074"
+                  />
                 </MobileNavItem>
                 <MobileNavItem title="Learn">
-                
                   <Child path="#" title="About Trees">
                     <LinkItem path="#" title="Why Trees?" />
                     <LinkItem path="#" title="Tree Species" />
@@ -146,8 +153,7 @@ const MobileNav = () => {
                     <LinkItem path="#" title="Project Stories" />
                     <LinkItem path="#" title="Partner Stories" />
                   </Child>
-               
-             
+
                   <Child path="#" title="Education">
                     <LinkItem path="#" title="Projects" />
                     <LinkItem path="#" title="Urban Forestry" />
@@ -158,35 +164,35 @@ const MobileNav = () => {
                     <LinkItem path="#" title="SdGS" />
                     <LinkItem path="#" title="Maps" />
                   </Child>
-                
-                <ImageBox
-                  linkTitle="Learn More"
-                  title="Read about stories from the field, interesting facts about trees and get your healthy dose of nature. "
-                  src="https://onetreeplanted.org/cdn/shop/files/Our-Blog-megamenu-images_4000x.webp?v=1676321660"
-                />
-                <ImageBox
-                  linkTitle="Learn More"
-                  title="Comprised of lesson plans, learning modules, resources, and activities, our T.R.E.E.S. School Program is the perfect addition to your curriculum. "
-                  src="https://onetreeplanted.org/cdn/shop/files/EE_megamenu_images_4500x.webp?v=1674843679"
-                />
+
+                  <ImageBox
+                    linkTitle="Learn More"
+                    title="Read about stories from the field, interesting facts about trees and get your healthy dose of nature. "
+                    src="https://onetreeplanted.org/cdn/shop/files/Our-Blog-megamenu-images_4000x.webp?v=1676321660"
+                  />
+                  <ImageBox
+                    linkTitle="Learn More"
+                    title="Comprised of lesson plans, learning modules, resources, and activities, our T.R.E.E.S. School Program is the perfect addition to your curriculum. "
+                    src="https://onetreeplanted.org/cdn/shop/files/EE_megamenu_images_4500x.webp?v=1674843679"
+                  />
                 </MobileNavItem>
                 <MobileNavItem title="Shop">
-                <Child path="#" title="By Collection">
-                  <LinkItem path="#" title="Apparel" />
-                  <LinkItem path="#" title="Accessories" />
-                  <LinkItem path="#" title="Personalized Greeting Cards" />
-                  <LinkItem path="#" title="Tree Kits" />
-                </Child>
-                <ImageBox
-                  linkTitle="Shop now"
-                  title="Our fan-favorite Reforestation T-Shirt. Wear it with pride to show your support of reforesting our planet, one tree at a time. "
-                  src="https://onetreeplanted.org/cdn/shop/files/Mega_Menu_Image_2_1_a5088b7a-fa61-4d0b-9c6a-8a32dfb8adfd_4500x.jpg?v=1699972315"
-                />
-                <ImageBox
-                  linkTitle="Gift a tree"
-                  title="Give the gift that lasts a lifetime! Choose an image, write your personalized message and select a delivery date to gift a tree. "
-                  src="https://onetreeplanted.org/cdn/shop/files/gift-trees-mega-menu_2x_cb75d577-44b5-4b97-9796-04c5f4d3a921_2500x.jpg?v=1681420564"
-                />
+                  <Child path="#" title="By Collection">
+                    <LinkItem path="#" title="Apparel" />
+                    <LinkItem path="#" title="Accessories" />
+                    <LinkItem path="#" title="Personalized Greeting Cards" />
+                    <LinkItem path="#" title="Tree Kits" />
+                  </Child>
+                  <ImageBox
+                    linkTitle="Shop now"
+                    title="Our fan-favorite Reforestation T-Shirt. Wear it with pride to show your support of reforesting our planet, one tree at a time. "
+                    src="https://onetreeplanted.org/cdn/shop/files/Mega_Menu_Image_2_1_a5088b7a-fa61-4d0b-9c6a-8a32dfb8adfd_4500x.jpg?v=1699972315"
+                  />
+                  <ImageBox
+                    linkTitle="Gift a tree"
+                    title="Give the gift that lasts a lifetime! Choose an image, write your personalized message and select a delivery date to gift a tree. "
+                    src="https://onetreeplanted.org/cdn/shop/files/gift-trees-mega-menu_2x_cb75d577-44b5-4b97-9796-04c5f4d3a921_2500x.jpg?v=1681420564"
+                  />
                 </MobileNavItem>
                 <LinkIndItem title="Contact" path="#" />
                 <LinkIndItem title="Login" path="#" />

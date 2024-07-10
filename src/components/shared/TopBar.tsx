@@ -28,11 +28,9 @@ const TopBar = () => {
             </a>
 
             <a href="#">
-              {' '}
               <Youtube />
             </a>
             <a href="#">
-              {' '}
               <Linkedin />
             </a>
           </div>
@@ -40,16 +38,25 @@ const TopBar = () => {
           <Link href="#">Contact Us</Link>
           <Link href="#">Newslater</Link>
         </div>
-        <div className='flex gap-3 items-center text-white uppercase text-sm'>
-          <Link href="#" className='bg-red-700 h-10 px-3 flex items-center hover:bg-red-800'>Donate</Link>
-          <Link className=' h-10 px-1 flex items-center gap-2 hover:text-main' href="#">
-          <User className='size-4'/>
-          Login
+        <div className="flex gap-3 items-center text-white uppercase text-sm">
+          <Link
+            href="#"
+            className="bg-red-700 h-10 px-3 flex items-center hover:bg-red-800"
+          >
+            Donate
           </Link>
-          <button className='flex gap-1
-           items-center bg-red-700 h-10 px-2 hover:bg-red-800'>
-            <ShoppingBag className='size-5'/>
-            0
+          <Link
+            className=" h-10 px-1 flex items-center gap-2 hover:text-main"
+            href="#"
+          >
+            <User className="size-4" />
+            Login
+          </Link>
+          <button
+            className="flex gap-1
+           items-center bg-red-700 h-10 px-2 hover:bg-red-800"
+          >
+            <ShoppingBag className="size-5" />0
           </button>
         </div>
       </div>
