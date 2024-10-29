@@ -63,7 +63,7 @@ function SimpleSlider() {
   }
   const [currentPos, setCurrentPos] = useState(0)
   return (
-    <div className="slider-container container !p-0 !m-[-2px]">
+    <div className="slider-container container !p-0">
       <Slider {...settings} afterChange={(x) => setCurrentPos(x)}>
         {/* <SlideItem src={img1} inview={currentPos === 0} /> */}
         <SlideItem src={img2} inview={currentPos === 0} />

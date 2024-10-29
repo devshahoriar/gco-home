@@ -102,7 +102,7 @@ export default function GaugeCircle({
       </svg>
       <span
         data-current-value={currentPercent}
-        className="duration-[var(--transition-length)] delay-[var(--delay)] absolute inset-0 m-auto h-fit w-fit ease-linear animate-in fade-in"
+        className="duration-&lsqb;var(--transition-length) delay-&lsqb;var(--delay) absolute inset-0 m-auto h-fit w-fit ease-linear animate-in fade-in"
       >
         {currentPercent}
       </span>
