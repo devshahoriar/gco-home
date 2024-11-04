@@ -4,7 +4,7 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    remotePatterns: [{ hostname: 'source.unsplash.com' }],
+    remotePatterns: [{ hostname: 'source.unsplash.com' },{hostname:"globalcommunityorganization.org"}],
   },
 }
 
