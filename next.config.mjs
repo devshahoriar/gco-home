@@ -2,9 +2,13 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   reactStrictMode: false,
   images: {
-    remotePatterns: [{ hostname: 'source.unsplash.com' },{hostname:"globalcommunityorganization.org"}],
+    remotePatterns: [
+      { hostname: 'source.unsplash.com' },
+      { hostname: 'globalcommunityorganization.org' },
+    ],
   },
 }
 
