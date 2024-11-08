@@ -1,13 +1,16 @@
 'use client'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import Image from 'next/image'
-import img1 from '@/img/carosel/1 (1).jpg'
+import { TextAnimate } from '@/components/ui/aimate/TextAnimate'
 import img2 from '@/img/carosel/cus (1).jpg'
 import img3 from '@/img/carosel/cus (2).jpg'
+import dynamic from 'next/dynamic'
+import Image from 'next/image'
 import { useState } from 'react'
-import { TextAnimate } from '@/components/ui/aimate/TextAnimate'
+// import Slider from 'react-slick'
+import 'slick-carousel/slick/slick-theme.css'
+import 'slick-carousel/slick/slick.css'
+
+
+const Slider = dynamic(() => import('react-slick'), { ssr: false })
 
 const typs = [
   'fadeIn',

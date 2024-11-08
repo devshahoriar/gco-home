@@ -1,3 +1,4 @@
+'use client'
 import BlurIn from '@/components/ui/aimate/blur-in'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import SiteButton from '@/components/ui/SiteButton'
