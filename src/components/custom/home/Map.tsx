@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 'use client'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
@@ -191,7 +192,7 @@ const c = [
 ]
 
 const CustomMap = () => {
-  const [popupInfo, setPopupInfo] = useState(null)
+  const [popupInfo, setPopupInfo] = useState<any>(null)
 
   const pins = useMemo(
     () =>
