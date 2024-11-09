@@ -1,12 +1,9 @@
-import { AnimatButton } from '@/components/ui/aimate/AnimateButton'
 import AnimatedNumber from '@/components/ui/aimate/AnimatedNumber'
 import BlurIn from '@/components/ui/aimate/blur-in'
 import { BorderBeam } from '@/components/ui/aimate/border-beam'
 import Meteors from '@/components/ui/aimate/meteors'
 import ShinyButton from '@/components/ui/aimate/shiny-button'
-import SiteButton from '@/components/ui/SiteButton'
 import { Coins } from 'lucide-react'
-import dynamic from 'next/dynamic'
 import Image from 'next/image'
 
 const ItemCard = ({
@@ -113,7 +110,6 @@ optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis"
             progress={10} // 80%
           />
         </div>
-        
       </div>
     </section>
   )

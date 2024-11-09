@@ -18,7 +18,7 @@ const MobileNav = () => {
             setMobileNav((r) => !r)
             window.scrollTo({
               top: 0,
-              behavior: 'smooth'
+              behavior: 'smooth',
             })
           }}
         >
@@ -91,11 +91,35 @@ const MobileNav = () => {
                   />
                 </MobileNavItem>
                 <MobileNavItem title="About">
-                  <Child path="#" title="Our Organization">
-                    <LinkItem path="#" title="Our Vision" />
-                    <LinkItem path="#" title="Our Model" />
-                    <LinkItem path="#" title="Newsroom" />
-                    <LinkItem path="#" title="Faq" />
+                  <Child path="/about" title="Our Organization">
+                    <LinkItem
+                      path="/about/our-missionvision"
+                      title="Our Vision"
+                    />
+                    <LinkItem path="/about/history-of-gco" title="History" />
+                  </Child>
+                  <Child path="#" title="Our Team">
+                    <LinkItem
+                      path="/about/team/board-of-director"
+                      title="Board Of Director"
+                    />
+                    <LinkItem
+                      path="/about/team/adviser-council"
+                      title="Adviser"
+                    />
+
+                    <LinkItem
+                      path="/about/team/executive-member"
+                      title="Exclusive Member"
+                    />
+                    <LinkItem
+                      path="/about/team/staff-member"
+                      title="Staff Member"
+                    />
+                    <LinkItem
+                      path="/about/team/tyagi-executive"
+                      title="Tyagi Exclusive"
+                    />
                   </Child>
                   <Child path="#" title="Our Impact">
                     <LinkItem path="#" title="2023 recap" />

@@ -45,12 +45,42 @@ const DesktopNav = () => {
             </NavItem>
             <NavItem path="#" title="About">
               <div className="flex justify-between">
-                <NavListItem path="#" title="Our Organization">
-                  <LinkItem path="#" title="Our Vision" />
-                  <LinkItem path="#" title="Our Model" />
-                  <LinkItem path="#" title="Newsroom" />
-                  <LinkItem path="#" title="Faq" />
-                </NavListItem>
+                <div>
+                  <NavListItem path="/about" title="Our Organization">
+                    <LinkItem
+                      path="/about/our-missionvision"
+                      title="Our Vision"
+                    />
+                    <LinkItem path="/about/history-of-gco" title="History" />
+                  </NavListItem>
+                  <div className="mt-5" />
+                  <NavListItem path="#" title="Our Team">
+                    <LinkItem
+                      path="/about/team/board-of-director"
+                      title="Board Of Director"
+                    />
+                    <LinkItem
+                      path="/about/team/adviser-council"
+                      title="Adviser"
+                    />
+                    <LinkItem
+                      path="/about/team/board-of-director"
+                      title="Board Of Director"
+                    />
+                    <LinkItem
+                      path="/about/team/executive-member"
+                      title="Exclusive Member"
+                    />
+                    <LinkItem
+                      path="/about/team/staff-member"
+                      title="Staff Member"
+                    />
+                    <LinkItem
+                      path="/about/team/tyagi-executive"
+                      title="Tyagi Exclusive"
+                    />
+                  </NavListItem>
+                </div>
                 <NavListItem path="#" title="Our Impact">
                   <LinkItem path="#" title="2023 recap" />
                   <LinkItem path="#" title="2022 recap" />

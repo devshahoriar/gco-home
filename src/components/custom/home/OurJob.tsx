@@ -1,8 +1,7 @@
-import { AnimatButton } from '@/components/ui/aimate/AnimateButton'
 import DotPattern from '@/components/ui/aimate/dot-pattern'
 import SiteButton from '@/components/ui/SiteButton'
 import { cn } from '@/lib/utils'
-import { ScanEye, TvMinimal, icons } from 'lucide-react'
+import { HeartPulse, PersonStanding, TentTree, Vegan } from 'lucide-react'
 import { ReactNode } from 'react'
 
 const CardItem = ({
@@ -29,7 +28,7 @@ const CardItem = ({
         <p className="line-clamp-4 text-center text-sm w-[80%] ">
           {description}
         </p>
-        <SiteButton className='px-6'>Read More</SiteButton>
+        <SiteButton className="px-6">Read More</SiteButton>
       </div>
     </div>
   )
@@ -39,36 +38,24 @@ const OurJob = () => {
   return (
     <div className="container flex flex-col items-center gap-10 sm:flex-row sm:flex-wrap sm:justify-center  md:pb-10 -mt-[100px] md:-mt-[120px]">
       <CardItem
-        icon={<ScanEye />}
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis"
-        title="Mission"
+        icon={<TentTree />}
+        description="Planting trees is a powerful climate action—each tree absorbs carbon dioxide, improves air quality, and supports biodiversity. Together, we can create greener cities and a healthier planet for future generations."
+        title="Climate action"
       />
       <CardItem
-        icon={<TvMinimal />}
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis"
-        title="Our progrma"
+        icon={<HeartPulse />}
+        description="Trees improve air quality by absorbing pollutants, releasing oxygen, and reducing respiratory issues. They also create calming environments, which help reduce stress and support mental health."
+        title="Health"
       />
       <CardItem
-        icon={<ScanEye />}
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis"
-        title="Mission"
+        icon={<Vegan />}
+        description="Tree planting enhances food security by providing fruits, nuts, and leaves, which serve as direct food sources. Trees also improve soil fertility, supporting crop growth and increasing agricultural yields. Additionally, they offer shade, which helps to protect crops and preserve water resources."
+        title="Food Security"
       />
       <CardItem
-        icon={<TvMinimal />}
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis"
-        title="Our progrma"
+        icon={<PersonStanding />}
+        description="Trees provide essential benefits to humans by purifying the air, absorbing carbon dioxide, and releasing oxygen, which improves air quality. They also help in reducing heat, conserving water, and supporting biodiversity, making the environment healthier and more sustainable."
+        title="Human writes"
       />
     </div>
   )

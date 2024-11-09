@@ -23,7 +23,7 @@ const SlideItem = ({ src }: any) => {
   return (
     <div className="size-40 rounded-md overflow-hidden mx-auto">
       <Image
-        className="h-full w-full object-contain rounded-md"
+        className="h-full w-full object-contain rounded-md bg-white"
         src={src}
         alt="logos"
       />
