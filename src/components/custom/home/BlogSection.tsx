@@ -9,6 +9,16 @@ const GridPattern = dynamic(
   { ssr: false }
 )
 
+const ListBlog = [
+  {
+    title: 'Donate One Tree🌱',
+    desc: `🌻 Garden Adventures: Explore the world of gardening with children, teaching them about the growth of plants, flowers, and the importance of pollinators.
+🌊 Ocean Odyssey: Extend their environmental knowledge beyond forests by sharing insights into the importance of oceans and marine life conservation.
+🌸 Nature Scavenger Hunts: Organize fun scavenger hunts in natural settings, fostering curiosity and connection to the environment.
+📚 Eco-Library: Share recommendations for children’s books that promote eco-awareness and environmental stewardship.`,
+  },
+]
+
 const BlogSection = () => {
   return (
     <section className="w-full relative overflow-hidden">
@@ -28,9 +38,11 @@ const BlogSection = () => {
         </div>
         <div className="mt-10 md:flex md:gap-5">
           <BigNews
-            title="The best way to plant a tree"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            image="/img/1.jpg"
+            title="A tree can be especially helpful for a child’s healthy development."
+            description="A tree can be especially helpful for a child’s healthy development.
+It teaches the child about the natural environment and encourages his scientific invention.
+It can make medicinal preparations from its health and nutritional point of view, clean and oxygenate its environment, and stimulate further environmental improvement."
+            image="/b/blog1.jpg"
           />
 
           <ScrollArea className="h-[500px] w-full mt-10 md:mt-0 md:w-1/2 shadow-xl">
@@ -65,12 +77,8 @@ const BlogSection = () => {
         </div>
       </div>
       <div className="flex justify-center pb-5">
-          <SiteButton
-            className=" px-6"
-          >
-            View all
-          </SiteButton>
-        </div>
+        <SiteButton className=" px-6">View all</SiteButton>
+      </div>
     </section>
   )
 }
