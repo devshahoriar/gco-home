@@ -13,6 +13,7 @@ import {
   Mail,
   ShoppingBag,
   User,
+  X,
   Youtube,
 } from 'lucide-react'
 
@@ -285,17 +286,17 @@ const DesktopFooter = () => {
               <a href="#">
                 <Mail />
               </a>
-              <a href="#">
+              <a href="https://www.facebook.com/GlobalCommunityOrganization" target='_new'>
                 <Facebook />
               </a>
-              <a href="#">
-                <Instagram />
+              <a href="https://x.com/Global_Com_Org" target='_new'>
+                <X />
               </a>
 
-              <a href="#">
+              <a href="https://www.youtube.com/@globalcommunityorganization" target='_new'>
                 <Youtube />
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/in/global-community-organization-4428951a6/" target='_new'>
                 <Linkedin />
               </a>
             </div>

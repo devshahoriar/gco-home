@@ -46,8 +46,8 @@ const categories = [
         icon: Laptop,
       },
       {
-        title: 'Freelancing',
-        description: 'Self-development & Career Growth',
+        title: 'Treelanching',
+        description: 'Treelanching Self-development',
         icon: Users,
       },
     ],
@@ -63,17 +63,17 @@ const categories = [
         icon: Globe2,
       },
       {
-        title: 'Cluster Village',
+        title: 'Cluster Village-গুচ্ছ গ্রাম',
         description: 'Community Development Project',
         icon: Users,
       },
       {
-        title: 'Safe Program',
+        title: 'Safe-নিরাপদ',
         description: 'Safety and Security Initiative',
         icon: HandshakeIcon,
       },
       {
-        title: 'Shadow Program',
+        title: 'Shadwo-ছায়া',
         description: 'Mentorship & Guidance',
         icon: Users,
       },
@@ -99,9 +99,6 @@ const categories = [
 ]
 
 export default function ProgramOverview() {
-
-
-
 
   return (
     <section className="w-full bg-bgMain bg-opacity-10 py-10 relative overflow-hidden">
