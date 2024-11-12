@@ -13,7 +13,7 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: "5px",
+      padding: '5px',
       screens: {
         '2xl': '1350px',
       },
@@ -25,7 +25,7 @@ const config = {
       colors: {
         main: '#5CB02F',
         main2: '#009edb',
-        bgMain: "#4d4d4d",
+        bgMain: '#4d4d4d',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -141,7 +141,7 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), require('tailwind-scrollbar')],
 } satisfies Config
 
 export default config
