@@ -30,12 +30,12 @@ const VideosPage = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
-              <h1 className="max-w-[90%] mx-3 line-clamp-1 mt-3 text-center">
+              {/* <h1 className="max-w-[90%] mx-3 line-clamp-1 mt-3 text-center">
                 Title Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quibusdam, explicabo. Labore alias doloribus earum fugiat,
                 reprehenderit quod facilis, porro a cumque blanditiis aliquid?
                 Rerum distinctio similique magni repellat, earum mollitia.
-              </h1>
+              </h1> */}
             </div>
           ))}
         </div>
