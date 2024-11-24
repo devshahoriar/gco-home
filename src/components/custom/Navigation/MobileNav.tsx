@@ -97,6 +97,8 @@ const MobileNav = () => {
                       title="Our Vision"
                     />
                     <LinkItem path="/about/history-of-gco" title="History" />
+                    <LinkItem path="/about/videos" title="Vidios" />
+                    <LinkItem path="/videos" title="Vidios" />
                   </Child>
                   <Child path="#" title="Our Team">
                     <LinkItem

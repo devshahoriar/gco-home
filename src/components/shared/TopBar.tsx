@@ -17,7 +17,7 @@ const TopBar = () => {
       <div className="container flex justify-between h-10 items-center">
         <div className="flex items-center text-white gap-5 text-xs uppercase">
           <div className="flex items-center topsocial gap-4 [&>*]:text-white [&>a>svg]:size-4 ml-2 ">
-            <a href="#">
+            <a href="mailto:hello@globalcommunityorganization.org">
               <Mail />
             </a>
          
@@ -35,9 +35,9 @@ const TopBar = () => {
               <Linkedin />
             </a>
           </div>
-          <p className="">+88017********</p>
+          <p className="">+8801760870070</p>
           <Link href="#">Contact Us</Link>
-          <Link href="#">Newslater</Link>
+          <Link href="#">Newsletter</Link>
         </div>
         <div className="flex gap-3 items-center text-white uppercase text-sm">
           <Link

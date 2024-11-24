@@ -55,7 +55,7 @@ const OurJob = () => {
       <CardItem
         icon={<PersonStanding />}
         description="Trees provide essential benefits to humans by purifying the air, absorbing carbon dioxide, and releasing oxygen, which improves air quality. They also help in reducing heat, conserving water, and supporting biodiversity, making the environment healthier and more sustainable."
-        title="Human writes"
+        title="Human Rights"
       />
     </div>
   )

@@ -1,7 +1,7 @@
 'use client'
 import { TextAnimate } from '@/components/ui/aimate/TextAnimate'
-import img2 from '@/img/carosel/cus (1).jpg'
-import img3 from '@/img/carosel/cus (2).jpg'
+import img2 from '@/img/carosel/cur1.jpg'
+import img3 from '@/img/carosel/cur2.jpg'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -26,7 +26,7 @@ const typs = [
 
 
 
-const SlideItem = ({ src, inview }: any) => {
+const SlideItem = ({ src, inview,text }: any) => {
   
     
   return (
@@ -34,8 +34,9 @@ const SlideItem = ({ src, inview }: any) => {
       {inview && (
         <section className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <TextAnimate
-            text="This is the test text that will be animated"
+            text={text}
             type={typs[Math.floor(Math.random() * typs.length)] as any}
+            className='!text-black text-4xl font-bold md:text-6xl'
           />
         </section>
       )}
@@ -69,8 +70,8 @@ function SimpleSlider() {
     <div className="slider-container container !p-0">
       <Slider {...settings} afterChange={(x) => setCurrentPos(x)}>
         {/* <SlideItem src={img1} inview={currentPos === 0} /> */}
-        <SlideItem src={img2} inview={currentPos === 0} />
-        <SlideItem src={img3} inview={currentPos === 1} />
+        <SlideItem src={img2} inview={currentPos === 0} text="One Tree for One Child." />
+        <SlideItem src={img3} inview={currentPos === 1} text='' />
       </Slider>
     </div>
   )

@@ -103,20 +103,21 @@ const GalleryPage = () => {
                 </button>
               ))}
             </div>
+            
           </div>
-          <div className="flex flex-wrap md:w-full justify-center  items-start md:justify-normal border dark:border-zinc-700 border-zinc-200 p-2 rounded-sm bg-black bg-opacity-10">
+          <div className="flex flex-wrap md:w-full justify-center  items-start md:justify-normal border dark:border-zinc-700 border-zinc-200 p-2 rounded-sm bg-black bg-opacity-10 shadow-2xl">
             {data[selectedCategory].map((img, i) => (
               <Image
                 onClick={() => {
                   setCurrentUrl(img)
                   setOpen(true)
                 }}
-                key={i}
+                key={img + i}
                 alt="Preview"
                 src={img}
                 height={1000}
                 width={1000}
-                className="w-[calc(50%)]  sm:w-[calc(33.333333333%)] xl:w-[calc(25%)] p-3 object-cover aspect-square rounded-[3px] cursor-pointer hover:scale-105 transition-all ease-in hover:brightness-125"
+                className="w-[calc(50%)]  sm:w-[calc(33.333333333%)] xl:w-[calc(25%)] p-3 object-cover aspect-square rounded-[3px] cursor-pointer hover:scale-105 transition-transform ease-in hover:brightness-125"
               />
             ))}
           </div>

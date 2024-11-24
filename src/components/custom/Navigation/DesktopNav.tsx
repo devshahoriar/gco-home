@@ -52,6 +52,8 @@ const DesktopNav = () => {
                       title="Our Vision"
                     />
                     <LinkItem path="/about/history-of-gco" title="History" />
+                    <LinkItem path="/about/videos" title="Vidios" />
+                    <LinkItem path="/about/photo-gallery" title="Gallary" />
                   </NavListItem>
                   <div className="mt-5" />
                   <NavListItem path="#" title="Our Team">
