@@ -61,75 +61,30 @@ const MobileNav = () => {
                 </button>
               </div>
               <div className="flex mt-3 w-full flex-col gap-5 text-stone-300">
-                <MobileNavItem title="Tree plant">
-                  <Child path="#" title="By region">
-                    <LinkItem path="#" title="North America" />
-                    <LinkItem path="#" title="Latin America" />
-                    <LinkItem path="#" title="Africa" />
-                    <LinkItem path="#" title="Asia" />
-                    <LinkItem path="#" title="Europe" />
-                    <LinkItem path="#" title="The pacific" />
-                    <LinkItem path="#" title="Plant trees for impact" />
-                  </Child>
-                  <Child path="#" title="By impact">
-                    <LinkItem path="#" title="Urban forestry" />
-                    <LinkItem path="#" title="Monarch" />
-                    <LinkItem path="#" title="Forest fire found" />
-                    <LinkItem path="#" title="Mangrovies" />
-                    <LinkItem path="#" title="Watersheds" />
-                    <LinkItem path="#" title="Woman" />
-                  </Child>
-                  <Child path="#" title="For others">
-                    <LinkItem path="#" title="gift trees" />
-                    <LinkItem path="#" title="gift trees is memory" />
-                    <LinkItem path="#" title="How to leave a legacy" />
-                  </Child>
-                  <ImageBox
-                    linkTitle="Plant Trees"
-                    title="Plant trees for impact and help restore ecosystems around the world! "
-                    src="https://onetreeplanted.org/cdn/shop/files/plant-trees-for-impact-main-img_5000x.jpg?v=1709925481"
-                  />
-                </MobileNavItem>
-                <MobileNavItem title="About">
+                <MobileNavItem title="Home" path="/" />
+                <MobileNavItem title="About Us">
                   <Child path="/about" title="Our Organization">
                     <LinkItem
                       path="/about/our-missionvision"
                       title="Our Vision"
                     />
                     <LinkItem path="/about/history-of-gco" title="History" />
-                    <LinkItem path="/about/videos" title="Vidios" />
-                    <LinkItem path="/videos" title="Vidios" />
-                  </Child>
-                  <Child path="#" title="Our Team">
-                    <LinkItem
-                      path="/about/team/board-of-director"
-                      title="Board Of Director"
-                    />
-                    <LinkItem
-                      path="/about/team/adviser-council"
-                      title="Adviser"
-                    />
 
-                    <LinkItem
-                      path="/about/team/executive-member"
-                      title="Exclusive Member"
-                    />
-                    <LinkItem
-                      path="/about/team/staff-member"
-                      title="Staff Member"
-                    />
-                    <LinkItem
-                      path="/about/team/tyagi-executive"
-                      title="Tyagi Exclusive"
-                    />
+                    <LinkItem path="/about/team" title="Our Team" />
                   </Child>
-                  <Child path="#" title="Our Impact">
-                    <LinkItem path="#" title="2023 recap" />
-                    <LinkItem path="#" title="2022 recap" />
-                    <LinkItem path="#" title="2021 recap" />
-                    <LinkItem path="#" title="2020 recap" />
-                    <LinkItem path="#" title="2019 recap" />
+
+                  <ImageBox
+                    linkTitle="Plant Trees"
+                    title="Plant trees for impact and help restore ecosystems around the world! "
+                    src="https://onetreeplanted.org/cdn/shop/files/plant-trees-for-impact-main-img_5000x.jpg?v=1709925481"
+                  />
+                </MobileNavItem>
+                <MobileNavItem title="GCO Wing">
+                  <Child path="/about" title="Our Organization">
+                    <LinkItem path="/about/videos" title="Vidios" />
+                    <LinkItem path="/about/photo-gallery" title="Gallary" />
                   </Child>
+                 
                   <ImageBox
                     linkTitle="Visit our Newsroom"
                     title="Stay up to date on major announcements, exciting collaborations, and more."
@@ -165,31 +120,16 @@ const MobileNav = () => {
                     src="https://onetreeplanted.org/cdn/shop/files/philanthropic-giving_4500x.jpg?v=1689881074"
                   />
                 </MobileNavItem>
-                <MobileNavItem title="Learn">
-                  <Child path="#" title="About Trees">
-                    <LinkItem path="#" title="Why Trees?" />
-                    <LinkItem path="#" title="Tree Species" />
-                    <LinkItem path="#" title="Tree Facta" />
-                    <div className="border-b w-[100px]" />
-                    <LinkItem path="#" title="Reforestation" />
-                    <LinkItem path="#" title="Deforestation" />
-                    <LinkItem path="#" title="Climate Change" />
+                <MobileNavItem title="What we do">
+                  <Child path="#" title="">
+                  <LinkItem path="#" title="Global Nation" />
+                    <LinkItem path="#" title="OT4OC" />
+                    <LinkItem path="#" title="TYAGI" />
+                    <LinkItem path="#" title="ABALAMBAN" />
+                    <LinkItem path="#" title="Tree lanching" />
+                    <LinkItem path="#" title="skill development Program" />
                   </Child>
-                  <Child path="#" title="Our Blog">
-                    <LinkItem path="#" title="Project Stories" />
-                    <LinkItem path="#" title="Partner Stories" />
-                  </Child>
-
-                  <Child path="#" title="Education">
-                    <LinkItem path="#" title="Projects" />
-                    <LinkItem path="#" title="Urban Forestry" />
-                  </Child>
-                  <Child path="#" title="Resources">
-                    <LinkItem path="#" title="Videos" />
-                    <LinkItem path="#" title="Photos" />
-                    <LinkItem path="#" title="SdGS" />
-                    <LinkItem path="#" title="Maps" />
-                  </Child>
+           
 
                   <ImageBox
                     linkTitle="Learn More"
@@ -202,13 +142,12 @@ const MobileNav = () => {
                     src="https://onetreeplanted.org/cdn/shop/files/EE_megamenu_images_4500x.webp?v=1674843679"
                   />
                 </MobileNavItem>
-                <MobileNavItem title="Shop">
-                  <Child path="#" title="By Collection">
-                    <LinkItem path="#" title="Apparel" />
-                    <LinkItem path="#" title="Accessories" />
-                    <LinkItem path="#" title="Personalized Greeting Cards" />
-                    <LinkItem path="#" title="Tree Kits" />
-                  </Child>
+                <MobileNavItem title="Where we do">
+                  {/* <Child path="#" title="By Collection"> */}
+                  <LinkItem path="#" title="Bangladesh" />
+                  <LinkItem path="#" title="Zimbabwe" />
+                  <LinkItem path="#" title="Uganda" />
+                  {/* </Child> */}
                   <ImageBox
                     linkTitle="Shop now"
                     title="Our fan-favorite Reforestation T-Shirt. Wear it with pride to show your support of reforesting our planet, one tree at a time. "
@@ -255,17 +194,19 @@ const MobileNavItem = ({ children, title = 'link 1', path = '#' }: any) => {
         >
           {title}
         </Link>
-        <button
-          onClick={() => setOpen((r) => !r)}
-          className="flex items-center"
-        >
-          <ChevronDown
-            className={cn(
-              'size-4 opacity-80 transition-transform',
-              open && 'rotate-180'
-            )}
-          />
-        </button>
+        {children && (
+          <button
+            onClick={() => setOpen((r) => !r)}
+            className="flex items-center"
+          >
+            <ChevronDown
+              className={cn(
+                'size-4 opacity-80 transition-transform',
+                open && 'rotate-180'
+              )}
+            />
+          </button>
+        )}
       </div>
       {open && children}
     </div>

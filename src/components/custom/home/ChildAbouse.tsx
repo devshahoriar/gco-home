@@ -11,6 +11,7 @@ const ChildAbouse = () => {
 				height={500}
 				width={1000}
 				src="/abousechild.jpg"
+		
 			/>
 			<div className="absolute top-0 left-0 bottom-0 right-0 bg-black bg-opacity-60 md:hidden z-[-5] size-full " />
 

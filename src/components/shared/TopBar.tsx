@@ -7,6 +7,7 @@ import {
   Mail,
   ShoppingBag,
   User,
+  X,
   Youtube,
 } from 'lucide-react'
 import Link from 'next/link'
@@ -21,19 +22,19 @@ const TopBar = () => {
               <Mail />
             </a>
          
-            <a href="#">
+            <a href="https://www.facebook.com/GlobalCommunityOrganization">
               <Facebook />
             </a>
-            <a href="#">
-              <Instagram />
+            <a href="https://x.com/Global_Com_Org">
+              <X />
             </a>
 
-            <a href="#">
+            <a href="https://youtube.com/@globalcommunityorganization?si=4emJ0AAcpVYRhpkZ">
               <Youtube />
             </a>
-            <a href="#">
+            {/* <a href="#">
               <Linkedin />
-            </a>
+            </a> */}
           </div>
           <p className="">+8801760870070</p>
           <Link href="#">Contact Us</Link>

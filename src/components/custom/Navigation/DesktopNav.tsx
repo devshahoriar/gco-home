@@ -12,7 +12,8 @@ const DesktopNav = () => {
         <div className="flex justify-between items-center ">
           <Logo className="w-[150px]" />
           <div className="flex flex-row gap-5 ">
-            <NavItem path="#" title="Plant Trees">
+            <NavItem path="/" title="Home" />
+            {/* <NavItem path="#" title="Plant Trees">
               <div className="flex justify-between">
                 <NavListItem path="#" title="By region">
                   <LinkItem path="#" title="North America" />
@@ -42,8 +43,8 @@ const DesktopNav = () => {
                   src="https://onetreeplanted.org/cdn/shop/files/plant-trees-for-impact-main-img_5000x.jpg?v=1709925481"
                 />
               </div>
-            </NavItem>
-            <NavItem path="#" title="About">
+            </NavItem> */}
+            <NavItem path="#" title="About Us">
               <div className="flex justify-between">
                 <div>
                   <NavListItem path="/about" title="Our Organization">
@@ -52,11 +53,11 @@ const DesktopNav = () => {
                       title="Our Vision"
                     />
                     <LinkItem path="/about/history-of-gco" title="History" />
-                    <LinkItem path="/about/videos" title="Vidios" />
-                    <LinkItem path="/about/photo-gallery" title="Gallary" />
+
+                    <LinkItem path="/about/team" title="Our Team" />
                   </NavListItem>
-                  <div className="mt-5" />
-                  <NavListItem path="#" title="Our Team">
+
+                  {/* <NavListItem path="#" title="Our Team">
                     <LinkItem
                       path="/about/team/board-of-director"
                       title="Board Of Director"
@@ -81,7 +82,7 @@ const DesktopNav = () => {
                       path="/about/team/tyagi-executive"
                       title="Tyagi Exclusive"
                     />
-                  </NavListItem>
+                  </NavListItem> */}
                 </div>
                 <NavListItem path="#" title="Our Impact">
                   <LinkItem path="#" title="2023 recap" />
@@ -90,6 +91,33 @@ const DesktopNav = () => {
                   <LinkItem path="#" title="2020 recap" />
                   <LinkItem path="#" title="2019 recap" />
                 </NavListItem>
+                <ImageBox
+                  linkTitle="Visit our Newsroom"
+                  title="Stay up to date on major announcements, exciting collaborations, and more."
+                  src="https://onetreeplanted.org/cdn/shop/files/newsroom-promo_5000x.jpg?v=1690489113"
+                />
+                <ImageBox
+                  linkTitle="Learn More"
+                  title="We make it simple for anyone to plant trees, and together we can make an incredible impact. "
+                  src="https://onetreeplanted.org/cdn/shop/files/Our_Vision-megamenu_images_4500x.webp?v=1674767633"
+                />
+              </div>
+            </NavItem>
+            <NavItem path="#" title="GCO Wing">
+              <div className="flex justify-between">
+                <div>
+                  <NavListItem path="/about" title="GCO Wing">
+                    <LinkItem path="/about/videos" title="Vidios" />
+                    <LinkItem path="/about/photo-gallery" title="Gallary" />
+                  </NavListItem>
+                </div>
+                {/* <NavListItem path="#" title="Our Impact">
+                  <LinkItem path="#" title="2023 recap" />
+                  <LinkItem path="#" title="2022 recap" />
+                  <LinkItem path="#" title="2021 recap" />
+                  <LinkItem path="#" title="2020 recap" />
+                  <LinkItem path="#" title="2019 recap" />
+                </NavListItem> */}
                 <ImageBox
                   linkTitle="Visit our Newsroom"
                   title="Stay up to date on major announcements, exciting collaborations, and more."
@@ -128,24 +156,19 @@ const DesktopNav = () => {
                 />
               </div>
             </NavItem>
-            <NavItem path="#" title="Learn">
+            <NavItem path="#" title="What we do">
               <div className="flex justify-between">
                 <div className="flex flex-col gap-5">
-                  <NavListItem path="#" title="About Trees">
-                    <LinkItem path="#" title="Why Trees?" />
-                    <LinkItem path="#" title="Tree Species" />
-                    <LinkItem path="#" title="Tree Facta" />
-                    <div className="border-b w-[100px]" />
-                    <LinkItem path="#" title="Reforestation" />
-                    <LinkItem path="#" title="Deforestation" />
-                    <LinkItem path="#" title="Climate Change" />
-                  </NavListItem>
-                  <NavListItem path="#" title="Our Blog">
-                    <LinkItem path="#" title="Project Stories" />
-                    <LinkItem path="#" title="Partner Stories" />
+                  <NavListItem path="#" title="">
+                    <LinkItem path="#" title="Global Nation" />
+                    <LinkItem path="#" title="OT4OC" />
+                    <LinkItem path="#" title="TYAGI" />
+                    <LinkItem path="#" title="ABALAMBAN" />
+                    <LinkItem path="#" title="Tree lanching" />
+                    <LinkItem path="#" title="skill development Program" />
                   </NavListItem>
                 </div>
-                <div className="flex flex-col gap-10">
+                {/* <div className="flex flex-col gap-10">
                   <NavListItem path="#" title="Education">
                     <LinkItem path="#" title="Projects" />
                     <LinkItem path="#" title="Urban Forestry" />
@@ -166,16 +189,16 @@ const DesktopNav = () => {
                   linkTitle="Learn More"
                   title="Comprised of lesson plans, learning modules, resources, and activities, our T.R.E.E.S. School Program is the perfect addition to your curriculum. "
                   src="https://onetreeplanted.org/cdn/shop/files/EE_megamenu_images_4500x.webp?v=1674843679"
-                />
+                /> */}
               </div>
             </NavItem>
-            <NavItem path="#" title="Shop">
+            <NavItem path="#" title="Where we do">
               <div className="flex justify-between">
-                <NavListItem path="#" title="By Collection">
-                  <LinkItem path="#" title="Apparel" />
-                  <LinkItem path="#" title="Accessories" />
-                  <LinkItem path="#" title="Personalized Greeting Cards" />
-                  <LinkItem path="#" title="Tree Kits" />
+                <NavListItem path="#" title="">
+                  <LinkItem path="#" title="Bangladesh" />
+                  <LinkItem path="#" title="Zimbabwe" />
+                  <LinkItem path="#" title="Uganda" />
+      
                 </NavListItem>
                 <ImageBox
                   linkTitle="Shop now"
@@ -222,13 +245,15 @@ const NavItem = ({
         href={path}
       >
         {title}
-        <ChevronDown className="size-4" />
+        {children && <ChevronDown className="size-4" />}
       </Link>
-      <div className="absolute top-[80%]  bg-opacity-80 w-screen left-0 desktopLinkContent opacity-0 z-40 pointer-events-none transition-opacity duration-300 ease-in-out">
-        <div className="bg-black bg-opacity-80 mt-[12px] h-[500px] overflow-x-auto">
-          <div className="container px-10 pt-8 ">{children}</div>
+      {children && (
+        <div className="absolute top-[80%]  bg-opacity-80 w-screen left-0 desktopLinkContent opacity-0 z-40 pointer-events-none transition-opacity duration-300 ease-in-out">
+          <div className="bg-black bg-opacity-80 mt-[12px] h-[500px] overflow-x-auto">
+            <div className="container px-10 pt-8 ">{children}</div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }

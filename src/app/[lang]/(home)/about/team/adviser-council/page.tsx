@@ -1,6 +1,6 @@
-import AminNulImage from '@/img/pagesImage/team/amin.jpg'
-import Najmul from '@/img/pagesImage/team/kh.jpg'
-import Afia from '@/img/pagesImage/team/mir.jpg'
+import MRIDHA from '@/img/pagesImage/team/amin.jpg'
+import MALEK from '@/img/pagesImage/team/kh.jpg'
+import SHOWKAT from '@/img/pagesImage/team/mir.jpg'
 import Image from 'next/image'
 
 const BoardDirectorPage = () => {
@@ -8,17 +8,17 @@ const BoardDirectorPage = () => {
     {
       name: 'AMIN UDDIN MRIDHA',
       position: 'CHIEF ADVISER',
-      image: AminNulImage,
+      image: MRIDHA,
     },
     {
       name: 'KH MALEK',
       position: 'ADVISER',
-      image: Najmul,
+      image: MALEK,
     },
     {
       name: 'MIR SHOWKAT ALI',
       position: 'ADVISER',
-      image: Afia,
+      image: SHOWKAT,
     },
   ]
   return (

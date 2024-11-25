@@ -14,11 +14,12 @@ const ItemCard = ({ src, title }: { src: any; title: string }) => {
       transition={{ duration: 0.5 }}
       className="w-[calc(50%-20px)] sm:w-[calc(33%-20px)] md:w-[180px] group"
     >
-      <ShineBorder
+      {/* <ShineBorder
         className="aspect-square !w-full relative  overflow-hidden group"
         color={['#A07CFE', '#FE8FB5', '#FFBE7B']}
-      >
-        <Image
+      > */}
+       <div className='!w-full aspect-square relative'>
+       <Image
           src={src}
           className="object-cover absolute top-0 left-0 bottom-0 right-0 h-full w-full p-1 rounded-sm group-hover:scale-105 transition-all duration-300 ease-in-out"
           alt="Country"
@@ -31,7 +32,8 @@ const ItemCard = ({ src, title }: { src: any; title: string }) => {
         <div className='z-40 absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out'>
           <button className=" border-white border-2 text-white font-bold px-5 py-1 hover:bg-white hover:text-black">View all</button>
         </div>
-      </ShineBorder>
+       </div>
+      {/* </ShineBorder> */}
     </motion.div>
   )
 }
