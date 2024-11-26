@@ -13,6 +13,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
+import { cn } from '@/lib/utils'
 import { useState, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 
@@ -63,16 +64,18 @@ const DilogView = ({
   slogan: string
 }) => {
   const [content, setContent] = useState('')
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchMarkdown = async () => {
       try {
         const response = await fetch(`/md/${fileName}`)
         const data = await response.text()
-    
         setContent(data)
       } catch (error) {
         console.error('Error fetching markdown:', error)
+      }finally{
+        setLoading(false)
       }
     }
 
@@ -81,7 +84,7 @@ const DilogView = ({
 
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger className={cn(loading && "pointer-events-none cursor-not-allowed animate-pulse")}>
         <h2 className="text-2xl font-semibold capitalize hover:underline text-start">{title}</h2>
       </DialogTrigger>
       <DialogContent className="md:w-[90vw] max-w-[90vw]">
@@ -89,7 +92,7 @@ const DilogView = ({
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{slogan}</DialogDescription>
         </DialogHeader>
-        <div className="prose dark:prose-invert max-w-none overflow-y-auto max-h-[70vh] p-4">
+        <div className="prose dark:prose-invert max-w-none overflow-y-auto max-h-[80vh] p-4">
           <ReactMarkdown>{content}</ReactMarkdown>
         </div>
       </DialogContent>
