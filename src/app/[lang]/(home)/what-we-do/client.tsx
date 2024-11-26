@@ -87,12 +87,12 @@ const DilogView = ({
       <DialogTrigger className={cn(loading && "pointer-events-none cursor-not-allowed animate-pulse")}>
         <h2 className="text-2xl font-semibold capitalize hover:underline text-start">{title}</h2>
       </DialogTrigger>
-      <DialogContent className="md:w-[90vw] max-w-[90vw]">
+      <DialogContent className="md:w-[90vw] max-w-[90vw] bg-white dark:bg-black">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{slogan}</DialogDescription>
         </DialogHeader>
-        <div className="prose dark:prose-invert max-w-none overflow-y-auto max-h-[80vh] p-4">
+        <div className="prose dark:prose-invert max-w-none overflow-y-auto max-h-[80vh] p-4 scrollbar-thin">
           <ReactMarkdown>{content}</ReactMarkdown>
         </div>
       </DialogContent>
