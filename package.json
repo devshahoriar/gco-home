@@ -32,6 +32,7 @@
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",
     "react-map-gl": "^7.1.7",
+    "react-markdown": "^9.0.1",
     "react-pro-sidebar": "^1.1.0",
     "react-slick": "^0.30.2",
     "remark": "^15.0.1",
@@ -42,6 +43,7 @@
     "yet-another-react-lightbox": "^3.21.7"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^20.17.8",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
