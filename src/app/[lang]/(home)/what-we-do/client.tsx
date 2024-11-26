@@ -67,11 +67,10 @@ const DilogView = ({
   useEffect(() => {
     const fetchMarkdown = async () => {
       try {
-        const response = await fetch(`/api/markdown?file=${fileName}`)
-        const data = await response.json()
-        if (data.content) {
-          setContent(data.content)
-        }
+        const response = await fetch(`/md/${fileName}`)
+        const data = await response.text()
+    
+        setContent(data)
       } catch (error) {
         console.error('Error fetching markdown:', error)
       }
