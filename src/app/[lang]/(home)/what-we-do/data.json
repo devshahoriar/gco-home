@@ -1,0 +1,86 @@
+{
+  "climate action": [
+    {
+      "title": "One tree for one child",
+      "slogan": "Green earth for Children",
+      "desc": "onet4oc.md"
+    },
+    {
+      "title": "save life from thunderstorms with plants",
+      "slogan": "Safe from Storms, Stronger Together: Protecting Lives with Palm Trees",
+      "desc": "savelife.md"
+    },
+    {
+      "title": "Disaster Resilience and Relief Programs",
+      "slogan": "Empowering Communities, Building Resilience: Together for a Safer Tomorrow",
+      "desc": "disaster.md"
+    }
+  ],
+  "health": [
+    {
+      "title": "Maternal and Child Health in Bangladesh Slums",
+      "slogan": "Empowering Mothers, Nurturing Children, Building Healthier Slums for a Brighter Future",
+      "desc": "childHelth.md"
+    },
+    {
+      "title": "Maternal & Child Nutrition in Char Land, Bangladesh",
+      "slogan": "Growing Health, Nourishing Futures: Empowering Mothers and Children in Bangladesh's Char Lands",
+      "desc": "Maternal.md"
+    }
+  ],
+  "Food Security": [
+    {
+      "title": "Addressing Hunger Among Bangladesh's Elderly",
+      "slogan": "No Elder Left Behind: Ensuring Hunger-Free, Healthier Lives for Bangladesh's Elders through Community, Care, and Commitment.",
+      "desc": "Addressing.md"
+    },
+    {
+      "title": "Abalamban – Self-Reliance",
+      "slogan": "Growing Together for Lasting Self-Reliance: Empowering Families, Nourishing Futures, Building Resilient Communities",
+      "desc": "Abalamban.md"
+    },
+    {
+      "title": "Cluster Village Program",
+      "slogan": "Building Stronger Communities, Together!",
+      "desc": "Cluster.md"
+    }
+  ],
+  "Human Rights": [
+    {
+      "title": "skill development program",
+      "slogan": "Skills for Growth, Opportunities for All",
+      "desc": "skilldev.md"
+    }
+  ],
+  "our events": [
+    {
+      "title": "one tree for one student",
+      "slogan": "Empowering Students, Greening the Future: One Tree, One Student, One Planet",
+      "desc": "onetree4ostudent.md"
+    }
+  ],
+  "campaigns": [
+    {
+      "title": "Nutrition and Health Awareness Campaigns",
+      "slogan": "Empowering Communities, Nourishing Futures: A Healthier Tomorrow Begins Today",
+      "desc": "nutrition.md"
+    },
+    {
+      "title": "Hygiene and Sanitation Awareness Campaigns",
+      "slogan": "Protect, Prevent, Prosper – Hygiene for All",
+      "desc": "Hygiene.md"
+    },
+    {
+      "title": "Mobile Campaigns for Health, Hygiene, and Social Awareness",
+      "slogan": "Empowering Health, Hygiene, and Social Awareness: Anytime, Anywhere!",
+      "desc": "Mobile.md"
+    }
+  ],
+  "training": [
+    {
+      "title": "ICT training program",
+      "slogan": "Empowering Communities, Bridging the Digital Divide, Building a Sustainable Future",
+      "desc": "ICT.md"
+    }
+  ]
+}

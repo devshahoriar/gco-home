@@ -21,14 +21,7 @@ const SubLayout = async ({
       disableTransitionOnChange
     >
       <I18nProviderClient locale={lang}>
-        {/* this is notish when need uncomment and edit */}
-        {/* <Marquee
-          className="text-red-500 container bg-red-50 dark:bg-opacity-10"
-          pauseOnHover
-          autoFill
-        >
-          any notice here -
-        </Marquee> */}
+        
         <TopBar />
         <Nav />
         <main>{children}</main>

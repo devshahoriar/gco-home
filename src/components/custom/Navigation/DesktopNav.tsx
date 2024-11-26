@@ -13,37 +13,7 @@ const DesktopNav = () => {
           <Logo className="w-[150px]" />
           <div className="flex flex-row gap-5 ">
             <NavItem path="/" title="Home" />
-            {/* <NavItem path="#" title="Plant Trees">
-              <div className="flex justify-between">
-                <NavListItem path="#" title="By region">
-                  <LinkItem path="#" title="North America" />
-                  <LinkItem path="#" title="Latin America" />
-                  <LinkItem path="#" title="Africa" />
-                  <LinkItem path="#" title="Asia" />
-                  <LinkItem path="#" title="Europe" />
-                  <LinkItem path="#" title="The pacific" />
-                  <LinkItem path="#" title="Plant trees for impact" />
-                </NavListItem>
-                <NavListItem path="#" title="By impact">
-                  <LinkItem path="#" title="Urban forestry" />
-                  <LinkItem path="#" title="Monarch" />
-                  <LinkItem path="#" title="Forest fire found" />
-                  <LinkItem path="#" title="Mangrovies" />
-                  <LinkItem path="#" title="Watersheds" />
-                  <LinkItem path="#" title="Woman" />
-                </NavListItem>
-                <NavListItem path="#" title="For others">
-                  <LinkItem path="#" title="gift trees" />
-                  <LinkItem path="#" title="gift trees is memory" />
-                  <LinkItem path="#" title="How to leave a legacy" />
-                </NavListItem>
-                <ImageBox
-                  linkTitle="Plant Trees"
-                  title="Plant trees for impact and help restore ecosystems around the world! "
-                  src="https://onetreeplanted.org/cdn/shop/files/plant-trees-for-impact-main-img_5000x.jpg?v=1709925481"
-                />
-              </div>
-            </NavItem> */}
+
             <NavItem path="#" title="About Us">
               <div className="flex justify-between">
                 <div>
@@ -53,36 +23,8 @@ const DesktopNav = () => {
                       title="Our Vision"
                     />
                     <LinkItem path="/about/history-of-gco" title="History" />
-
                     <LinkItem path="/about/team" title="Our Team" />
                   </NavListItem>
-
-                  {/* <NavListItem path="#" title="Our Team">
-                    <LinkItem
-                      path="/about/team/board-of-director"
-                      title="Board Of Director"
-                    />
-                    <LinkItem
-                      path="/about/team/adviser-council"
-                      title="Adviser"
-                    />
-                    <LinkItem
-                      path="/about/team/board-of-director"
-                      title="Board Of Director"
-                    />
-                    <LinkItem
-                      path="/about/team/executive-member"
-                      title="Exclusive Member"
-                    />
-                    <LinkItem
-                      path="/about/team/staff-member"
-                      title="Staff Member"
-                    />
-                    <LinkItem
-                      path="/about/team/tyagi-executive"
-                      title="Tyagi Exclusive"
-                    />
-                  </NavListItem> */}
                 </div>
                 <NavListItem path="#" title="Our Impact">
                   <LinkItem path="#" title="2023 recap" />
@@ -159,13 +101,84 @@ const DesktopNav = () => {
             <NavItem path="#" title="What we do">
               <div className="flex justify-between">
                 <div className="flex flex-col gap-5">
-                  <NavListItem path="#" title="">
-                    <LinkItem path="#" title="Global Nation" />
-                    <LinkItem path="#" title="OT4OC" />
-                    <LinkItem path="#" title="TYAGI" />
-                    <LinkItem path="#" title="ABALAMBAN" />
-                    <LinkItem path="#" title="Tree lanching" />
-                    <LinkItem path="#" title="skill development Program" />
+                  <NavListItem path="/what-we-do" title="Climate action">
+                    <LinkItem
+                      path="/what-we-do"
+                      title="One tree for one child"
+                    />
+                    <LinkItem
+                      path="/what-we-do"
+                      title="save life from thunderstorms with plants"
+                    />
+                    <LinkItem
+                      path="/what-we-do"
+                      title="sponsor a tree for future child in Bangladesh"
+                    />
+                    <LinkItem
+                      path="/what-we-do"
+                      title="Disaster Resilience and Relief Programs"
+                    />
+                  </NavListItem>
+
+                  <NavListItem path="/what-we-do" title="health">
+                    <LinkItem
+                      path="/what-we-do"
+                      title="Maternal and Child Health in Bangladesh Slums"
+                    />
+                    <LinkItem
+                      path="/what-we-do"
+                      title="Maternal & Child Nutrition in Char Land, Bangladesh"
+                    />
+                  </NavListItem>
+                </div>
+                <div className="flex flex-col gap-5">
+                  <NavListItem path="/what-we-do" title="Food Security">
+                    <LinkItem
+                      path="/what-we-do"
+                      title="Addressing Hunger Among Bangladesh's Elderly"
+                    />
+                    <LinkItem
+                      path="/what-we-do"
+                      title="Abalamban – Self-Reliance"
+                    />
+                    <LinkItem
+                      path="/what-we-do"
+                      title="Cluster Village Program"
+                    />
+                  </NavListItem>
+
+                  <NavListItem path="/what-we-do" title="Human Rights">
+                    <LinkItem
+                      path="/what-we-do"
+                      title="skill development program"
+                    />
+                  </NavListItem>
+                  <NavListItem path="/what-we-do" title="our events">
+                    <LinkItem
+                      path="/what-we-do"
+                      title="skill development program"
+                    />
+                  </NavListItem>
+                </div>
+        
+                <div className="flex flex-col gap-5">
+                  <NavListItem path="/what-we-do" title="campaigns">
+                    <LinkItem
+                      path="/what-we-do"
+                      title="Nutrition and Health Awareness Campaigns"
+                    />
+                    <LinkItem
+                      path="/what-we-do"
+                      title="Hygiene and Sanitation Awareness Campaigns"
+                    />
+                    <LinkItem
+                      path="/what-we-do"
+                      title="Mobile Campaigns for Health, Hygiene, and Social Awareness"
+                    />
+                  </NavListItem>
+
+                  <NavListItem path="/what-we-do" title="training">
+                    <LinkItem path="/what-we-do" title="ICT training program" />
                   </NavListItem>
                 </div>
                 {/* <div className="flex flex-col gap-10">
@@ -198,7 +211,6 @@ const DesktopNav = () => {
                   <LinkItem path="#" title="Bangladesh" />
                   <LinkItem path="#" title="Zimbabwe" />
                   <LinkItem path="#" title="Uganda" />
-      
                 </NavListItem>
                 <ImageBox
                   linkTitle="Shop now"
@@ -270,7 +282,7 @@ const NavListItem = ({
   return (
     <div>
       <Link
-        className="text-xl underline underline-offset-[20px]  opacity-80 hover:opacity-100 hover:drop-shadow-lg hover:shadow-white"
+        className="text-xl underline underline-offset-[20px] capitalize  opacity-80 hover:opacity-100 hover:drop-shadow-lg hover:shadow-white"
         href={path}
       >
         {title}
@@ -282,7 +294,7 @@ const NavListItem = ({
 
 const LinkItem = ({ path, title }: { path: string; title: string }) => {
   return (
-    <Link className="opacity-80 hover:opacity-100" href={path}>
+    <Link className="opacity-80 hover:opacity-100 capitalize" href={path}>
       {title}
     </Link>
   )

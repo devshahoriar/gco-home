@@ -6,7 +6,7 @@ export const SweetchLayoutSidebar = ({
   children,
   className,
 }: {
-  children: ReactElement[]
+  children: ReactElement[] | ReactElement
   className?: string
 }) => {
   return (

@@ -11,7 +11,6 @@ import Mashud from '@/img/pagesImage/team/ExclusiveMember/mashud.jpg'
 import Shahin from '@/img/pagesImage/team/ExclusiveMember/shahi.jpg'
 import Shamim from '@/img/pagesImage/team/ExclusiveMember/Shamim.png'
 import Najmul from '@/img/pagesImage/team/Nizhum-Photo-2.jpg'
-
 import Zihanur from '@/img/pagesImage/team/ExclusiveMember/jihanur.jpg'
 import Kamrun from '@/img/pagesImage/team/ExclusiveMember/kamrun.png'
 import May from '@/img/pagesImage/team/ExclusiveMember/may.png'
@@ -260,7 +259,7 @@ const TeamPage = () => {
             ))}
           </SweetchLayoutSidebar>
           <SweetchLayoutContent className='p-0'>
-            <div className=" flex flex-wrap">
+            <div className="flex flex-wrap">
               {data[active].map((item: any, index: number) => (
                 <ItemCard key={index} item={item} />
               ))}
@@ -280,7 +279,7 @@ const ItemCard = ({ item }: any) => {
           alt={item.name}
           src={item.image}
           className="rounded-full size-[50%] group-hover/item:scale-110 transition-transform duration-2500 ease-in-out"
-
+          placeholder='blur'
         />
         <a href='#' className="font-bold text-xl mt-2 text-white text-center hover:text-black transition-colors uppercase ">{item.name}</a>
         <p className="font-normal text-white text-center mt-1 uppercase">{item.position}</p>
