@@ -2,6 +2,7 @@
 'use client'
 
 import Logo from '@/components/shared/Logo'
+import { cn } from '@/lib/utils'
 import { ChevronDown, Search } from 'lucide-react'
 import Link from 'next/link'
 
@@ -17,27 +18,37 @@ const DesktopNav = () => {
             <NavItem path="#" title="About Us">
               <div className="flex justify-between">
                 <div>
-                  <NavListItem path="/about" title="Our Organization">
+                  <NavListItem path="/" title="Our Organization">
+                    <LinkItem path="/about" title="About GCO" />
                     <LinkItem
                       path="/about/our-missionvision"
-                      title="Our Vision"
+                      title="Mission vision"
                     />
-                    <LinkItem path="/about/history-of-gco" title="History" />
-                    <LinkItem path="/about/team" title="Our Team" />
+                    <LinkItem
+                      path="/about/history-of-gco"
+                      title="History of gco"
+                    />
                   </NavListItem>
+                  <div className="mt-4" />
+                  <NavListItem
+                    className=" no-underline"
+                    path="/about/team"
+                    title="Our Team"
+                  />
                 </div>
-                <NavListItem path="#" title="Our Impact">
-                  <LinkItem path="#" title="2023 recap" />
-                  <LinkItem path="#" title="2022 recap" />
-                  <LinkItem path="#" title="2021 recap" />
-                  <LinkItem path="#" title="2020 recap" />
-                  <LinkItem path="#" title="2019 recap" />
+
+                <NavListItem path="#" title="our strength">
+                  <LinkItem path="#" title="tagi volunteer" />
+                  <LinkItem path="#" title="tagi foundation" />
+                  <LinkItem path="#" title="tagi research center" />
+                  <LinkItem path="#" title="tagi enterprise" />
+                  <LinkItem path="#" title="global nation" />
+                  <LinkItem path="#" title="gco Nursery" />
+                  <LinkItem path="#" title="treelanching" />
                 </NavListItem>
-                <ImageBox
-                  linkTitle="Visit our Newsroom"
-                  title="Stay up to date on major announcements, exciting collaborations, and more."
-                  src="https://onetreeplanted.org/cdn/shop/files/newsroom-promo_5000x.jpg?v=1690489113"
-                />
+                <NavListItem path="#" title="Our Impact">
+                  <LinkItem path="/api/report2023" title="annual report 2023" />
+                </NavListItem>
                 <ImageBox
                   linkTitle="Learn More"
                   title="We make it simple for anyone to plant trees, and together we can make an incredible impact. "
@@ -160,7 +171,7 @@ const DesktopNav = () => {
                     />
                   </NavListItem>
                 </div>
-        
+
                 <div className="flex flex-col gap-5">
                   <NavListItem path="/what-we-do" title="campaigns">
                     <LinkItem
@@ -274,20 +285,27 @@ const NavListItem = ({
   children,
   title,
   path,
+  className,
 }: {
-  children: React.ReactNode
+  children?: React.ReactNode
   title: String
   path: string
+  className?: string
 }) => {
   return (
     <div>
       <Link
-        className="text-xl underline underline-offset-[20px] capitalize  opacity-80 hover:opacity-100 hover:drop-shadow-lg hover:shadow-white"
+        className={cn(
+          'text-xl underline underline-offset-[20px] capitalize  opacity-80 hover:opacity-100 hover:drop-shadow-lg hover:shadow-white',
+          className
+        )}
         href={path}
       >
         {title}
       </Link>
-      <div className="flex flex-col mt-10 gap-5 ml-5">{children}</div>
+      {children && (
+        <div className="flex flex-col mt-10 gap-5 ml-5">{children}</div>
+      )}
     </div>
   )
 }

@@ -1,10 +1,23 @@
-import Image from 'next/image'
-import AboutImage from '@/img/pagesImage/50K-Tree-Plantation.png'
+const appUrl = process.env.APP_URL!
+import ReactMarkdown from 'react-markdown'
+const AboutPage = async () => {
+  const res = await fetch(appUrl + '/md/about/gco.md')
+  const md = await res.text()
 
-const AboutPage = () => {
   return (
     <main className="container mt-5">
-      <div className="flex justify-center m-2">
+      <div className="prose dark:prose-invert max-w-[700px] mx-auto my-10">
+        <ReactMarkdown>{md}</ReactMarkdown>
+      </div>
+    </main>
+  )
+}
+
+export default AboutPage
+
+// import AboutImage from '@/img/pagesImage/50K-Tree-Plantation.png'
+{
+  /* <div className="flex justify-center m-2">
         <Image height={500} alt="About" src={AboutImage} />
       </div>
       <div className='flex justify-center flex-col items-center'>
@@ -47,9 +60,5 @@ const AboutPage = () => {
           sustainable environment.
         </p>
         <p className='w-[800px] text-justify mt-6 mb-6'>2033 is the Silver Jubilee of the Global Community Organization. On the occasion of the Silver Jubilee celebrations, Global Community Organization has taken up a long-term action plan by coordinating the child ‍ and environment. We firmly believe that our <b>“One Tree For One Child”</b> is a timely and groundbreaking activity.</p>
-      </div>
-    </main>
-  )
+      </div> */
 }
-
-export default AboutPage
