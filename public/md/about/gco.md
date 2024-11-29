@@ -1,4 +1,4 @@
-### Establishment and Growth
+**Establishment and Growth**
 
 The **Global Community Organization (GCO)** was founded on **June 1, 2008**, in Bagha Upazila, Rajshahi District, Bangladesh. Initially established by a group of dedicated youth, GCO aimed to address pressing social and environmental challenges. Over the years, GCO has grown into a prominent, non-political, non-profit, and philanthropic organization, with a deep commitment to improving the lives of local communities.
 

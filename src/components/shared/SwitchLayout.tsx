@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
-import { ReactElement } from 'react'
+import { ReactElement, ReactNode } from 'react'
 
 export const SweetchLayoutSidebar = ({
   children,
@@ -29,13 +29,13 @@ export const SweetchLayoutContent = ({
   children,
   className,
 }: {
-  children: ReactElement
+  children: ReactNode
   className?: string
 }) => {
   return (
     <div
       className={cn(
-        'border border-zinc-100 dark:border-zinc-700 shadow-md rounded mt-5 md:flex-1 md:mr-6 md:mt-2 p-2',
+        'border border-zinc-100 dark:border-zinc-700 shadow-md rounded md:flex-1',
         className
       )}
     >

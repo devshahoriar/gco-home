@@ -23,7 +23,7 @@ import Image from 'next/image'
 import MRIDHA from '@/img/pagesImage/team/amin.jpg'
 import MALEK from '@/img/pagesImage/team/kh.jpg'
 import SHOWKAT from '@/img/pagesImage/team/mir.jpg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Facebook, Mail, Phone } from 'lucide-react'
 
 type TeamData = {
@@ -240,6 +240,18 @@ const Keys = Object.keys(data)
 
 const TeamPage = () => {
   const [active, setActive] = useState(Keys[0])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    const x = decodeURI(window.location.hash?.split('#')[1] ? window.location.hash?.split('#')[1] : Keys[0])
+    setActive(x)
+  }, [])
+  useEffect(() => {
+    const hasChange = () => {
+      console.log('hash change')
+    }
+    window.addEventListener('hashchange', hasChange)
+    return () => window.removeEventListener('hashchange', hasChange)
+  }, [])
   return (
     <>
       <div className="bg-green-500">
@@ -252,15 +264,18 @@ const TeamPage = () => {
               <Switch
                 key={key}
                 active={active === key}
-                onClick={() => setActive(key)}
+                onClick={() => {
+                  window.location.hash = key
+                  setActive(key)
+                }}
               >
                 {key}
               </Switch>
             ))}
           </SweetchLayoutSidebar>
-          <SweetchLayoutContent className='p-0'>
+          <SweetchLayoutContent className="p-0">
             <div className="flex flex-wrap">
-              {data[active].map((item: any, index: number) => (
+              {data[active]?.map((item: any, index: number) => (
                 <ItemCard key={index} item={item} />
               ))}
             </div>
@@ -279,19 +294,26 @@ const ItemCard = ({ item }: any) => {
           alt={item.name}
           src={item.image}
           className="rounded-full size-[50%] group-hover/item:scale-110 transition-transform duration-2500 ease-in-out"
-          placeholder='blur'
+          placeholder="blur"
         />
-        <a href='#' className="font-bold text-xl mt-2 text-white text-center hover:text-black transition-colors uppercase ">{item.name}</a>
-        <p className="font-normal text-white text-center mt-1 uppercase">{item.position}</p>
+        <a
+          href="#"
+          className="font-bold text-xl mt-2 text-white text-center hover:text-black transition-colors uppercase "
+        >
+          {item.name}
+        </a>
+        <p className="font-normal text-white text-center mt-1 uppercase">
+          {item.position}
+        </p>
         <div className="flex gap-2 mt-2 hover:*:text-black">
           <a href="#">
-            <Phone className='size-4'/>
+            <Phone className="size-4" />
           </a>
           <a href="#">
-            <Mail className='size-4'/>
+            <Mail className="size-4" />
           </a>
           <a href="#">
-            <Facebook className='size-4'/>
+            <Facebook className="size-4" />
           </a>
         </div>
       </div>

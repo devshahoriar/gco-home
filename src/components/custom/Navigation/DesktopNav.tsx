@@ -18,23 +18,30 @@ const DesktopNav = () => {
             <NavItem path="#" title="About Us">
               <div className="flex justify-between">
                 <div>
-                  <NavListItem path="/" title="Our Organization">
-                    <LinkItem path="/about" title="About GCO" />
-                    <LinkItem
-                      path="/about/our-missionvision"
-                      title="Mission vision"
-                    />
-                    <LinkItem
-                      path="/about/history-of-gco"
-                      title="History of gco"
-                    />
+                  <NavListItem path="/about" title="Our Organization">
+                    <LinkItem path="/about#about" title="About GCO" />
+                    <LinkItem path="/about#mission" title="Mission vision" />
+                    <LinkItem path="/about#histry" title="History of gco" />
                   </NavListItem>
                   <div className="mt-4" />
-                  <NavListItem
-                    className=" no-underline"
-                    path="/about/team"
-                    title="Our Team"
-                  />
+                  <NavListItem className="" path="/about/team" title="Our Team">
+                    <LinkItem
+                      path="/about/team#BOARD OF DIRECTOR"
+                      title="BOARD OF DIRECTOR"
+                    />
+                    <LinkItem
+                      path="/about/team#EXECUTIVE MEMBER"
+                      title="EXECUTIVE MEMBER"
+                    />
+                    <LinkItem
+                      path="/about/team#ADVISER COUNCIL"
+                      title="ADVISER COUNCIL"
+                    />
+                    <LinkItem
+                      path="/about/team#GCO STAFF"
+                      title="GCO STAFF"
+                    />
+                  </NavListItem>
                 </div>
 
                 <NavListItem path="#" title="our strength">
@@ -64,13 +71,7 @@ const DesktopNav = () => {
                     <LinkItem path="/about/photo-gallery" title="Gallary" />
                   </NavListItem>
                 </div>
-                {/* <NavListItem path="#" title="Our Impact">
-                  <LinkItem path="#" title="2023 recap" />
-                  <LinkItem path="#" title="2022 recap" />
-                  <LinkItem path="#" title="2021 recap" />
-                  <LinkItem path="#" title="2020 recap" />
-                  <LinkItem path="#" title="2019 recap" />
-                </NavListItem> */}
+
                 <ImageBox
                   linkTitle="Visit our Newsroom"
                   title="Stay up to date on major announcements, exciting collaborations, and more."
