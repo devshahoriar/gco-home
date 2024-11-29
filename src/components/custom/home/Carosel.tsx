@@ -1,11 +1,10 @@
 'use client'
-import { TextAnimate } from '@/components/ui/aimate/TextAnimate'
+// import { TextAnimate } from '@/components/ui/aimate/TextAnimate'
 import img2 from '@/img/carosel/cur1.jpg'
 import img3 from '@/img/carosel/cur2.jpg'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { useState } from 'react'
-// import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 
@@ -33,11 +32,7 @@ const SlideItem = ({ src, inview,text }: any) => {
     <div className="h-[300px] sm:h-[350px] md:h-[500px] xl:h-[550px] overflow-hidden relative">
       {inview && (
         <section className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <TextAnimate
-            text={text}
-            type={typs[Math.floor(Math.random() * typs.length)] as any}
-            className='!text-black text-4xl font-bold md:text-6xl'
-          />
+          <h1 className='!text-black text-4xl font-bold md:text-5xl'>{text}</h1>
         </section>
       )}
       <Image

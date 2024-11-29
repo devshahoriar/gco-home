@@ -23,8 +23,8 @@ const ItemCard = ({ src, title }: { src: any; title: string }) => {
           src={src}
           className="object-cover absolute top-0 left-0 bottom-0 right-0 h-full w-full p-1 rounded-sm group-hover:scale-105 transition-all duration-300 ease-in-out"
           alt="Country"
-          width="400"
-          height="400"
+          width={150}
+          height={150}
         />
         <div className="z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-10 px-3 py-2 rounded-[5px] text-white font-bold backdrop-blur-md group-hover:opacity-0 transition-opacity duration-300 ease-in-out">
           {title}
@@ -41,10 +41,10 @@ const ItemCard = ({ src, title }: { src: any; title: string }) => {
 export const PlantTrees = () => {
   return (
     <div className="my-10 container pb-0">
-      <BlurIn
-        word="Where we work"
+      <h1
+      
         className="text-center !text-2xl font-semibold md:!text-3xl"
-      />
+      >Where we work</h1>
       <div className="flex flex-wrap md:justify-between justify-center md:flex-nowrap gap-5 mt-10 px-3">
         <ItemCard src="/treep/af.jpg" title="Bangladesh" />
         <ItemCard src="/treep/bd.jpg" title="India" />

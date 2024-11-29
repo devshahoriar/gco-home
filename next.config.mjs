@@ -7,6 +7,7 @@ const nextConfig = {
       { hostname: 'source.unsplash.com' },
       { hostname: 'globalcommunityorganization.org' },
       { hostname: 'ik.imagekit.io' },
+      {hostname: 'picsum.photos'}
     ],
   },
   eslint: {

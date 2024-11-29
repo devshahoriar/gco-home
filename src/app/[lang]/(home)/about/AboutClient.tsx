@@ -19,7 +19,7 @@ const Items = [
     id: 'mission',
   },
   {
-    title: 'History of gco',
+    title: 'History of GCO',
     id: 'histry',
   },
 ]
@@ -51,13 +51,13 @@ const AboutClient = ({ about, histry }: any) => {
       </SweetchLayoutSidebar>
       <SweetchLayoutContent className="p-0">
         {active === 'about' && (
-          <div className="prose dark:prose-invert !max-w-full p-5">
+          <div className="prose dark:prose-invert !max-w-full p-5 text-justify">
             <ReactMarkdown className="w-full">{about}</ReactMarkdown>
           </div>
         )}
 
         {active === 'histry' && (
-          <div className="prose dark:prose-invert !max-w-full p-5">
+          <div className="prose dark:prose-invert !max-w-full p-5 text-justify">
             <ReactMarkdown>{histry}</ReactMarkdown>
           </div>
         )}

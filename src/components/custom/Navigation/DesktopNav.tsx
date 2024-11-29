@@ -21,7 +21,7 @@ const DesktopNav = () => {
                   <NavListItem path="/about" title="Our Organization">
                     <LinkItem path="/about#about" title="About GCO" />
                     <LinkItem path="/about#mission" title="Mission vision" />
-                    <LinkItem path="/about#histry" title="History of gco" />
+                    <LinkItem path="/about#histry" title="History of GCO" />
                   </NavListItem>
                   <div className="mt-4" />
                   <NavListItem className="" path="/about/team" title="Our Team">
@@ -45,12 +45,12 @@ const DesktopNav = () => {
                 </div>
 
                 <NavListItem path="#" title="our strength">
-                  <LinkItem path="#" title="tagi volunteer" />
-                  <LinkItem path="#" title="tagi foundation" />
-                  <LinkItem path="#" title="tagi research center" />
-                  <LinkItem path="#" title="tagi enterprise" />
+                  <LinkItem path="#" title="Tyagi volunteer" />
+                  <LinkItem path="#" title="Tyagi foundation" />
+                  <LinkItem path="#" title="Tyagi research center" />
+                  <LinkItem path="#" title="Tyagi enterprise" />
                   <LinkItem path="#" title="global nation" />
-                  <LinkItem path="#" title="gco Nursery" />
+                  <LinkItem path="#" title="GCO Nursery" />
                   <LinkItem path="#" title="treelanching" />
                 </NavListItem>
                 <NavListItem path="#" title="Our Impact">

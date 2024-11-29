@@ -3,6 +3,7 @@ import BlurIn from '@/components/ui/aimate/blur-in'
 import SiteButton from '@/components/ui/SiteButton'
 import { TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Tabs } from '@radix-ui/react-tabs'
+import Image from 'next/image'
 
 const Instagram = () => {
   return (
@@ -58,7 +59,7 @@ const SocialItem = () => {
             key={i}
             className="w-[calc(50%-20px)] sm:w-[calc(33%-20px)] lg:w-[calc(25%-20px)]"
           >
-            <img className='w-full h-full object-cover' src={"https://picsum.photos/800?q="+i} alt="" />
+            <Image width={200} height={200} className='w-full h-full object-cover' src={"https://picsum.photos/200?q="+i} alt="" />
           </div>
         ))}
     </div>
