@@ -57,10 +57,9 @@ const BlogSection = () => {
       />
       <div className="container px-10 pt-12 pb-20">
         <div className="mt-10">
-          <BlurIn
+          <h1
             className="!text-2xl font-semibold md:!text-3xl !pt-10 !text-start"
-            word="News and Blogs"
-          />
+          >News and Blogs</h1>
         </div>
         <div className="mt-10 md:flex md:gap-5">
           <BigNews
