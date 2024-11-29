@@ -1,4 +1,4 @@
-export const dynamic = 'force-cache'
+export const dynamic = 'force-static'
 
 const StengthPage = () => {
   return (

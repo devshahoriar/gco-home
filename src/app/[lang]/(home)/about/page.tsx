@@ -1,6 +1,6 @@
 const appUrl = process.env.APP_URL!
 import AboutClient from './AboutClient'
-export const dynamic = 'force-cache'
+export const dynamic = 'force-static'
 const AboutPage = async () => {
   const res = await fetch(appUrl + '/md/about/gco.md')
   const about = await res.text()
