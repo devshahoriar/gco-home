@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import '../styles/globals.css'
 
-import { cn } from '@/lib/utils'
+import { APP_URL, cn } from '@/lib/utils'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -12,9 +12,7 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.APP_URL
-      ? `${process.env.APP_URL}`
-      : `http://localhost:${process.env.PORT || 3000}`
+    APP_URL
   ),
   title: 'Global Community Organization',
   description:

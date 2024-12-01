@@ -1,13 +1,13 @@
 'use client'
-import BlurIn from '@/components/ui/aimate/blur-in'
+
 import { ScrollArea } from '@/components/ui/scroll-area'
 import SiteButton from '@/components/ui/SiteButton'
-import dynamic from 'next/dynamic'
+
 import Image from 'next/image'
-const GridPattern = dynamic(
-  () => import('@/components/ui/aimate/animated-grid-pattern'),
-  { ssr: false }
-)
+// const GridPattern = dynamic(
+//   () => import('@/components/ui/aimate/animated-grid-pattern'),
+//   { ssr: false }
+// )
 
 const ListBlog = [
   {
@@ -47,14 +47,14 @@ It is an incredible and impossible achievement. It is with great pleasure that w
 
 const BlogSection = () => {
   return (
-    <section className="w-full relative overflow-hidden">
-      <GridPattern
+    <section className="w-full relative overflow-hidden border-b border-zinc-600 border-t">
+      {/* <GridPattern
         numSquares={100}
         maxOpacity={0.5}
         duration={2}
         repeatDelay={1}
         className="opacity-50"
-      />
+      /> */}
       <div className="container px-10 pt-12 pb-20">
         <div className="mt-10">
           <h1

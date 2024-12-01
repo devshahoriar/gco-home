@@ -20,6 +20,7 @@
     "@radix-ui/react-tabs": "^1.1.1",
     "@types/mapbox-gl": "^3.4.1",
     "@types/react-slick": "^0.23.13",
+    "babel-plugin-react-compiler": "^19.0.0-beta-df7b47d-20241124",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.17",

@@ -29,7 +29,7 @@ export const SweetchLayoutContent = ({
   children,
   className,
 }: {
-  children: ReactNode
+  children?: ReactNode
   className?: string
 }) => {
   return (

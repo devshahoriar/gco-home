@@ -44,14 +44,14 @@ const DesktopNav = () => {
                   </NavListItem>
                 </div>
 
-                <NavListItem path="#" title="our strength">
-                  <LinkItem path="#" title="Tyagi volunteer" />
-                  <LinkItem path="#" title="Tyagi foundation" />
-                  <LinkItem path="#" title="Tyagi research center" />
-                  <LinkItem path="#" title="Tyagi enterprise" />
-                  <LinkItem path="#" title="global nation" />
-                  <LinkItem path="#" title="GCO Nursery" />
-                  <LinkItem path="#" title="treelanching" />
+                <NavListItem path="/about/strength" title="our strength">
+                  <LinkItem path="/about/strength#tyagiVolunteer" title="Tyagi volunteer" />
+                  <LinkItem path="/about/strength#tyagiFoundation" title="Tyagi foundation" />
+                  <LinkItem path="/about/strength#tyagiResearchCenter" title="Tyagi research center" />
+                  <LinkItem path="/about/strength#tyagiEnterprise" title="Tyagi enterprise" />
+                  <LinkItem path="/about/strength#globalNation" title="global nation" />
+                  <LinkItem path="/about/strength#gcoNursery" title="GCO Nursery" />
+                  <LinkItem path="/about/strength#treelanching" title="treelanching" />
                 </NavListItem>
                 <NavListItem path="#" title="Our Impact">
                   <LinkItem path="/api/report2023" title="annual report 2023" />

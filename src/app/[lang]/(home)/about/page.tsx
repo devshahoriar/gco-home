@@ -1,4 +1,5 @@
-const appUrl = process.env.APP_URL!
+const appUrl = APP_URL
+import { APP_URL } from '@/lib/utils'
 import AboutClient from './AboutClient'
 export const dynamic = 'force-static'
 const AboutPage = async () => {
