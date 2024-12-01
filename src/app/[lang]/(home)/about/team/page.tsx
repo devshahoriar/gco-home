@@ -293,8 +293,9 @@ const ItemCard = ({ item }: any) => {
         <Image
           alt={item.name}
           src={item.image}
+          height={200}
+          width={200}
           className="rounded-full size-[50%] group-hover/item:scale-110 transition-transform duration-2500 ease-in-out"
-          placeholder="blur"
         />
         <a
           href="#"
