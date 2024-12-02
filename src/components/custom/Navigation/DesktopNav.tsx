@@ -17,50 +17,65 @@ const DesktopNav = () => {
 
             <NavItem path="#" title="About Us">
               <div className="flex justify-between">
-                <div>
-                  <NavListItem path="/about" title="Our Organization">
-                    <LinkItem path="/about#about" title="About GCO" />
-                    <LinkItem path="/about#mission" title="Mission vision" />
-                    <LinkItem path="/about#histry" title="History of GCO" />
-                  </NavListItem>
-                  <div className="mt-4" />
-                  <NavListItem className="" path="/about/team" title="Our Team">
-                    <LinkItem
-                      path="/about/team#BOARD OF DIRECTOR"
-                      title="BOARD OF DIRECTOR"
-                    />
-                    <LinkItem
-                      path="/about/team#EXECUTIVE MEMBER"
-                      title="EXECUTIVE MEMBER"
-                    />
-                    <LinkItem
-                      path="/about/team#ADVISER COUNCIL"
-                      title="ADVISER COUNCIL"
-                    />
-                    <LinkItem
-                      path="/about/team#GCO STAFF"
-                      title="GCO STAFF"
-                    />
-                  </NavListItem>
-                </div>
+                <NavListItem path="/about" title="Our Organization">
+                  <LinkItem path="/about#about" title="About GCO" />
+                  <LinkItem path="/about#mission" title="Mission vision" />
+                  <LinkItem path="/about#histry" title="History of GCO" />
+                </NavListItem>
+
+                <NavListItem path="/about/team" title="Our Team">
+                  <LinkItem
+                    path="/about/team#BOARD OF DIRECTOR"
+                    title="Board Of Director"
+                  />
+                  <LinkItem
+                    path="/about/team#EXECUTIVE MEMBER"
+                    title="Executive Member"
+                  />
+                  <LinkItem
+                    path="/about/team#ADVISER COUNCIL"
+                    title="Adviser Council"
+                  />
+                  <LinkItem path="/about/team#GCO STAFF" title="Gco Staff" />
+                  <LinkItem
+                    path="/about/team#TYAGI EXECUTIVE"
+                    title="Tyagi Executive"
+                  />
+                </NavListItem>
 
                 <NavListItem path="/about/strength" title="our strength">
-                  <LinkItem path="/about/strength#tyagiVolunteer" title="Tyagi volunteer" />
-                  <LinkItem path="/about/strength#tyagiFoundation" title="Tyagi foundation" />
-                  <LinkItem path="/about/strength#tyagiResearchCenter" title="Tyagi research center" />
-                  <LinkItem path="/about/strength#tyagiEnterprise" title="Tyagi enterprise" />
-                  <LinkItem path="/about/strength#globalNation" title="global nation" />
-                  <LinkItem path="/about/strength#gcoNursery" title="GCO Nursery" />
-                  <LinkItem path="/about/strength#treelanching" title="treelanching" />
+                  <LinkItem
+                    path="/about/strength#tyagiVolunteer"
+                    title="Tyagi volunteer"
+                  />
+                  <LinkItem
+                    path="/about/strength#tyagiFoundation"
+                    title="Tyagi foundation"
+                  />
+                  <LinkItem
+                    path="/about/strength#tyagiResearchCenter"
+                    title="Tyagi research center"
+                  />
+                  <LinkItem
+                    path="/about/strength#tyagiEnterprise"
+                    title="Tyagi enterprise"
+                  />
+                  <LinkItem
+                    path="/about/strength#globalNation"
+                    title="global nation"
+                  />
+                  <LinkItem
+                    path="/about/strength#gcoNursery"
+                    title="GCO Nursery"
+                  />
+                  <LinkItem
+                    path="/about/strength#treelanching"
+                    title="treelanching"
+                  />
                 </NavListItem>
                 <NavListItem path="#" title="Our Impact">
                   <LinkItem path="/api/report2023" title="annual report 2023" />
                 </NavListItem>
-                <ImageBox
-                  linkTitle="Learn More"
-                  title="We make it simple for anyone to plant trees, and together we can make an incredible impact. "
-                  src="https://onetreeplanted.org/cdn/shop/files/Our_Vision-megamenu_images_4500x.webp?v=1674767633"
-                />
               </div>
             </NavItem>
             <NavItem path="#" title="GCO Wing">
@@ -273,8 +288,8 @@ const NavItem = ({
       </Link>
       {children && (
         <div className="absolute top-[80%]  bg-opacity-80 w-screen left-0 desktopLinkContent opacity-0 z-40 pointer-events-none transition-opacity duration-300 ease-in-out">
-          <div className="bg-black bg-opacity-80 mt-[12px] h-[500px] overflow-x-auto">
-            <div className="container px-10 pt-8 ">{children}</div>
+          <div className="bg-black bg-opacity-80 mt-[12px] h-[300px] overflow-x-auto">
+            <div className="container px-10 py-8 ">{children}</div>
           </div>
         </div>
       )}

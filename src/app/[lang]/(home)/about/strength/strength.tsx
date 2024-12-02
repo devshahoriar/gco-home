@@ -1,5 +1,4 @@
 'use client'
-import ReactMarkdown from 'react-markdown'
 import {
   SweetchLayoutContent,
   SweetchLayoutSidebar,
@@ -7,6 +6,7 @@ import {
   SwitchLayoutParant,
 } from '@/components/shared/SwitchLayout'
 import { useEffect, useState } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 const Items = [
   {
@@ -26,7 +26,7 @@ const Items = [
     id: 'tyagiEnterprise',
   },
   {
-    title: 'global nation',
+    title: 'Global nation',
     id: 'globalNation',
   },
   {
@@ -39,12 +39,23 @@ const Items = [
   },
 ]
 
-const Strength = ({ tyagiVolunteer,tyagiFoundation,tyagiResearchCenter }: any) => {
+const Strength = ({
+  tyagiVolunteer,
+  tyagiFoundation,
+  tyagiResearchCenter,
+  tyagiEnterprise,
+  treelanching,
+}: any) => {
   const [active, setActive] = useState('tyagiVolunteer')
   useEffect(() => {
     window.scrollTo(0, 0)
-    setActive(window.location.hash?.split('#')[1] ? window.location.hash?.split('#')[1] : 'tyagiVolunteer')
+    setActive(
+      window.location.hash?.split('#')[1]
+        ? window.location.hash?.split('#')[1]
+        : 'tyagiVolunteer'
+    )
   }, [])
+
   return (
     <SwitchLayoutParant className="mt-5">
       <SweetchLayoutSidebar>
@@ -75,7 +86,19 @@ const Strength = ({ tyagiVolunteer,tyagiFoundation,tyagiResearchCenter }: any) =
         )}
         {active === 'tyagiResearchCenter' && (
           <div className="prose dark:prose-invert !max-w-full px-5 text-justify">
-            <ReactMarkdown className="w-full">{tyagiResearchCenter}</ReactMarkdown>
+            <ReactMarkdown className="w-full">
+              {tyagiResearchCenter}
+            </ReactMarkdown>
+          </div>
+        )}
+        {active === 'tyagiEnterprise' && (
+          <div className="prose dark:prose-invert !max-w-full px-5 text-justify">
+            <ReactMarkdown className="w-full">{tyagiEnterprise}</ReactMarkdown>
+          </div>
+        )}
+        {active === 'treelanching' && (
+          <div className="prose dark:prose-invert !max-w-full px-5 text-justify">
+            <ReactMarkdown className="w-full">{treelanching}</ReactMarkdown>
           </div>
         )}
       </SweetchLayoutContent>

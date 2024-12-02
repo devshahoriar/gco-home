@@ -6,6 +6,7 @@ import {
   Linkedin,
   Mail,
   ShoppingBag,
+  Twitter,
   User,
   X,
   Youtube,
@@ -26,7 +27,7 @@ const TopBar = () => {
               <Facebook />
             </a>
             <a href="https://x.com/Global_Com_Org">
-              <X />
+            <Twitter />
             </a>
 
             <a href="https://youtube.com/@globalcommunityorganization?si=4emJ0AAcpVYRhpkZ">
@@ -37,7 +38,7 @@ const TopBar = () => {
             </a> */}
           </div>
           <p className="">+8801760870070</p>
-          <Link href="#">Contact Us</Link>
+          <Link href="/contact-us">Contact Us</Link>
           <Link href="#">Newsletter</Link>
         </div>
         <div className="flex gap-3 items-center text-white uppercase text-sm">

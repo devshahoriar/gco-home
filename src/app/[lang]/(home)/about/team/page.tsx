@@ -245,13 +245,6 @@ const TeamPage = () => {
     const x = decodeURI(window.location.hash?.split('#')[1] ? window.location.hash?.split('#')[1] : Keys[0])
     setActive(x)
   }, [])
-  useEffect(() => {
-    const hasChange = () => {
-      console.log('hash change')
-    }
-    window.addEventListener('hashchange', hasChange)
-    return () => window.removeEventListener('hashchange', hasChange)
-  }, [])
   return (
     <>
       <div className="bg-green-500">
@@ -263,6 +256,7 @@ const TeamPage = () => {
             {Keys.map((key) => (
               <Switch
                 key={key}
+                className='text-start capitalize'
                 active={active === key}
                 onClick={() => {
                   window.location.hash = key

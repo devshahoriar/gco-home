@@ -1,5 +1,3 @@
-**TYAGI Research Center**
-
 The **TYAGI Research Center** is a significant initiative of the **Global Community Organization (GCO)**, designed to drive meaningful insights and innovation in its mission to create a sustainable and equitable world. This center serves as the research and development hub for evaluating and advancing the organization’s activities.
 
 **Purpose and Objectives**
