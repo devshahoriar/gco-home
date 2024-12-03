@@ -1,5 +1,16 @@
 import Logo from '@/components/shared/Logo'
+import { Button } from '@/components/ui/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
+import { Label } from '@/components/ui/label'
 import { Facebook, Mail, Twitter, Youtube } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
@@ -16,10 +27,10 @@ const ContactUsPage = () => {
           className="absolute h-full w-full top-0 bottom-0 left-0 ring-0 object-cover"
         />
         <div className="z-10 text-center">
-          <h1 className="text-2xl font-bold sm:text-4xl md:text-6xl xl:text-8xl uppercase">
+          <h1 className="text-2xl font-bold sm:text-4xl md:text-6xl xl:text-8xl uppercase text-white">
             Contact Us
           </h1>
-          <p className="md:text-2xl font-semibold">
+          <p className="md:text-2xl font-semibold text-white">
             Have a question? Want to learn more about what we do?
           </p>
         </div>
@@ -51,8 +62,8 @@ const ContactUsPage = () => {
             <Youtube />
           </SocialIcon>
         </div>
-        <div className="mt-10 flex">
-          <div className="w-1/2 px-5">
+        <div className="mt-10 flex flex-col md:flex-row">
+          <div className="md:w-1/2 px-5 w-full ">
             <div className="p-5">
               <h1 className="text-xl font-semibold uppercase">Get In Touch</h1>
               <p className="mt-4 font-light">
@@ -63,8 +74,9 @@ const ContactUsPage = () => {
 
               <h1 className="text-xl font-semibold uppercase mt-10">Call Us</h1>
               <p className="mt-4 font-light">
-                For immediate assistance, call our office at <b>+8801760870070</b>. Our
-                office hours are Saturday - <b>Thursday, 9 AM - 6 PM</b> ET.
+                For immediate assistance, call our office at{' '}
+                <b>+8801760870070</b>. Our office hours are Saturday -{' '}
+                <b>Thursday, 9 AM - 6 PM</b> ET.
               </p>
 
               <p className="mt-10 font-light">
@@ -77,8 +89,50 @@ const ContactUsPage = () => {
               <Logo className="w-[300px]" />
             </div>
           </div>
-          <div className="w-1/2">
-            <div>ss</div>
+          <div className="md:w-1/2 w-full">
+            <div className="mx-5 mb-10">
+              <Card className='bg-opacity-50'>
+                <CardHeader>
+                  <CardTitle>Get In Touch!</CardTitle>
+                  <CardDescription>
+                    Contact with us. We are here to help you.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form>
+                    <div className="flex gap-2">
+                      <div className="flex-1">
+                        <Label>Name</Label>
+                        <Input
+                          id="name"
+                          type="text"
+                          placeholder="Enter your name"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <Label>Email</Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="Enter your Email"
+                        />
+                      </div>
+                    </div>
+                    <div className="mt-5">
+                      <Label>Subject</Label>
+                      <Input id="subject" type="text" placeholder="subject.." />
+                    </div>
+                    <div className="mt-5">
+                      <Label>Text</Label>
+                      <Textarea id="subject"  placeholder="subject.." />
+                    </div>
+                    <div className='mt-5'>
+                      <Button>Submit</Button>
+                    </div>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>

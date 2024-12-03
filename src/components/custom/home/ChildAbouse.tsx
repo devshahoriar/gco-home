@@ -20,16 +20,10 @@ const ChildAbouse = () => {
 				<div className="hidden md:block md:w-1/2" />
 				<div className="md:w-1/2 flex  flex-col items-center md:items-start md:gap-4 sm:gap-3 h-full mt-5 sm:mt-10 md:mt-12">
 					<h1 className="text-white font-bold w-[80%] text-center mt-5 md:text-start sm:text-xl lg::text-2xl">
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-						Doloremque, aut!
+					One Tree, One Child
 					</h1>
 					<p className="text-white text-sm text-center w-[80%] my-4 md:text-start lg:text-base">
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam
-						repudiandae ad eius itaque soluta maiores consequuntur inventore
-						dignissimos voluptatibus quos illo iure fuga amet, error officia.
-						Quos alias, voluptatibus voluptates fuga eius voluptate tempore
-						excepturi architecto ipsa ducimus unde in natus sit libero, cumque
-						fugiat praesentium ab ratione pariatur aut?
+					The One Tree for One Child initiative is a vital program under the Global Community Organization (GCO), focusing on environmental sustainability and social inclusion. It brings together afforestation efforts with community development by providing trees to families with newborn children. This initiative aims to create a lasting impact on the environment while also addressing the needs of vulnerable populations. 
 					</p>
 					<ShinyButton>
 						<div className="flex gap-2">

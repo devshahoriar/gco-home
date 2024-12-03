@@ -61,7 +61,7 @@ const DesktopNav = () => {
                     title="Tyagi enterprise"
                   />
                   <LinkItem
-                    path="/about/strength#globalNation"
+                    path="/about/strength/globalNation"
                     title="global nation"
                   />
                   <LinkItem
@@ -287,7 +287,9 @@ const NavItem = ({
         {children && <ChevronDown className="size-4" />}
       </Link>
       {children && (
-        <div className="absolute top-[80%]  bg-opacity-80 w-screen left-0 desktopLinkContent opacity-0 z-40 pointer-events-none transition-opacity duration-300 ease-in-out">
+        <div
+          className="absolute top-[80%]  bg-opacity-80 w-screen left-0 desktopLinkContent opacity-0 z-40 pointer-events-none transition-opacity duration-300 ease-in-out"
+        >
           <div className="bg-black bg-opacity-80 mt-[12px] h-[300px] overflow-x-auto">
             <div className="container px-10 py-8 ">{children}</div>
           </div>

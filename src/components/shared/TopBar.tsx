@@ -39,7 +39,7 @@ const TopBar = () => {
           </div>
           <p className="">+8801760870070</p>
           <Link href="/contact-us">Contact Us</Link>
-          <Link href="#">Newsletter</Link>
+          <Link href="/newsletter">Newsletter</Link>
         </div>
         <div className="flex gap-3 items-center text-white uppercase text-sm">
           <Link

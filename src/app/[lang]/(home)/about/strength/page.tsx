@@ -15,6 +15,8 @@ const StengthPage = async () => {
   const tyagiEnterprise = await res4.text()
   const res5 = await fetch(APP_URL + '/md/stength/treelanching.md')
   const treelanching = await res5.text()
+  const res6 = await fetch(APP_URL + '/md/stength/gcoNursery.md')
+  const gcoNursery = await res6.text()
 
   return (
     <section className="container">
@@ -24,6 +26,7 @@ const StengthPage = async () => {
         tyagiResearchCenter={tyagiResearchCenter}
         tyagiEnterprise={tyagiEnterprise}
         treelanching={treelanching}
+        gcoNursery={gcoNursery}
       />
     </section>
   )

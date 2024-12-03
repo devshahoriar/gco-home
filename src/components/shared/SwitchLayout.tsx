@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
-import { ReactElement, ReactNode } from 'react'
+import { ReactElement, ReactNode, useRef } from 'react'
 
 export const SweetchLayoutSidebar = ({
   children,
@@ -9,10 +9,27 @@ export const SweetchLayoutSidebar = ({
   children: ReactElement[] | ReactElement
   className?: string
 }) => {
+  const prentRef = useRef<HTMLDivElement>(null)
+  const scrollLeft = () => {
+    prentRef.current?.scrollTo({
+      left: prentRef?.current?.scrollLeft + 200,
+      behavior: 'smooth',
+    })
+  }
+  const scrollRight = () => {
+    prentRef.current?.scrollTo({
+      left: prentRef?.current?.scrollLeft - 200,
+      behavior: 'smooth',
+    })
+  }
   return (
     <div className="flex justify-center items-center  md:items-start md:h-full">
-      <ArrowLeft className="size-7 text-green-600 block md:hidden" />
+      <ArrowLeft
+        onClick={scrollLeft}
+        className="size-5 text-green-600 block md:hidden"
+      />
       <div
+        ref={prentRef}
         className={cn(
           'flex gap-4 max-w-[80%] overflow-auto scrollbar-none md:flex-col md:w-[300px] border-r dark:border-r-zinc-700',
           className
@@ -20,7 +37,7 @@ export const SweetchLayoutSidebar = ({
       >
         {children}
       </div>
-      <ArrowRight className="size-7 text-green-600 block md:hidden" />
+      <ArrowRight onClick={scrollRight} className="size-5 text-green-600 block md:hidden" />
     </div>
   )
 }
@@ -35,7 +52,7 @@ export const SweetchLayoutContent = ({
   return (
     <div
       className={cn(
-        'border border-zinc-100 dark:border-zinc-700 shadow-md rounded md:flex-1',
+        'border border-zinc-100 dark:border-zinc-700 shadow-md rounded md:flex-1 mt-10 md:mt-0',
         className
       )}
     >

@@ -54,14 +54,14 @@ const MiniWOrdlMap = () => {
                 className="md:size-24"
               />
               <p className="text-center font-thin text-sm md:mt-3 md:w-[60%]">
-                Lorem ipsum
+                {/* Lorem ipsum */}
               </p>
             </div>
           </div>
-          <p className="text-center w-[80%] text-sm mt-5 md:text-start md:text-base font-bold">
+          {/* <p className="text-center w-[80%] text-sm mt-5 md:text-start md:text-base font-bold">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia,
             minima!
-          </p>
+          </p> */}
         </div>
         <div className="flex justify-center md:items-center md:w-[60%]">
           <div className="mt-10 md:mt-0 w-[90%] md:w-full h-[400px]">

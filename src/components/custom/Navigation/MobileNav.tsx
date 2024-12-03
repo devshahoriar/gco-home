@@ -5,11 +5,16 @@ import Logo from '@/components/shared/Logo'
 import { cn } from '@/lib/utils'
 import { ChevronDown, Menu, Search, ShoppingBag, X } from 'lucide-react'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 
 const MobileNav = () => {
   const [mobileNav, setMobileNav] = useState(false)
+  const path = usePathname()
+  useEffect(() => {
+    setMobileNav(false)
+  }, [path])
   return (
     <nav className="md:hidden container flex justify-between items-center text-white h-10 relative">
       <div className="flex fixed top-0 left-0 justify-between items-center text-white h-10 w-full px-[5px] bg-bgMain !z-50">
@@ -62,29 +67,74 @@ const MobileNav = () => {
               </div>
               <div className="flex mt-3 w-full flex-col gap-5 text-stone-300">
                 <MobileNavItem title="Home" path="/" />
-                <MobileNavItem title="About Us">
+                <MobileNavItem path="#" title="About Us">
                   <Child path="/about" title="Our Organization">
-                    <LinkItem
-                      path="/about/our-missionvision"
-                      title="Our Vision"
-                    />
-                    <LinkItem path="/about/history-of-gco" title="History" />
-
-                    <LinkItem path="/about/team" title="Our Team" />
+                    <LinkItem path="/about#about" title="About GCO" />
+                    <LinkItem path="/about#mission" title="Mission vision" />
+                    <LinkItem path="/about#histry" title="History of GCO" />
                   </Child>
-
-                  <ImageBox
-                    linkTitle="Plant Trees"
-                    title="Plant trees for impact and help restore ecosystems around the world! "
-                    src="https://onetreeplanted.org/cdn/shop/files/plant-trees-for-impact-main-img_5000x.jpg?v=1709925481"
-                  />
+                  <Child path="/about/team" title="Our Team">
+                    <LinkItem
+                      path="/about/team#BOARD OF DIRECTOR"
+                      title="Board Of Director"
+                    />
+                    <LinkItem
+                      path="/about/team#EXECUTIVE MEMBER"
+                      title="Executive Member"
+                    />
+                    <LinkItem
+                      path="/about/team#ADVISER COUNCIL"
+                      title="Adviser Council"
+                    />
+                    <LinkItem path="/about/team#GCO STAFF" title="Gco Staff" />
+                    <LinkItem
+                      path="/about/team#TYAGI EXECUTIVE"
+                      title="Tyagi Executive"
+                    />
+                  </Child>
+                  <Child path="/about/strength" title="our strength">
+                    <LinkItem
+                      path="/about/strength#tyagiVolunteer"
+                      title="Tyagi volunteer"
+                    />
+                    <LinkItem
+                      path="/about/strength#tyagiFoundation"
+                      title="Tyagi foundation"
+                    />
+                    <LinkItem
+                      path="/about/strength#tyagiResearchCenter"
+                      title="Tyagi research center"
+                    />
+                    <LinkItem
+                      path="/about/strength#tyagiEnterprise"
+                      title="Tyagi enterprise"
+                    />
+                    <LinkItem
+                      path="/about/strength/globalNation"
+                      title="global nation"
+                    />
+                    <LinkItem
+                      path="/about/strength#gcoNursery"
+                      title="GCO Nursery"
+                    />
+                    <LinkItem
+                      path="/about/strength#treelanching"
+                      title="treelanching"
+                    />
+                  </Child>
+                  <Child path="#" title="Our Impact">
+                    <LinkItem
+                      path="/api/report2023"
+                      title="annual report 2023"
+                    />
+                  </Child>
                 </MobileNavItem>
                 <MobileNavItem title="GCO Wing">
                   <Child path="/about" title="Our Organization">
                     <LinkItem path="/about/videos" title="Vidios" />
                     <LinkItem path="/about/photo-gallery" title="Gallary" />
                   </Child>
-                 
+
                   <ImageBox
                     linkTitle="Visit our Newsroom"
                     title="Stay up to date on major announcements, exciting collaborations, and more."
@@ -122,14 +172,13 @@ const MobileNav = () => {
                 </MobileNavItem>
                 <MobileNavItem title="What we do">
                   <Child path="#" title="">
-                  <LinkItem path="#" title="Global Nation" />
+                    <LinkItem path="#" title="Global Nation" />
                     <LinkItem path="#" title="OT4OC" />
                     <LinkItem path="#" title="TYAGI" />
                     <LinkItem path="#" title="ABALAMBAN" />
                     <LinkItem path="#" title="Tree lanching" />
                     <LinkItem path="#" title="skill development Program" />
                   </Child>
-           
 
                   <ImageBox
                     linkTitle="Learn More"
@@ -191,6 +240,11 @@ const MobileNavItem = ({ children, title = 'link 1', path = '#' }: any) => {
         <Link
           className="font-normal w-[80%] hover:opacity-65 text-lg uppercase"
           href={path}
+          onClick={() => {
+            if (path === '#') {
+              setOpen((r) => !r)
+            }
+          }}
         >
           {title}
         </Link>

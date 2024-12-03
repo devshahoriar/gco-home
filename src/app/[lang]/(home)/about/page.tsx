@@ -1,11 +1,11 @@
-const appUrl = APP_URL
-import { APP_URL } from '@/lib/utils'
+
 import AboutClient from './AboutClient'
 export const dynamic = 'force-static'
+const APP_URL = process.env.NEXT_PUBLIC_URL
 const AboutPage = async () => {
-  const res = await fetch(appUrl + '/md/about/gco.md')
+  const res = await fetch(APP_URL + '/md/about/gco.md')
   const about = await res.text()
-  const res2 = await fetch(appUrl + '/md/about/histry.md')
+  const res2 = await fetch(APP_URL + '/md/about/histry.md')
   const histry = await res2.text()
 
   return (

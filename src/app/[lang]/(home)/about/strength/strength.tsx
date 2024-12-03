@@ -25,10 +25,10 @@ const Items = [
     title: 'Tyagi enterprise',
     id: 'tyagiEnterprise',
   },
-  {
-    title: 'Global nation',
-    id: 'globalNation',
-  },
+  // {
+  //   title: 'Global nation',
+  //   id: 'globalNation',
+  // },
   {
     title: 'GCO Nursery',
     id: 'gcoNursery',
@@ -45,6 +45,7 @@ const Strength = ({
   tyagiResearchCenter,
   tyagiEnterprise,
   treelanching,
+  gcoNursery
 }: any) => {
   const [active, setActive] = useState('tyagiVolunteer')
   useEffect(() => {
@@ -99,6 +100,11 @@ const Strength = ({
         {active === 'treelanching' && (
           <div className="prose dark:prose-invert !max-w-full px-5 text-justify">
             <ReactMarkdown className="w-full">{treelanching}</ReactMarkdown>
+          </div>
+        )}
+        {active === 'gcoNursery' && (
+          <div className="prose dark:prose-invert !max-w-full px-5 text-justify">
+            <ReactMarkdown className="w-full">{gcoNursery}</ReactMarkdown>
           </div>
         )}
       </SweetchLayoutContent>
