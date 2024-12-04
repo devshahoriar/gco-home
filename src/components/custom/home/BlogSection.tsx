@@ -4,10 +4,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import SiteButton from '@/components/ui/SiteButton'
 
 import Image from 'next/image'
-// const GridPattern = dynamic(
-//   () => import('@/components/ui/aimate/animated-grid-pattern'),
-//   { ssr: false }
-// )
+import { useRouter } from 'next/navigation'
 
 const ListBlog = [
   {
@@ -46,20 +43,14 @@ It is an incredible and impossible achievement. It is with great pleasure that w
 ]
 
 const BlogSection = () => {
+  const { push,prefetch } = useRouter()
   return (
     <section className="w-full relative overflow-hidden border-b border-zinc-600 border-t">
-      {/* <GridPattern
-        numSquares={100}
-        maxOpacity={0.5}
-        duration={2}
-        repeatDelay={1}
-        className="opacity-50"
-      /> */}
-      <div className="container px-10 pt-12 pb-20">
+      <div className="container px-10 pt-12">
         <div className="mt-10">
-          <h1
-            className="!text-2xl font-semibold md:!text-3xl !pt-10 !text-start"
-          >News and Blogs</h1>
+          <h1 className="!text-2xl font-semibold md:!text-3xl !pt-10 !text-start">
+            News and Blogs
+          </h1>
         </div>
         <div className="mt-10 md:flex md:gap-5">
           <BigNews
@@ -84,8 +75,10 @@ It can make medicinal preparations from its health and nutritional point of view
           </ScrollArea>
         </div>
       </div>
-      <div className="flex justify-center pb-5">
-        <SiteButton className=" px-6">View all</SiteButton>
+      <div className="flex justify-center pb-5 mt-5">
+        <SiteButton onClick={() => push('/blog')} className="px-6">
+          View all
+        </SiteButton>
       </div>
     </section>
   )

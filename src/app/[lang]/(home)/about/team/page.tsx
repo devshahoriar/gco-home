@@ -1,4 +1,4 @@
-'use client'
+
 import {
   SweetchLayoutContent,
   SweetchLayoutSidebar,
@@ -242,7 +242,11 @@ const TeamPage = () => {
   const [active, setActive] = useState(Keys[0])
   useEffect(() => {
     window.scrollTo(0, 0)
-    const x = decodeURI(window.location.hash?.split('#')[1] ? window.location.hash?.split('#')[1] : Keys[0])
+    const x = decodeURI(
+      window.location.hash?.split('#')[1]
+        ? window.location.hash?.split('#')[1]
+        : Keys[0]
+    )
     setActive(x)
   }, [])
   return (
@@ -256,7 +260,7 @@ const TeamPage = () => {
             {Keys.map((key) => (
               <Switch
                 key={key}
-                className='text-start capitalize'
+                className="text-start capitalize"
                 active={active === key}
                 onClick={() => {
                   window.location.hash = key
@@ -268,7 +272,11 @@ const TeamPage = () => {
             ))}
           </SweetchLayoutSidebar>
           <SweetchLayoutContent className="p-0">
-            <div className="flex flex-wrap">
+            <div
+              className="flex flex-wrap"
+    
+              
+            >
               {data[active]?.map((item: any, index: number) => (
                 <ItemCard key={index} item={item} />
               ))}
@@ -282,15 +290,23 @@ const TeamPage = () => {
 
 const ItemCard = ({ item }: any) => {
   return (
-    <div className="aspect-square md:w-[33.3333%] sm:w-[50%] w-full rounded-sm p-4 group/item">
-      <div className="flex justify-center items-center flex-col h-full bg-opacity-90 rounded-lg  bg-primary ">
-        <Image
-          alt={item.name}
-          src={item.image}
-          height={200}
-          width={200}
-          className="rounded-full size-[50%] group-hover/item:scale-110 transition-transform duration-2500 ease-in-out"
-        />
+    <div
+      className="aspect-square md:w-[33.3333%] sm:w-[50%] w-full rounded-sm p-4 group/item"
+
+    >
+      <div className="flex justify-center items-center flex-col h-full bg-opacity-90 rounded-lg bg-primary">
+        <div
+
+          className="w-full flex justify-center items-center"
+        >
+          <Image
+            alt={item.name}
+            src={item.image}
+            height={200}
+            width={200}
+            className="rounded-full w-1/2"
+          />
+        </div>
         <a
           href="#"
           className="font-bold text-xl mt-2 text-white text-center hover:text-black transition-colors uppercase "
