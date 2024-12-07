@@ -26,8 +26,9 @@ const PhotoGallary = () => {
         <div className="flex flex-wrap my-5 gap-3 sm:gap-4 mx-2 items-center justify-center max-w-[900px]">
           {allListImage.map((url, index) => (
             <Image
-              loading={index > 20 ? 'eager' : 'lazy'}
+              loading={'lazy'}
               key={index}
+              priority={false}
               src={url}
               alt="image"
               className="aspect-square size-[80px] sm:size-[130px] md:size-[200px] rounded-full object-cover"

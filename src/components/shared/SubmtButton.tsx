@@ -1,7 +1,6 @@
 'use client'
 import { cn } from '@/lib/utils'
 import { Loader } from 'lucide-react'
-import { useFormStatus } from 'react-dom'
 import { Button } from '../ui/button'
 
 const SubmtButton = ({
@@ -11,7 +10,8 @@ const SubmtButton = ({
   className?: string
   title?: string
 }) => {
-  const { pending } = useFormStatus()
+  // const { pending } = useFormStatus()
+  const pending = false
   return (
     <Button className={cn('w-20', className)} type="submit" disabled={pending}>
       {pending ? <Loader className="animate-spin size-5" /> : title}
