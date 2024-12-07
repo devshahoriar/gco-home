@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import '../styles/globals.css'
+import NextTopLoader from 'nextjs-toploader';
 
 import { APP_URL, cn } from '@/lib/utils'
 
@@ -32,7 +33,11 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+        <div vaul-drawer-wrapper="" className="bg-background">
+         <NextTopLoader zIndex={1000} color='#5CB02F' showSpinner={false} />
+       
         {children}
+        </div>
       </body>
     </html>
   )

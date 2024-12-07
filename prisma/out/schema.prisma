@@ -100,7 +100,7 @@ model BlogCategory {
 model BlogPost {
   id           Int          @id @default(autoincrement())
   title        String
-  content      String
+  content      String       @db.LongText
   coverImageID Int
   coverImage   File         @relation(fields: [coverImageID], references: [id])
   views        Int          @default(0)

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const ItemBlogPage = () => {
+const ItemBlogPage = async () => {
   return (
     <article className="min-h-screen">
       {/* Hero Section */}
@@ -61,27 +61,6 @@ const ItemBlogPage = () => {
             ))}
           </div>
 
-          {/* Author Bio */}
-          <div className="mt-5 p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-            <div className="flex items-center gap-4">
-              <Image
-                src="https://picsum.photos/100/100"
-                alt="Author"
-                width={64}
-                height={64}
-                className="rounded-full"
-              />
-              <div>
-                <h3 className="font-semibold text-lg dark:text-white">
-                  John Doe
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Senior Web Developer with 5 years of experience.
-                </p>
-              </div>
-            </div>
-          </div>
-
           {/* Related Posts */}
           <div className="mt-16">
             <h2 className="text-2xl font-bold mb-6 dark:text-white">
@@ -90,7 +69,7 @@ const ItemBlogPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[1, 2].map((post) => (
                 <Link key={post} href={`/blog/${post}`} className="group block">
-                  <div className="relative h-48 mb-4 overflow-hidden rounded-lg">
+                  <div className="relative h-48 mb-4 overflow-hidden rounded-[2px]">
                     <Image
                       src={`https://picsum.photos/600/400?random=${post}`}
                       alt="Related post"

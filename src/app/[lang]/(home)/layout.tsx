@@ -21,10 +21,11 @@ const SubLayout = async ({
       disableTransitionOnChange
     >
       <I18nProviderClient locale={lang}>
-        
-        <TopBar />
-        <Nav />
-        <main>{children}</main>
+        <div className='fixed !w-full z-50'>
+          <TopBar />
+          <Nav />
+        </div>
+        <main className='pt-[99px]'>{children}</main>
         <Footer />
       </I18nProviderClient>
     </ThemeProviderClient>

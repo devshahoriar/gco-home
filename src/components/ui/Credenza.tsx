@@ -45,6 +45,14 @@ const Credenza = ({ children, ...props }: RootCredenzaProps) => {
   const isDesktop = useMediaQuery(desktop)
   const Credenza = isDesktop ? Dialog : Drawer
 
+  React.useEffect(() => {
+    if (props.open) {
+      document.body.style.overflowY = "hidden"
+    } else {
+      document.body.style.overflowY = "auto"
+    }
+  }, [props.open])
+
   return <Credenza {...props}>{children}</Credenza>
 }
 

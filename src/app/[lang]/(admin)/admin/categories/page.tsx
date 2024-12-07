@@ -15,6 +15,7 @@ import Link from "next/link"
 
 const BlogCategorysPage = async () => {
   const allCategory = await allCetrgory()
+
   return (
     <AdminPageLayout title="Category">
       <div className="flex justify-between mt-5">
