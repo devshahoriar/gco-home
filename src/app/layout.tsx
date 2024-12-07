@@ -13,7 +13,7 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    APP_URL
+    APP_URL as string
   ),
   title: 'Global Community Organization',
   description:
