@@ -1,19 +1,32 @@
 'use client'
 
 import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu'
+import { signOut, useSession } from '@/lib/auth-client'
+import {
   Facebook,
-  Instagram,
-  Linkedin,
   Mail,
   ShoppingBag,
   Twitter,
   User,
-  X,
   Youtube,
 } from 'lucide-react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const TopBar = () => {
+  const { data } = useSession()
+  const user = data?.user
+  const {refresh} = useRouter()
+  const hendelLogout = async () => {
+    await signOut()
+    refresh()
+  }
   return (
     <section className="bg-main2 hidden md:block">
       <div className="container flex justify-between h-10 items-center">
@@ -22,12 +35,12 @@ const TopBar = () => {
             <a href="mailto:hello@globalcommunityorganization.org">
               <Mail />
             </a>
-         
+
             <a href="https://www.facebook.com/GlobalCommunityOrganization">
               <Facebook />
             </a>
             <a href="https://x.com/Global_Com_Org">
-            <Twitter />
+              <Twitter />
             </a>
 
             <a href="https://youtube.com/@globalcommunityorganization?si=4emJ0AAcpVYRhpkZ">
@@ -48,13 +61,34 @@ const TopBar = () => {
           >
             Donate
           </Link>
-          <Link
-            className=" h-10 px-1 flex items-center gap-2 hover:text-black"
-            href="#"
-          >
-            <User className="size-4" />
-            Login
-          </Link>
+          <>
+            {user ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <h1 className="font-bold cursor-pointer">{user.name}</h1>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-32 dark:bg-bgMain">
+                  <DropdownMenuItem>Account</DropdownMenuItem>
+                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/admin">Dashboard</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>
+                    <button onClick={hendelLogout}>Logout</button>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link
+                className=" h-10 px-1 flex items-center gap-2 hover:text-black"
+                href="/join"
+              >
+                <User className="size-4" />
+                Login
+              </Link>
+            )}
+          </>
           <button
             className="flex gap-1
            items-center bg-white  text-bgMain hover:bg-bgMain hover:text-white h-10 px-2"

@@ -1,34 +1,20 @@
-'use client'
-import AdminNav from '@/components/custom/admin/shared/Nav'
-import { useState, type ReactElement } from 'react'
-import ThemeProviderClient from "@/components/shared/theme-provider";
-import dynamic from 'next/dynamic'
+import { getSession } from '@/lib/auth-client'
+import { headers } from 'next/headers'
+import { ReactElement } from 'react'
+import { ClientLayout } from './client'
+import NoPermission from './NoPermission'
+import { Role } from '../../../../prisma/out'
 
-const AdminSideBar = dynamic(()=> import('@/components/custom/admin/shared/SideBar'),{ssr: false})
-
-const AdminLayout = ({
-  params: { lang },
-  children,
-}: {
-  params: { lang: string }
-  children: ReactElement
-}) => {
-  const [toggled, setToggled] = useState(false)
-  return (
-    <ThemeProviderClient
-			attribute="class"
-			defaultTheme="system"
-			enableSystem
-			disableTransitionOnChange
-		>
-    <div className="flex">
-      <AdminSideBar toggled={toggled} setToggled={setToggled} />
-      <main className="w-full">
-        <AdminNav toggled={toggled} setToggled={setToggled} />
-        {children}
-      </main>
-    </div>
-    </ThemeProviderClient>
-  )
+const AdminLayout = async ({ children }: { children: ReactElement }) => {
+  const { data } = await getSession({
+    fetchOptions: {
+      headers: await headers(),
+    },
+  })
+  const user: any = data?.user
+  if (!user || user?.type !== Role.ADMIN) {
+    return <NoPermission />
+  }
+  return <ClientLayout>{children}</ClientLayout>
 }
 export default AdminLayout

@@ -11,10 +11,11 @@ import ProgramOverview from '@/components/custom/home/programs-overview'
 
 
 const HomePage = async () => {
+
   return (
     <>
       <div className='md:h-[550px]'>
-      <Carosel />
+      <Carosel  />
       </div>
       <OurJob />
       <OurProgram />

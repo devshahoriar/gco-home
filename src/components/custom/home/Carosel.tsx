@@ -8,7 +8,6 @@ import { useState } from 'react'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 
-
 const Slider = dynamic(() => import('react-slick'), { ssr: false })
 
 const typs = [
@@ -22,17 +21,12 @@ const typs = [
   'calmInUp',
 ]
 
-
-
-
-const SlideItem = ({ src, inview,text }: any) => {
-  
-    
+const SlideItem = ({ src, inview, text }: any) => {
   return (
     <div className="h-[300px] sm:h-[350px] md:h-[500px] xl:h-[550px] overflow-hidden relative">
       {inview && (
         <section className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <h1 className='!text-black text-4xl font-bold md:text-5xl'>{text}</h1>
+          <h1 className="!text-black text-4xl font-bold md:text-5xl">{text}</h1>
         </section>
       )}
       <Image
@@ -65,8 +59,12 @@ function SimpleSlider() {
     <div className="slider-container container !p-0">
       <Slider {...settings} afterChange={(x) => setCurrentPos(x)}>
         {/* <SlideItem src={img1} inview={currentPos === 0} /> */}
-        <SlideItem src={img2} inview={currentPos === 0} text="One Tree for One Child." />
-        <SlideItem src={img3} inview={currentPos === 1} text='' />
+        <SlideItem
+          src={img2}
+          inview={currentPos === 0}
+          text="One Tree for One Child."
+        />
+        <SlideItem src={img3} inview={currentPos === 1} text="" />
       </Slider>
     </div>
   )

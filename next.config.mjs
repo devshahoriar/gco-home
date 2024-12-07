@@ -1,21 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   output: 'standalone',
   images: {
     remotePatterns: [
       { hostname: 'source.unsplash.com' },
       { hostname: 'globalcommunityorganization.org' },
       { hostname: 'ik.imagekit.io' },
-      {hostname: 'picsum.photos'}
+      { hostname: 'picsum.photos' },
     ],
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
-  experimental:{
-    reactCompiler: true
-  }
+  experimental: {
+    reactCompiler: true,
+  },
 }
 
 export default nextConfig

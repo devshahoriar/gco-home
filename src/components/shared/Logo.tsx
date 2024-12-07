@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import logo from '../../../public/logo.png'
+import logo from '@/img/logos/logo.png'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 const Logo = ({ className }: { className?: string }) => {

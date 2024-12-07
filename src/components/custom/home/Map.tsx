@@ -193,10 +193,6 @@ const c = [
 const CustomMap = () => {
   const [popupInfo, setPopupInfo] = useState<any>(null)
 
-  useEffect(() => {
-    console.log(popupInfo)
-  }, [popupInfo])
-
   const pins = useMemo(
     () =>
       trees.map((tree, index) => (
@@ -248,7 +244,12 @@ const CustomMap = () => {
                 className="object-cover aspect-video object-center rounded-[2px]"
                 src={popupInfo?.TreeImage[0]?.imageUrl}
               />
-              <a className="underline focus:no-underline" autoFocus={false} target='_new' href={popupInfo?.TreeImage[0]?.imageUrl}>
+              <a
+                className="underline focus:no-underline"
+                autoFocus={false}
+                target="_new"
+                href={popupInfo?.TreeImage[0]?.imageUrl}
+              >
                 See full size↗
               </a>
             </div>

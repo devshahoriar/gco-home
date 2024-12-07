@@ -43,7 +43,7 @@ It is an incredible and impossible achievement. It is with great pleasure that w
 ]
 
 const BlogSection = () => {
-  const { push,prefetch } = useRouter()
+  const { push } = useRouter()
   return (
     <section className="w-full relative overflow-hidden border-b border-zinc-600 border-t">
       <div className="container px-10 pt-12">

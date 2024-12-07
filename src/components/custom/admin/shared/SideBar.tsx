@@ -2,6 +2,8 @@
 import Logo from '@/components/shared/Logo'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { cn } from '@/lib/utils'
+import '@/styles/adminSideBar.css'
 import {
   ChevronLeft,
   Globe,
@@ -10,15 +12,12 @@ import {
   Moon,
   Notebook,
   NotebookPen,
-  Sun,
-  Warehouse,
+  Sun
 } from 'lucide-react'
-import { useState } from 'react'
-import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar'
-import '@/styles/adminSideBar.css'
-import { usePathname, useRouter } from 'next/navigation'
-import { cn } from '@/lib/utils'
 import { useTheme } from 'next-themes'
+import { usePathname, useRouter } from 'next/navigation'
+import { useState } from 'react'
+import { Sidebar } from 'react-pro-sidebar'
 
 const AdminSideBar = ({ toggled, setToggled }: any) => {
   const path = usePathname()
@@ -57,7 +56,7 @@ const AdminSideBar = ({ toggled, setToggled }: any) => {
 
               <Notebook className="size-5" />
             </SideBarLinkButton>
-            <SideBarLinkButton
+            {/* <SideBarLinkButton
               setToggled={setToggled}
               link="/admin/addblog"
               active={'/admin/addblog' === path}
@@ -65,7 +64,7 @@ const AdminSideBar = ({ toggled, setToggled }: any) => {
               {!collapsed && 'Add Blog'}
 
               <NotebookPen className="size-5" />
-            </SideBarLinkButton>
+            </SideBarLinkButton> */}
             <Button
               variant="outline"
               className="w-full flex justify-center gap-4 items-center bg-red-500 text-white"
@@ -123,7 +122,6 @@ const SideBarLinkButton = ({ children, active, link, setToggled }: any) => {
         navigation.push(link)
         setToggled(false)
       }}
- 
       className={cn(
         'flex items-center w-full gap-3 text',
         !active && 'bg-zinc-600 dark:text-white'
