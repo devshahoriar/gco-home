@@ -13,13 +13,11 @@ export const POST = async (req: NextRequest) => {
       headers: await headers(),
     },
   })) as any
-  if (!user) {
+  if (!user || user.type !== Role.ADMIN) {
     return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
   }
 
-  if (user.type !== Role.ADMIN) {
-    return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
-  }
+
 
   const body = await req.formData()
   const title = body.get('title') as string
@@ -65,10 +63,10 @@ export const POST = async (req: NextRequest) => {
 }
 
 export const GET = async (req: NextRequest) => {
-  const qery = req.nextUrl.searchParams.get('blogId')
+  const qery = req.nextUrl.searchParams.get('blogId') as string
   const blog = await db.blogPost.findUnique({
     where: {
-      id: Number(qery),
+      id: qery,
     },
     select: {
       id: true,
@@ -138,7 +136,7 @@ export const PUT = async (req: NextRequest) => {
     if (coverImage) {
       const oldBlogImage = await db.blogPost.findUnique({
         where: {
-          id: Number(blogId),
+          id: blogId,
         },
         select: {
           coverImage: {
@@ -165,7 +163,7 @@ export const PUT = async (req: NextRequest) => {
     }
 
     await db.blogPost.update({
-      where: { id: Number(blogId) },
+      where: { id: blogId },
       data: {
         title: title,
         content: description,

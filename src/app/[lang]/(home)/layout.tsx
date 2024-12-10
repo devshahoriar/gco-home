@@ -25,7 +25,7 @@ const SubLayout = async ({
           <TopBar />
           <Nav />
         </div>
-        <main className='pt-[99px]'>{children}</main>
+        <main className='md:pt-[97px] pt-[40px]'>{children}</main>
         <Footer />
       </I18nProviderClient>
     </ThemeProviderClient>

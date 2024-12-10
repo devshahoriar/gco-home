@@ -1,10 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import SiteButton from '@/components/ui/SiteButton'
+
 import { TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Tabs } from '@radix-ui/react-tabs'
 import Image from 'next/image'
+import FbTab from './FbTab'
+import XTab from './TwTab'
 
-const Instagram = () => {
+const Instagram = ({fb,x}:any) => {
   return (
     <section>
       <div className="container px-3 py-5">
@@ -23,19 +25,16 @@ const Instagram = () => {
             </div>
             <div className="w-full">
               <TabsContent value="fb">
-                fb
-                <SocialItem key="fb" />
+          
+                <FbTab fb={fb}/>
               </TabsContent>
               <TabsContent value="ins">
-                x
-                <SocialItem key="ins" />
+                <XTab x={x}/>
               </TabsContent>
             </div>
           </Tabs>
         </div>
-        <div className="flex justify-center pb-2 mt-5">
-          <SiteButton className=" px-6">Show More</SiteButton>
-        </div>
+        
       </div>
     </section>
   )

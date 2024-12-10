@@ -1,6 +1,6 @@
+import db from '@/lib/db'
 import { betterAuth } from 'better-auth'
 import { prismaAdapter } from 'better-auth/adapters/prisma'
-import db from '@/lib/db'
 import { APP_URL } from './utils'
 
 export const auth = betterAuth({
@@ -29,5 +29,6 @@ export const auth = betterAuth({
   advanced: {
     cookiePrefix: 'token',
   },
-  baseURL: APP_URL
+  baseURL: APP_URL,
+  trustedOrigins: [APP_URL as string,"http://localhost:3000"],
 })

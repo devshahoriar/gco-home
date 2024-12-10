@@ -191,6 +191,20 @@ exports.Prisma.BlogPostScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.FbEmbadeScalarFieldEnum = {
+  id: 'id',
+  piyority: 'piyority',
+  embedCode: 'embedCode',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.TwEmbadeScalarFieldEnum = {
+  id: 'id',
+  piyority: 'piyority',
+  embedCode: 'embedCode',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -244,8 +258,17 @@ exports.Prisma.BlogCategoryOrderByRelevanceFieldEnum = {
 };
 
 exports.Prisma.BlogPostOrderByRelevanceFieldEnum = {
+  id: 'id',
   title: 'title',
   content: 'content'
+};
+
+exports.Prisma.FbEmbadeOrderByRelevanceFieldEnum = {
+  embedCode: 'embedCode'
+};
+
+exports.Prisma.TwEmbadeOrderByRelevanceFieldEnum = {
+  embedCode: 'embedCode'
 };
 exports.Role = exports.$Enums.Role = {
   USER: 'USER',
@@ -264,7 +287,9 @@ exports.Prisma.ModelName = {
   Verification: 'Verification',
   File: 'File',
   BlogCategory: 'BlogCategory',
-  BlogPost: 'BlogPost'
+  BlogPost: 'BlogPost',
+  FbEmbade: 'FbEmbade',
+  TwEmbade: 'TwEmbade'
 };
 
 /**

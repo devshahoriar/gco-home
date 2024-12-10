@@ -1,3 +1,4 @@
+import db from '@/lib/db'
 import Image from 'next/image'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
@@ -15,8 +16,12 @@ const allCat = async () =>
     },
   })
 
-const blogsDb = async () =>
+const blogsDb = async (catId: string) =>
   await db?.blogPost.findMany({
+    orderBy: {
+      createdAt: 'desc',
+    },
+    where: catId ? { categoryId: Number(catId) } : {},
     select: {
       title: true,
       content: true,
@@ -35,9 +40,11 @@ const blogsDb = async () =>
     },
   })
 
-const BlogPage = async () => {
+const BlogPage = async ({ searchParams }: any) => {
+  const { catId } = await searchParams
+ 
   const categories = await allCat()
-  const blogs = await blogsDb()
+  const blogs = await blogsDb(catId)
   return (
     <>
       <header className="text-center bg-green-500 py-2">
@@ -51,7 +58,7 @@ const BlogPage = async () => {
             categories.map((category) => (
               <Link
                 key={category.name}
-                href={`/blog?id=${category.id}`}
+                href={`/blog?catId=${category.id}`}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               >
                 <span className="text-sm text-gray-700 dark:text-gray-300">
@@ -62,6 +69,12 @@ const BlogPage = async () => {
                 </span>
               </Link>
             ))}
+          <Link
+            href={`/blog`}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+          >
+            All
+          </Link>
         </div>
       </div>
 
@@ -69,16 +82,21 @@ const BlogPage = async () => {
         <div className="lg:grid lg:grid-cols-4 lg:gap-8">
           {/* Sidebar */}
           <aside className="hidden lg:block lg:col-span-1">
-            <div className="sticky top-4 bg-white dark:bg-bgMain rounded-[2px] shadow-md p-6">
-              <h2 className="text-xl font-semibold mb-4 dark:text-white">
-                Categories
-              </h2>
-              <ul className="space-y-2">
+            <div className="sticky top-28 bg-white dark:bg-bgMain rounded-[2px] shadow-md p-6">
+              <div className="flex justify-between items-center ">
+                <h2 className="text-xl font-semibold dark:text-white">
+                  Categories
+                </h2>
+                <Link className="text-sm hover:text-primary" href="/blog">
+                  All
+                </Link>
+              </div>
+              <ul className="space-y-2 mt-3">
                 {categories &&
                   categories.map((category) => (
                     <li key={category.name}>
                       <Link
-                        href={`/blog?id=${category.id}`}
+                        href={`/blog?catId=${category.id}`}
                         className="flex items-center justify-between py-2 px-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                       >
                         <span className="text-gray-700 dark:text-gray-300">
@@ -102,7 +120,7 @@ const BlogPage = async () => {
                   <article
                     key={post.id}
                     className="bg-white dark:bg-bgMain rounded-[2px] shadow-md overflow-hidden 
-                    hover:shadow-xl dark:hover:shadow-gray-700 transition-all duration-300"
+                    hover:shadow-xl dark:hover:shadow-gray-700 transition-all duration-300 group"
                   >
                     <Link href={`/blog/${post.id}`}>
                       <div className="relative h-48 overflow-hidden">
@@ -122,8 +140,16 @@ const BlogPage = async () => {
                         </h2>
 
                         <ReactMarkdown
-                      
-                          allowedElements={['p','h1','h2','h3','h4','h5','h6','blockquote']}
+                          allowedElements={[
+                            'p',
+                            'h1',
+                            'h2',
+                            'h3',
+                            'h4',
+                            'h5',
+                            'h6',
+                            'blockquote',
+                          ]}
                           className="text-gray-600 dark:text-gray-300 text-sm mb-4 [&>*]:inline"
                         >
                           {post.content.slice(0, 200) + '...'}

@@ -48,6 +48,16 @@ export type BlogCategory = $Result.DefaultSelection<Prisma.$BlogCategoryPayload>
  * 
  */
 export type BlogPost = $Result.DefaultSelection<Prisma.$BlogPostPayload>
+/**
+ * Model FbEmbade
+ * 
+ */
+export type FbEmbade = $Result.DefaultSelection<Prisma.$FbEmbadePayload>
+/**
+ * Model TwEmbade
+ * 
+ */
+export type TwEmbade = $Result.DefaultSelection<Prisma.$TwEmbadePayload>
 
 /**
  * Enums
@@ -270,6 +280,26 @@ export class PrismaClient<
     * ```
     */
   get blogPost(): Prisma.BlogPostDelegate<ExtArgs>;
+
+  /**
+   * `prisma.fbEmbade`: Exposes CRUD operations for the **FbEmbade** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FbEmbades
+    * const fbEmbades = await prisma.fbEmbade.findMany()
+    * ```
+    */
+  get fbEmbade(): Prisma.FbEmbadeDelegate<ExtArgs>;
+
+  /**
+   * `prisma.twEmbade`: Exposes CRUD operations for the **TwEmbade** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more TwEmbades
+    * const twEmbades = await prisma.twEmbade.findMany()
+    * ```
+    */
+  get twEmbade(): Prisma.TwEmbadeDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -716,7 +746,9 @@ export namespace Prisma {
     Verification: 'Verification',
     File: 'File',
     BlogCategory: 'BlogCategory',
-    BlogPost: 'BlogPost'
+    BlogPost: 'BlogPost',
+    FbEmbade: 'FbEmbade',
+    TwEmbade: 'TwEmbade'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -732,7 +764,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "user" | "session" | "account" | "verification" | "file" | "blogCategory" | "blogPost"
+      modelProps: "user" | "session" | "account" | "verification" | "file" | "blogCategory" | "blogPost" | "fbEmbade" | "twEmbade"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1195,6 +1227,138 @@ export namespace Prisma {
           count: {
             args: Prisma.BlogPostCountArgs<ExtArgs>
             result: $Utils.Optional<BlogPostCountAggregateOutputType> | number
+          }
+        }
+      }
+      FbEmbade: {
+        payload: Prisma.$FbEmbadePayload<ExtArgs>
+        fields: Prisma.FbEmbadeFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FbEmbadeFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FbEmbadePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FbEmbadeFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FbEmbadePayload>
+          }
+          findFirst: {
+            args: Prisma.FbEmbadeFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FbEmbadePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FbEmbadeFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FbEmbadePayload>
+          }
+          findMany: {
+            args: Prisma.FbEmbadeFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FbEmbadePayload>[]
+          }
+          create: {
+            args: Prisma.FbEmbadeCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FbEmbadePayload>
+          }
+          createMany: {
+            args: Prisma.FbEmbadeCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.FbEmbadeDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FbEmbadePayload>
+          }
+          update: {
+            args: Prisma.FbEmbadeUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FbEmbadePayload>
+          }
+          deleteMany: {
+            args: Prisma.FbEmbadeDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FbEmbadeUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.FbEmbadeUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FbEmbadePayload>
+          }
+          aggregate: {
+            args: Prisma.FbEmbadeAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFbEmbade>
+          }
+          groupBy: {
+            args: Prisma.FbEmbadeGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FbEmbadeGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FbEmbadeCountArgs<ExtArgs>
+            result: $Utils.Optional<FbEmbadeCountAggregateOutputType> | number
+          }
+        }
+      }
+      TwEmbade: {
+        payload: Prisma.$TwEmbadePayload<ExtArgs>
+        fields: Prisma.TwEmbadeFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TwEmbadeFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TwEmbadePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TwEmbadeFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TwEmbadePayload>
+          }
+          findFirst: {
+            args: Prisma.TwEmbadeFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TwEmbadePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TwEmbadeFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TwEmbadePayload>
+          }
+          findMany: {
+            args: Prisma.TwEmbadeFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TwEmbadePayload>[]
+          }
+          create: {
+            args: Prisma.TwEmbadeCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TwEmbadePayload>
+          }
+          createMany: {
+            args: Prisma.TwEmbadeCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.TwEmbadeDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TwEmbadePayload>
+          }
+          update: {
+            args: Prisma.TwEmbadeUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TwEmbadePayload>
+          }
+          deleteMany: {
+            args: Prisma.TwEmbadeDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TwEmbadeUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.TwEmbadeUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TwEmbadePayload>
+          }
+          aggregate: {
+            args: Prisma.TwEmbadeAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTwEmbade>
+          }
+          groupBy: {
+            args: Prisma.TwEmbadeGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TwEmbadeGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TwEmbadeCountArgs<ExtArgs>
+            result: $Utils.Optional<TwEmbadeCountAggregateOutputType> | number
           }
         }
       }
@@ -7012,21 +7176,19 @@ export namespace Prisma {
   }
 
   export type BlogPostAvgAggregateOutputType = {
-    id: number | null
     coverImageID: number | null
     views: number | null
     categoryId: number | null
   }
 
   export type BlogPostSumAggregateOutputType = {
-    id: number | null
     coverImageID: number | null
     views: number | null
     categoryId: number | null
   }
 
   export type BlogPostMinAggregateOutputType = {
-    id: number | null
+    id: string | null
     title: string | null
     content: string | null
     coverImageID: number | null
@@ -7038,7 +7200,7 @@ export namespace Prisma {
   }
 
   export type BlogPostMaxAggregateOutputType = {
-    id: number | null
+    id: string | null
     title: string | null
     content: string | null
     coverImageID: number | null
@@ -7064,14 +7226,12 @@ export namespace Prisma {
 
 
   export type BlogPostAvgAggregateInputType = {
-    id?: true
     coverImageID?: true
     views?: true
     categoryId?: true
   }
 
   export type BlogPostSumAggregateInputType = {
-    id?: true
     coverImageID?: true
     views?: true
     categoryId?: true
@@ -7201,7 +7361,7 @@ export namespace Prisma {
   }
 
   export type BlogPostGroupByOutputType = {
-    id: number
+    id: string
     title: string
     content: string
     coverImageID: number
@@ -7270,7 +7430,7 @@ export namespace Prisma {
       category: Prisma.$BlogCategoryPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
-      id: number
+      id: string
       title: string
       content: string
       coverImageID: number
@@ -7650,7 +7810,7 @@ export namespace Prisma {
    * Fields of the BlogPost model
    */ 
   interface BlogPostFieldRefs {
-    readonly id: FieldRef<"BlogPost", 'Int'>
+    readonly id: FieldRef<"BlogPost", 'String'>
     readonly title: FieldRef<"BlogPost", 'String'>
     readonly content: FieldRef<"BlogPost", 'String'>
     readonly coverImageID: FieldRef<"BlogPost", 'Int'>
@@ -7973,6 +8133,1724 @@ export namespace Prisma {
 
 
   /**
+   * Model FbEmbade
+   */
+
+  export type AggregateFbEmbade = {
+    _count: FbEmbadeCountAggregateOutputType | null
+    _avg: FbEmbadeAvgAggregateOutputType | null
+    _sum: FbEmbadeSumAggregateOutputType | null
+    _min: FbEmbadeMinAggregateOutputType | null
+    _max: FbEmbadeMaxAggregateOutputType | null
+  }
+
+  export type FbEmbadeAvgAggregateOutputType = {
+    id: number | null
+    piyority: number | null
+  }
+
+  export type FbEmbadeSumAggregateOutputType = {
+    id: number | null
+    piyority: number | null
+  }
+
+  export type FbEmbadeMinAggregateOutputType = {
+    id: number | null
+    piyority: number | null
+    embedCode: string | null
+    createdAt: Date | null
+  }
+
+  export type FbEmbadeMaxAggregateOutputType = {
+    id: number | null
+    piyority: number | null
+    embedCode: string | null
+    createdAt: Date | null
+  }
+
+  export type FbEmbadeCountAggregateOutputType = {
+    id: number
+    piyority: number
+    embedCode: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type FbEmbadeAvgAggregateInputType = {
+    id?: true
+    piyority?: true
+  }
+
+  export type FbEmbadeSumAggregateInputType = {
+    id?: true
+    piyority?: true
+  }
+
+  export type FbEmbadeMinAggregateInputType = {
+    id?: true
+    piyority?: true
+    embedCode?: true
+    createdAt?: true
+  }
+
+  export type FbEmbadeMaxAggregateInputType = {
+    id?: true
+    piyority?: true
+    embedCode?: true
+    createdAt?: true
+  }
+
+  export type FbEmbadeCountAggregateInputType = {
+    id?: true
+    piyority?: true
+    embedCode?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type FbEmbadeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FbEmbade to aggregate.
+     */
+    where?: FbEmbadeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FbEmbades to fetch.
+     */
+    orderBy?: FbEmbadeOrderByWithRelationInput | FbEmbadeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FbEmbadeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FbEmbades from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FbEmbades.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FbEmbades
+    **/
+    _count?: true | FbEmbadeCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: FbEmbadeAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: FbEmbadeSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FbEmbadeMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FbEmbadeMaxAggregateInputType
+  }
+
+  export type GetFbEmbadeAggregateType<T extends FbEmbadeAggregateArgs> = {
+        [P in keyof T & keyof AggregateFbEmbade]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFbEmbade[P]>
+      : GetScalarType<T[P], AggregateFbEmbade[P]>
+  }
+
+
+
+
+  export type FbEmbadeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FbEmbadeWhereInput
+    orderBy?: FbEmbadeOrderByWithAggregationInput | FbEmbadeOrderByWithAggregationInput[]
+    by: FbEmbadeScalarFieldEnum[] | FbEmbadeScalarFieldEnum
+    having?: FbEmbadeScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FbEmbadeCountAggregateInputType | true
+    _avg?: FbEmbadeAvgAggregateInputType
+    _sum?: FbEmbadeSumAggregateInputType
+    _min?: FbEmbadeMinAggregateInputType
+    _max?: FbEmbadeMaxAggregateInputType
+  }
+
+  export type FbEmbadeGroupByOutputType = {
+    id: number
+    piyority: number | null
+    embedCode: string
+    createdAt: Date
+    _count: FbEmbadeCountAggregateOutputType | null
+    _avg: FbEmbadeAvgAggregateOutputType | null
+    _sum: FbEmbadeSumAggregateOutputType | null
+    _min: FbEmbadeMinAggregateOutputType | null
+    _max: FbEmbadeMaxAggregateOutputType | null
+  }
+
+  type GetFbEmbadeGroupByPayload<T extends FbEmbadeGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FbEmbadeGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FbEmbadeGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FbEmbadeGroupByOutputType[P]>
+            : GetScalarType<T[P], FbEmbadeGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FbEmbadeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    piyority?: boolean
+    embedCode?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["fbEmbade"]>
+
+
+  export type FbEmbadeSelectScalar = {
+    id?: boolean
+    piyority?: boolean
+    embedCode?: boolean
+    createdAt?: boolean
+  }
+
+
+  export type $FbEmbadePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FbEmbade"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      piyority: number | null
+      embedCode: string
+      createdAt: Date
+    }, ExtArgs["result"]["fbEmbade"]>
+    composites: {}
+  }
+
+  type FbEmbadeGetPayload<S extends boolean | null | undefined | FbEmbadeDefaultArgs> = $Result.GetResult<Prisma.$FbEmbadePayload, S>
+
+  type FbEmbadeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<FbEmbadeFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: FbEmbadeCountAggregateInputType | true
+    }
+
+  export interface FbEmbadeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FbEmbade'], meta: { name: 'FbEmbade' } }
+    /**
+     * Find zero or one FbEmbade that matches the filter.
+     * @param {FbEmbadeFindUniqueArgs} args - Arguments to find a FbEmbade
+     * @example
+     * // Get one FbEmbade
+     * const fbEmbade = await prisma.fbEmbade.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FbEmbadeFindUniqueArgs>(args: SelectSubset<T, FbEmbadeFindUniqueArgs<ExtArgs>>): Prisma__FbEmbadeClient<$Result.GetResult<Prisma.$FbEmbadePayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one FbEmbade that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {FbEmbadeFindUniqueOrThrowArgs} args - Arguments to find a FbEmbade
+     * @example
+     * // Get one FbEmbade
+     * const fbEmbade = await prisma.fbEmbade.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FbEmbadeFindUniqueOrThrowArgs>(args: SelectSubset<T, FbEmbadeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FbEmbadeClient<$Result.GetResult<Prisma.$FbEmbadePayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first FbEmbade that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FbEmbadeFindFirstArgs} args - Arguments to find a FbEmbade
+     * @example
+     * // Get one FbEmbade
+     * const fbEmbade = await prisma.fbEmbade.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FbEmbadeFindFirstArgs>(args?: SelectSubset<T, FbEmbadeFindFirstArgs<ExtArgs>>): Prisma__FbEmbadeClient<$Result.GetResult<Prisma.$FbEmbadePayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first FbEmbade that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FbEmbadeFindFirstOrThrowArgs} args - Arguments to find a FbEmbade
+     * @example
+     * // Get one FbEmbade
+     * const fbEmbade = await prisma.fbEmbade.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FbEmbadeFindFirstOrThrowArgs>(args?: SelectSubset<T, FbEmbadeFindFirstOrThrowArgs<ExtArgs>>): Prisma__FbEmbadeClient<$Result.GetResult<Prisma.$FbEmbadePayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more FbEmbades that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FbEmbadeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FbEmbades
+     * const fbEmbades = await prisma.fbEmbade.findMany()
+     * 
+     * // Get first 10 FbEmbades
+     * const fbEmbades = await prisma.fbEmbade.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const fbEmbadeWithIdOnly = await prisma.fbEmbade.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends FbEmbadeFindManyArgs>(args?: SelectSubset<T, FbEmbadeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FbEmbadePayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a FbEmbade.
+     * @param {FbEmbadeCreateArgs} args - Arguments to create a FbEmbade.
+     * @example
+     * // Create one FbEmbade
+     * const FbEmbade = await prisma.fbEmbade.create({
+     *   data: {
+     *     // ... data to create a FbEmbade
+     *   }
+     * })
+     * 
+     */
+    create<T extends FbEmbadeCreateArgs>(args: SelectSubset<T, FbEmbadeCreateArgs<ExtArgs>>): Prisma__FbEmbadeClient<$Result.GetResult<Prisma.$FbEmbadePayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many FbEmbades.
+     * @param {FbEmbadeCreateManyArgs} args - Arguments to create many FbEmbades.
+     * @example
+     * // Create many FbEmbades
+     * const fbEmbade = await prisma.fbEmbade.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FbEmbadeCreateManyArgs>(args?: SelectSubset<T, FbEmbadeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a FbEmbade.
+     * @param {FbEmbadeDeleteArgs} args - Arguments to delete one FbEmbade.
+     * @example
+     * // Delete one FbEmbade
+     * const FbEmbade = await prisma.fbEmbade.delete({
+     *   where: {
+     *     // ... filter to delete one FbEmbade
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FbEmbadeDeleteArgs>(args: SelectSubset<T, FbEmbadeDeleteArgs<ExtArgs>>): Prisma__FbEmbadeClient<$Result.GetResult<Prisma.$FbEmbadePayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one FbEmbade.
+     * @param {FbEmbadeUpdateArgs} args - Arguments to update one FbEmbade.
+     * @example
+     * // Update one FbEmbade
+     * const fbEmbade = await prisma.fbEmbade.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FbEmbadeUpdateArgs>(args: SelectSubset<T, FbEmbadeUpdateArgs<ExtArgs>>): Prisma__FbEmbadeClient<$Result.GetResult<Prisma.$FbEmbadePayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more FbEmbades.
+     * @param {FbEmbadeDeleteManyArgs} args - Arguments to filter FbEmbades to delete.
+     * @example
+     * // Delete a few FbEmbades
+     * const { count } = await prisma.fbEmbade.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FbEmbadeDeleteManyArgs>(args?: SelectSubset<T, FbEmbadeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FbEmbades.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FbEmbadeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FbEmbades
+     * const fbEmbade = await prisma.fbEmbade.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FbEmbadeUpdateManyArgs>(args: SelectSubset<T, FbEmbadeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one FbEmbade.
+     * @param {FbEmbadeUpsertArgs} args - Arguments to update or create a FbEmbade.
+     * @example
+     * // Update or create a FbEmbade
+     * const fbEmbade = await prisma.fbEmbade.upsert({
+     *   create: {
+     *     // ... data to create a FbEmbade
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FbEmbade we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FbEmbadeUpsertArgs>(args: SelectSubset<T, FbEmbadeUpsertArgs<ExtArgs>>): Prisma__FbEmbadeClient<$Result.GetResult<Prisma.$FbEmbadePayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of FbEmbades.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FbEmbadeCountArgs} args - Arguments to filter FbEmbades to count.
+     * @example
+     * // Count the number of FbEmbades
+     * const count = await prisma.fbEmbade.count({
+     *   where: {
+     *     // ... the filter for the FbEmbades we want to count
+     *   }
+     * })
+    **/
+    count<T extends FbEmbadeCountArgs>(
+      args?: Subset<T, FbEmbadeCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FbEmbadeCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FbEmbade.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FbEmbadeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FbEmbadeAggregateArgs>(args: Subset<T, FbEmbadeAggregateArgs>): Prisma.PrismaPromise<GetFbEmbadeAggregateType<T>>
+
+    /**
+     * Group by FbEmbade.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FbEmbadeGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FbEmbadeGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FbEmbadeGroupByArgs['orderBy'] }
+        : { orderBy?: FbEmbadeGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FbEmbadeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFbEmbadeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FbEmbade model
+   */
+  readonly fields: FbEmbadeFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FbEmbade.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FbEmbadeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FbEmbade model
+   */ 
+  interface FbEmbadeFieldRefs {
+    readonly id: FieldRef<"FbEmbade", 'Int'>
+    readonly piyority: FieldRef<"FbEmbade", 'Int'>
+    readonly embedCode: FieldRef<"FbEmbade", 'String'>
+    readonly createdAt: FieldRef<"FbEmbade", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FbEmbade findUnique
+   */
+  export type FbEmbadeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FbEmbade
+     */
+    select?: FbEmbadeSelect<ExtArgs> | null
+    /**
+     * Filter, which FbEmbade to fetch.
+     */
+    where: FbEmbadeWhereUniqueInput
+  }
+
+  /**
+   * FbEmbade findUniqueOrThrow
+   */
+  export type FbEmbadeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FbEmbade
+     */
+    select?: FbEmbadeSelect<ExtArgs> | null
+    /**
+     * Filter, which FbEmbade to fetch.
+     */
+    where: FbEmbadeWhereUniqueInput
+  }
+
+  /**
+   * FbEmbade findFirst
+   */
+  export type FbEmbadeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FbEmbade
+     */
+    select?: FbEmbadeSelect<ExtArgs> | null
+    /**
+     * Filter, which FbEmbade to fetch.
+     */
+    where?: FbEmbadeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FbEmbades to fetch.
+     */
+    orderBy?: FbEmbadeOrderByWithRelationInput | FbEmbadeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FbEmbades.
+     */
+    cursor?: FbEmbadeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FbEmbades from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FbEmbades.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FbEmbades.
+     */
+    distinct?: FbEmbadeScalarFieldEnum | FbEmbadeScalarFieldEnum[]
+  }
+
+  /**
+   * FbEmbade findFirstOrThrow
+   */
+  export type FbEmbadeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FbEmbade
+     */
+    select?: FbEmbadeSelect<ExtArgs> | null
+    /**
+     * Filter, which FbEmbade to fetch.
+     */
+    where?: FbEmbadeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FbEmbades to fetch.
+     */
+    orderBy?: FbEmbadeOrderByWithRelationInput | FbEmbadeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FbEmbades.
+     */
+    cursor?: FbEmbadeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FbEmbades from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FbEmbades.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FbEmbades.
+     */
+    distinct?: FbEmbadeScalarFieldEnum | FbEmbadeScalarFieldEnum[]
+  }
+
+  /**
+   * FbEmbade findMany
+   */
+  export type FbEmbadeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FbEmbade
+     */
+    select?: FbEmbadeSelect<ExtArgs> | null
+    /**
+     * Filter, which FbEmbades to fetch.
+     */
+    where?: FbEmbadeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FbEmbades to fetch.
+     */
+    orderBy?: FbEmbadeOrderByWithRelationInput | FbEmbadeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FbEmbades.
+     */
+    cursor?: FbEmbadeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FbEmbades from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FbEmbades.
+     */
+    skip?: number
+    distinct?: FbEmbadeScalarFieldEnum | FbEmbadeScalarFieldEnum[]
+  }
+
+  /**
+   * FbEmbade create
+   */
+  export type FbEmbadeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FbEmbade
+     */
+    select?: FbEmbadeSelect<ExtArgs> | null
+    /**
+     * The data needed to create a FbEmbade.
+     */
+    data: XOR<FbEmbadeCreateInput, FbEmbadeUncheckedCreateInput>
+  }
+
+  /**
+   * FbEmbade createMany
+   */
+  export type FbEmbadeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FbEmbades.
+     */
+    data: FbEmbadeCreateManyInput | FbEmbadeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FbEmbade update
+   */
+  export type FbEmbadeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FbEmbade
+     */
+    select?: FbEmbadeSelect<ExtArgs> | null
+    /**
+     * The data needed to update a FbEmbade.
+     */
+    data: XOR<FbEmbadeUpdateInput, FbEmbadeUncheckedUpdateInput>
+    /**
+     * Choose, which FbEmbade to update.
+     */
+    where: FbEmbadeWhereUniqueInput
+  }
+
+  /**
+   * FbEmbade updateMany
+   */
+  export type FbEmbadeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FbEmbades.
+     */
+    data: XOR<FbEmbadeUpdateManyMutationInput, FbEmbadeUncheckedUpdateManyInput>
+    /**
+     * Filter which FbEmbades to update
+     */
+    where?: FbEmbadeWhereInput
+  }
+
+  /**
+   * FbEmbade upsert
+   */
+  export type FbEmbadeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FbEmbade
+     */
+    select?: FbEmbadeSelect<ExtArgs> | null
+    /**
+     * The filter to search for the FbEmbade to update in case it exists.
+     */
+    where: FbEmbadeWhereUniqueInput
+    /**
+     * In case the FbEmbade found by the `where` argument doesn't exist, create a new FbEmbade with this data.
+     */
+    create: XOR<FbEmbadeCreateInput, FbEmbadeUncheckedCreateInput>
+    /**
+     * In case the FbEmbade was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FbEmbadeUpdateInput, FbEmbadeUncheckedUpdateInput>
+  }
+
+  /**
+   * FbEmbade delete
+   */
+  export type FbEmbadeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FbEmbade
+     */
+    select?: FbEmbadeSelect<ExtArgs> | null
+    /**
+     * Filter which FbEmbade to delete.
+     */
+    where: FbEmbadeWhereUniqueInput
+  }
+
+  /**
+   * FbEmbade deleteMany
+   */
+  export type FbEmbadeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FbEmbades to delete
+     */
+    where?: FbEmbadeWhereInput
+  }
+
+  /**
+   * FbEmbade without action
+   */
+  export type FbEmbadeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FbEmbade
+     */
+    select?: FbEmbadeSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model TwEmbade
+   */
+
+  export type AggregateTwEmbade = {
+    _count: TwEmbadeCountAggregateOutputType | null
+    _avg: TwEmbadeAvgAggregateOutputType | null
+    _sum: TwEmbadeSumAggregateOutputType | null
+    _min: TwEmbadeMinAggregateOutputType | null
+    _max: TwEmbadeMaxAggregateOutputType | null
+  }
+
+  export type TwEmbadeAvgAggregateOutputType = {
+    id: number | null
+    piyority: number | null
+  }
+
+  export type TwEmbadeSumAggregateOutputType = {
+    id: number | null
+    piyority: number | null
+  }
+
+  export type TwEmbadeMinAggregateOutputType = {
+    id: number | null
+    piyority: number | null
+    embedCode: string | null
+    createdAt: Date | null
+  }
+
+  export type TwEmbadeMaxAggregateOutputType = {
+    id: number | null
+    piyority: number | null
+    embedCode: string | null
+    createdAt: Date | null
+  }
+
+  export type TwEmbadeCountAggregateOutputType = {
+    id: number
+    piyority: number
+    embedCode: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type TwEmbadeAvgAggregateInputType = {
+    id?: true
+    piyority?: true
+  }
+
+  export type TwEmbadeSumAggregateInputType = {
+    id?: true
+    piyority?: true
+  }
+
+  export type TwEmbadeMinAggregateInputType = {
+    id?: true
+    piyority?: true
+    embedCode?: true
+    createdAt?: true
+  }
+
+  export type TwEmbadeMaxAggregateInputType = {
+    id?: true
+    piyority?: true
+    embedCode?: true
+    createdAt?: true
+  }
+
+  export type TwEmbadeCountAggregateInputType = {
+    id?: true
+    piyority?: true
+    embedCode?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type TwEmbadeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TwEmbade to aggregate.
+     */
+    where?: TwEmbadeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TwEmbades to fetch.
+     */
+    orderBy?: TwEmbadeOrderByWithRelationInput | TwEmbadeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TwEmbadeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TwEmbades from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TwEmbades.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned TwEmbades
+    **/
+    _count?: true | TwEmbadeCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: TwEmbadeAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: TwEmbadeSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TwEmbadeMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TwEmbadeMaxAggregateInputType
+  }
+
+  export type GetTwEmbadeAggregateType<T extends TwEmbadeAggregateArgs> = {
+        [P in keyof T & keyof AggregateTwEmbade]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTwEmbade[P]>
+      : GetScalarType<T[P], AggregateTwEmbade[P]>
+  }
+
+
+
+
+  export type TwEmbadeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TwEmbadeWhereInput
+    orderBy?: TwEmbadeOrderByWithAggregationInput | TwEmbadeOrderByWithAggregationInput[]
+    by: TwEmbadeScalarFieldEnum[] | TwEmbadeScalarFieldEnum
+    having?: TwEmbadeScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TwEmbadeCountAggregateInputType | true
+    _avg?: TwEmbadeAvgAggregateInputType
+    _sum?: TwEmbadeSumAggregateInputType
+    _min?: TwEmbadeMinAggregateInputType
+    _max?: TwEmbadeMaxAggregateInputType
+  }
+
+  export type TwEmbadeGroupByOutputType = {
+    id: number
+    piyority: number | null
+    embedCode: string
+    createdAt: Date
+    _count: TwEmbadeCountAggregateOutputType | null
+    _avg: TwEmbadeAvgAggregateOutputType | null
+    _sum: TwEmbadeSumAggregateOutputType | null
+    _min: TwEmbadeMinAggregateOutputType | null
+    _max: TwEmbadeMaxAggregateOutputType | null
+  }
+
+  type GetTwEmbadeGroupByPayload<T extends TwEmbadeGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TwEmbadeGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TwEmbadeGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TwEmbadeGroupByOutputType[P]>
+            : GetScalarType<T[P], TwEmbadeGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TwEmbadeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    piyority?: boolean
+    embedCode?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["twEmbade"]>
+
+
+  export type TwEmbadeSelectScalar = {
+    id?: boolean
+    piyority?: boolean
+    embedCode?: boolean
+    createdAt?: boolean
+  }
+
+
+  export type $TwEmbadePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "TwEmbade"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      piyority: number | null
+      embedCode: string
+      createdAt: Date
+    }, ExtArgs["result"]["twEmbade"]>
+    composites: {}
+  }
+
+  type TwEmbadeGetPayload<S extends boolean | null | undefined | TwEmbadeDefaultArgs> = $Result.GetResult<Prisma.$TwEmbadePayload, S>
+
+  type TwEmbadeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<TwEmbadeFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: TwEmbadeCountAggregateInputType | true
+    }
+
+  export interface TwEmbadeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TwEmbade'], meta: { name: 'TwEmbade' } }
+    /**
+     * Find zero or one TwEmbade that matches the filter.
+     * @param {TwEmbadeFindUniqueArgs} args - Arguments to find a TwEmbade
+     * @example
+     * // Get one TwEmbade
+     * const twEmbade = await prisma.twEmbade.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TwEmbadeFindUniqueArgs>(args: SelectSubset<T, TwEmbadeFindUniqueArgs<ExtArgs>>): Prisma__TwEmbadeClient<$Result.GetResult<Prisma.$TwEmbadePayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one TwEmbade that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {TwEmbadeFindUniqueOrThrowArgs} args - Arguments to find a TwEmbade
+     * @example
+     * // Get one TwEmbade
+     * const twEmbade = await prisma.twEmbade.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TwEmbadeFindUniqueOrThrowArgs>(args: SelectSubset<T, TwEmbadeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TwEmbadeClient<$Result.GetResult<Prisma.$TwEmbadePayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first TwEmbade that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TwEmbadeFindFirstArgs} args - Arguments to find a TwEmbade
+     * @example
+     * // Get one TwEmbade
+     * const twEmbade = await prisma.twEmbade.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TwEmbadeFindFirstArgs>(args?: SelectSubset<T, TwEmbadeFindFirstArgs<ExtArgs>>): Prisma__TwEmbadeClient<$Result.GetResult<Prisma.$TwEmbadePayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first TwEmbade that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TwEmbadeFindFirstOrThrowArgs} args - Arguments to find a TwEmbade
+     * @example
+     * // Get one TwEmbade
+     * const twEmbade = await prisma.twEmbade.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TwEmbadeFindFirstOrThrowArgs>(args?: SelectSubset<T, TwEmbadeFindFirstOrThrowArgs<ExtArgs>>): Prisma__TwEmbadeClient<$Result.GetResult<Prisma.$TwEmbadePayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more TwEmbades that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TwEmbadeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all TwEmbades
+     * const twEmbades = await prisma.twEmbade.findMany()
+     * 
+     * // Get first 10 TwEmbades
+     * const twEmbades = await prisma.twEmbade.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const twEmbadeWithIdOnly = await prisma.twEmbade.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends TwEmbadeFindManyArgs>(args?: SelectSubset<T, TwEmbadeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TwEmbadePayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a TwEmbade.
+     * @param {TwEmbadeCreateArgs} args - Arguments to create a TwEmbade.
+     * @example
+     * // Create one TwEmbade
+     * const TwEmbade = await prisma.twEmbade.create({
+     *   data: {
+     *     // ... data to create a TwEmbade
+     *   }
+     * })
+     * 
+     */
+    create<T extends TwEmbadeCreateArgs>(args: SelectSubset<T, TwEmbadeCreateArgs<ExtArgs>>): Prisma__TwEmbadeClient<$Result.GetResult<Prisma.$TwEmbadePayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many TwEmbades.
+     * @param {TwEmbadeCreateManyArgs} args - Arguments to create many TwEmbades.
+     * @example
+     * // Create many TwEmbades
+     * const twEmbade = await prisma.twEmbade.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TwEmbadeCreateManyArgs>(args?: SelectSubset<T, TwEmbadeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a TwEmbade.
+     * @param {TwEmbadeDeleteArgs} args - Arguments to delete one TwEmbade.
+     * @example
+     * // Delete one TwEmbade
+     * const TwEmbade = await prisma.twEmbade.delete({
+     *   where: {
+     *     // ... filter to delete one TwEmbade
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TwEmbadeDeleteArgs>(args: SelectSubset<T, TwEmbadeDeleteArgs<ExtArgs>>): Prisma__TwEmbadeClient<$Result.GetResult<Prisma.$TwEmbadePayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one TwEmbade.
+     * @param {TwEmbadeUpdateArgs} args - Arguments to update one TwEmbade.
+     * @example
+     * // Update one TwEmbade
+     * const twEmbade = await prisma.twEmbade.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TwEmbadeUpdateArgs>(args: SelectSubset<T, TwEmbadeUpdateArgs<ExtArgs>>): Prisma__TwEmbadeClient<$Result.GetResult<Prisma.$TwEmbadePayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more TwEmbades.
+     * @param {TwEmbadeDeleteManyArgs} args - Arguments to filter TwEmbades to delete.
+     * @example
+     * // Delete a few TwEmbades
+     * const { count } = await prisma.twEmbade.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TwEmbadeDeleteManyArgs>(args?: SelectSubset<T, TwEmbadeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TwEmbades.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TwEmbadeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many TwEmbades
+     * const twEmbade = await prisma.twEmbade.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TwEmbadeUpdateManyArgs>(args: SelectSubset<T, TwEmbadeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one TwEmbade.
+     * @param {TwEmbadeUpsertArgs} args - Arguments to update or create a TwEmbade.
+     * @example
+     * // Update or create a TwEmbade
+     * const twEmbade = await prisma.twEmbade.upsert({
+     *   create: {
+     *     // ... data to create a TwEmbade
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the TwEmbade we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TwEmbadeUpsertArgs>(args: SelectSubset<T, TwEmbadeUpsertArgs<ExtArgs>>): Prisma__TwEmbadeClient<$Result.GetResult<Prisma.$TwEmbadePayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of TwEmbades.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TwEmbadeCountArgs} args - Arguments to filter TwEmbades to count.
+     * @example
+     * // Count the number of TwEmbades
+     * const count = await prisma.twEmbade.count({
+     *   where: {
+     *     // ... the filter for the TwEmbades we want to count
+     *   }
+     * })
+    **/
+    count<T extends TwEmbadeCountArgs>(
+      args?: Subset<T, TwEmbadeCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TwEmbadeCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a TwEmbade.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TwEmbadeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TwEmbadeAggregateArgs>(args: Subset<T, TwEmbadeAggregateArgs>): Prisma.PrismaPromise<GetTwEmbadeAggregateType<T>>
+
+    /**
+     * Group by TwEmbade.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TwEmbadeGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TwEmbadeGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TwEmbadeGroupByArgs['orderBy'] }
+        : { orderBy?: TwEmbadeGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TwEmbadeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTwEmbadeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the TwEmbade model
+   */
+  readonly fields: TwEmbadeFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for TwEmbade.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TwEmbadeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the TwEmbade model
+   */ 
+  interface TwEmbadeFieldRefs {
+    readonly id: FieldRef<"TwEmbade", 'Int'>
+    readonly piyority: FieldRef<"TwEmbade", 'Int'>
+    readonly embedCode: FieldRef<"TwEmbade", 'String'>
+    readonly createdAt: FieldRef<"TwEmbade", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * TwEmbade findUnique
+   */
+  export type TwEmbadeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TwEmbade
+     */
+    select?: TwEmbadeSelect<ExtArgs> | null
+    /**
+     * Filter, which TwEmbade to fetch.
+     */
+    where: TwEmbadeWhereUniqueInput
+  }
+
+  /**
+   * TwEmbade findUniqueOrThrow
+   */
+  export type TwEmbadeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TwEmbade
+     */
+    select?: TwEmbadeSelect<ExtArgs> | null
+    /**
+     * Filter, which TwEmbade to fetch.
+     */
+    where: TwEmbadeWhereUniqueInput
+  }
+
+  /**
+   * TwEmbade findFirst
+   */
+  export type TwEmbadeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TwEmbade
+     */
+    select?: TwEmbadeSelect<ExtArgs> | null
+    /**
+     * Filter, which TwEmbade to fetch.
+     */
+    where?: TwEmbadeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TwEmbades to fetch.
+     */
+    orderBy?: TwEmbadeOrderByWithRelationInput | TwEmbadeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TwEmbades.
+     */
+    cursor?: TwEmbadeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TwEmbades from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TwEmbades.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TwEmbades.
+     */
+    distinct?: TwEmbadeScalarFieldEnum | TwEmbadeScalarFieldEnum[]
+  }
+
+  /**
+   * TwEmbade findFirstOrThrow
+   */
+  export type TwEmbadeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TwEmbade
+     */
+    select?: TwEmbadeSelect<ExtArgs> | null
+    /**
+     * Filter, which TwEmbade to fetch.
+     */
+    where?: TwEmbadeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TwEmbades to fetch.
+     */
+    orderBy?: TwEmbadeOrderByWithRelationInput | TwEmbadeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TwEmbades.
+     */
+    cursor?: TwEmbadeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TwEmbades from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TwEmbades.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TwEmbades.
+     */
+    distinct?: TwEmbadeScalarFieldEnum | TwEmbadeScalarFieldEnum[]
+  }
+
+  /**
+   * TwEmbade findMany
+   */
+  export type TwEmbadeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TwEmbade
+     */
+    select?: TwEmbadeSelect<ExtArgs> | null
+    /**
+     * Filter, which TwEmbades to fetch.
+     */
+    where?: TwEmbadeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TwEmbades to fetch.
+     */
+    orderBy?: TwEmbadeOrderByWithRelationInput | TwEmbadeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing TwEmbades.
+     */
+    cursor?: TwEmbadeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TwEmbades from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TwEmbades.
+     */
+    skip?: number
+    distinct?: TwEmbadeScalarFieldEnum | TwEmbadeScalarFieldEnum[]
+  }
+
+  /**
+   * TwEmbade create
+   */
+  export type TwEmbadeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TwEmbade
+     */
+    select?: TwEmbadeSelect<ExtArgs> | null
+    /**
+     * The data needed to create a TwEmbade.
+     */
+    data: XOR<TwEmbadeCreateInput, TwEmbadeUncheckedCreateInput>
+  }
+
+  /**
+   * TwEmbade createMany
+   */
+  export type TwEmbadeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many TwEmbades.
+     */
+    data: TwEmbadeCreateManyInput | TwEmbadeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * TwEmbade update
+   */
+  export type TwEmbadeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TwEmbade
+     */
+    select?: TwEmbadeSelect<ExtArgs> | null
+    /**
+     * The data needed to update a TwEmbade.
+     */
+    data: XOR<TwEmbadeUpdateInput, TwEmbadeUncheckedUpdateInput>
+    /**
+     * Choose, which TwEmbade to update.
+     */
+    where: TwEmbadeWhereUniqueInput
+  }
+
+  /**
+   * TwEmbade updateMany
+   */
+  export type TwEmbadeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update TwEmbades.
+     */
+    data: XOR<TwEmbadeUpdateManyMutationInput, TwEmbadeUncheckedUpdateManyInput>
+    /**
+     * Filter which TwEmbades to update
+     */
+    where?: TwEmbadeWhereInput
+  }
+
+  /**
+   * TwEmbade upsert
+   */
+  export type TwEmbadeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TwEmbade
+     */
+    select?: TwEmbadeSelect<ExtArgs> | null
+    /**
+     * The filter to search for the TwEmbade to update in case it exists.
+     */
+    where: TwEmbadeWhereUniqueInput
+    /**
+     * In case the TwEmbade found by the `where` argument doesn't exist, create a new TwEmbade with this data.
+     */
+    create: XOR<TwEmbadeCreateInput, TwEmbadeUncheckedCreateInput>
+    /**
+     * In case the TwEmbade was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TwEmbadeUpdateInput, TwEmbadeUncheckedUpdateInput>
+  }
+
+  /**
+   * TwEmbade delete
+   */
+  export type TwEmbadeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TwEmbade
+     */
+    select?: TwEmbadeSelect<ExtArgs> | null
+    /**
+     * Filter which TwEmbade to delete.
+     */
+    where: TwEmbadeWhereUniqueInput
+  }
+
+  /**
+   * TwEmbade deleteMany
+   */
+  export type TwEmbadeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TwEmbades to delete
+     */
+    where?: TwEmbadeWhereInput
+  }
+
+  /**
+   * TwEmbade without action
+   */
+  export type TwEmbadeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TwEmbade
+     */
+    select?: TwEmbadeSelect<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -8081,6 +9959,26 @@ export namespace Prisma {
   export type BlogPostScalarFieldEnum = (typeof BlogPostScalarFieldEnum)[keyof typeof BlogPostScalarFieldEnum]
 
 
+  export const FbEmbadeScalarFieldEnum: {
+    id: 'id',
+    piyority: 'piyority',
+    embedCode: 'embedCode',
+    createdAt: 'createdAt'
+  };
+
+  export type FbEmbadeScalarFieldEnum = (typeof FbEmbadeScalarFieldEnum)[keyof typeof FbEmbadeScalarFieldEnum]
+
+
+  export const TwEmbadeScalarFieldEnum: {
+    id: 'id',
+    piyority: 'piyority',
+    embedCode: 'embedCode',
+    createdAt: 'createdAt'
+  };
+
+  export type TwEmbadeScalarFieldEnum = (typeof TwEmbadeScalarFieldEnum)[keyof typeof TwEmbadeScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -8158,11 +10056,26 @@ export namespace Prisma {
 
 
   export const BlogPostOrderByRelevanceFieldEnum: {
+    id: 'id',
     title: 'title',
     content: 'content'
   };
 
   export type BlogPostOrderByRelevanceFieldEnum = (typeof BlogPostOrderByRelevanceFieldEnum)[keyof typeof BlogPostOrderByRelevanceFieldEnum]
+
+
+  export const FbEmbadeOrderByRelevanceFieldEnum: {
+    embedCode: 'embedCode'
+  };
+
+  export type FbEmbadeOrderByRelevanceFieldEnum = (typeof FbEmbadeOrderByRelevanceFieldEnum)[keyof typeof FbEmbadeOrderByRelevanceFieldEnum]
+
+
+  export const TwEmbadeOrderByRelevanceFieldEnum: {
+    embedCode: 'embedCode'
+  };
+
+  export type TwEmbadeOrderByRelevanceFieldEnum = (typeof TwEmbadeOrderByRelevanceFieldEnum)[keyof typeof TwEmbadeOrderByRelevanceFieldEnum]
 
 
   /**
@@ -8636,7 +10549,7 @@ export namespace Prisma {
     AND?: BlogPostWhereInput | BlogPostWhereInput[]
     OR?: BlogPostWhereInput[]
     NOT?: BlogPostWhereInput | BlogPostWhereInput[]
-    id?: IntFilter<"BlogPost"> | number
+    id?: StringFilter<"BlogPost"> | string
     title?: StringFilter<"BlogPost"> | string
     content?: StringFilter<"BlogPost"> | string
     coverImageID?: IntFilter<"BlogPost"> | number
@@ -8665,7 +10578,7 @@ export namespace Prisma {
   }
 
   export type BlogPostWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
+    id?: string
     AND?: BlogPostWhereInput | BlogPostWhereInput[]
     OR?: BlogPostWhereInput[]
     NOT?: BlogPostWhereInput | BlogPostWhereInput[]
@@ -8702,7 +10615,7 @@ export namespace Prisma {
     AND?: BlogPostScalarWhereWithAggregatesInput | BlogPostScalarWhereWithAggregatesInput[]
     OR?: BlogPostScalarWhereWithAggregatesInput[]
     NOT?: BlogPostScalarWhereWithAggregatesInput | BlogPostScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"BlogPost"> | number
+    id?: StringWithAggregatesFilter<"BlogPost"> | string
     title?: StringWithAggregatesFilter<"BlogPost"> | string
     content?: StringWithAggregatesFilter<"BlogPost"> | string
     coverImageID?: IntWithAggregatesFilter<"BlogPost"> | number
@@ -8711,6 +10624,106 @@ export namespace Prisma {
     published?: BoolWithAggregatesFilter<"BlogPost"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"BlogPost"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"BlogPost"> | Date | string
+  }
+
+  export type FbEmbadeWhereInput = {
+    AND?: FbEmbadeWhereInput | FbEmbadeWhereInput[]
+    OR?: FbEmbadeWhereInput[]
+    NOT?: FbEmbadeWhereInput | FbEmbadeWhereInput[]
+    id?: IntFilter<"FbEmbade"> | number
+    piyority?: IntNullableFilter<"FbEmbade"> | number | null
+    embedCode?: StringFilter<"FbEmbade"> | string
+    createdAt?: DateTimeFilter<"FbEmbade"> | Date | string
+  }
+
+  export type FbEmbadeOrderByWithRelationInput = {
+    id?: SortOrder
+    piyority?: SortOrderInput | SortOrder
+    embedCode?: SortOrder
+    createdAt?: SortOrder
+    _relevance?: FbEmbadeOrderByRelevanceInput
+  }
+
+  export type FbEmbadeWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: FbEmbadeWhereInput | FbEmbadeWhereInput[]
+    OR?: FbEmbadeWhereInput[]
+    NOT?: FbEmbadeWhereInput | FbEmbadeWhereInput[]
+    piyority?: IntNullableFilter<"FbEmbade"> | number | null
+    embedCode?: StringFilter<"FbEmbade"> | string
+    createdAt?: DateTimeFilter<"FbEmbade"> | Date | string
+  }, "id">
+
+  export type FbEmbadeOrderByWithAggregationInput = {
+    id?: SortOrder
+    piyority?: SortOrderInput | SortOrder
+    embedCode?: SortOrder
+    createdAt?: SortOrder
+    _count?: FbEmbadeCountOrderByAggregateInput
+    _avg?: FbEmbadeAvgOrderByAggregateInput
+    _max?: FbEmbadeMaxOrderByAggregateInput
+    _min?: FbEmbadeMinOrderByAggregateInput
+    _sum?: FbEmbadeSumOrderByAggregateInput
+  }
+
+  export type FbEmbadeScalarWhereWithAggregatesInput = {
+    AND?: FbEmbadeScalarWhereWithAggregatesInput | FbEmbadeScalarWhereWithAggregatesInput[]
+    OR?: FbEmbadeScalarWhereWithAggregatesInput[]
+    NOT?: FbEmbadeScalarWhereWithAggregatesInput | FbEmbadeScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"FbEmbade"> | number
+    piyority?: IntNullableWithAggregatesFilter<"FbEmbade"> | number | null
+    embedCode?: StringWithAggregatesFilter<"FbEmbade"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"FbEmbade"> | Date | string
+  }
+
+  export type TwEmbadeWhereInput = {
+    AND?: TwEmbadeWhereInput | TwEmbadeWhereInput[]
+    OR?: TwEmbadeWhereInput[]
+    NOT?: TwEmbadeWhereInput | TwEmbadeWhereInput[]
+    id?: IntFilter<"TwEmbade"> | number
+    piyority?: IntNullableFilter<"TwEmbade"> | number | null
+    embedCode?: StringFilter<"TwEmbade"> | string
+    createdAt?: DateTimeFilter<"TwEmbade"> | Date | string
+  }
+
+  export type TwEmbadeOrderByWithRelationInput = {
+    id?: SortOrder
+    piyority?: SortOrderInput | SortOrder
+    embedCode?: SortOrder
+    createdAt?: SortOrder
+    _relevance?: TwEmbadeOrderByRelevanceInput
+  }
+
+  export type TwEmbadeWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: TwEmbadeWhereInput | TwEmbadeWhereInput[]
+    OR?: TwEmbadeWhereInput[]
+    NOT?: TwEmbadeWhereInput | TwEmbadeWhereInput[]
+    piyority?: IntNullableFilter<"TwEmbade"> | number | null
+    embedCode?: StringFilter<"TwEmbade"> | string
+    createdAt?: DateTimeFilter<"TwEmbade"> | Date | string
+  }, "id">
+
+  export type TwEmbadeOrderByWithAggregationInput = {
+    id?: SortOrder
+    piyority?: SortOrderInput | SortOrder
+    embedCode?: SortOrder
+    createdAt?: SortOrder
+    _count?: TwEmbadeCountOrderByAggregateInput
+    _avg?: TwEmbadeAvgOrderByAggregateInput
+    _max?: TwEmbadeMaxOrderByAggregateInput
+    _min?: TwEmbadeMinOrderByAggregateInput
+    _sum?: TwEmbadeSumOrderByAggregateInput
+  }
+
+  export type TwEmbadeScalarWhereWithAggregatesInput = {
+    AND?: TwEmbadeScalarWhereWithAggregatesInput | TwEmbadeScalarWhereWithAggregatesInput[]
+    OR?: TwEmbadeScalarWhereWithAggregatesInput[]
+    NOT?: TwEmbadeScalarWhereWithAggregatesInput | TwEmbadeScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"TwEmbade"> | number
+    piyority?: IntNullableWithAggregatesFilter<"TwEmbade"> | number | null
+    embedCode?: StringWithAggregatesFilter<"TwEmbade"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"TwEmbade"> | Date | string
   }
 
   export type UserCreateInput = {
@@ -9156,6 +11169,7 @@ export namespace Prisma {
   }
 
   export type BlogPostCreateInput = {
+    id?: string
     title: string
     content: string
     views?: number
@@ -9167,7 +11181,7 @@ export namespace Prisma {
   }
 
   export type BlogPostUncheckedCreateInput = {
-    id?: number
+    id?: string
     title: string
     content: string
     coverImageID: number
@@ -9179,6 +11193,7 @@ export namespace Prisma {
   }
 
   export type BlogPostUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
@@ -9190,7 +11205,7 @@ export namespace Prisma {
   }
 
   export type BlogPostUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     coverImageID?: IntFieldUpdateOperationsInput | number
@@ -9202,7 +11217,7 @@ export namespace Prisma {
   }
 
   export type BlogPostCreateManyInput = {
-    id?: number
+    id?: string
     title: string
     content: string
     coverImageID: number
@@ -9214,6 +11229,7 @@ export namespace Prisma {
   }
 
   export type BlogPostUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
@@ -9223,7 +11239,7 @@ export namespace Prisma {
   }
 
   export type BlogPostUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     coverImageID?: IntFieldUpdateOperationsInput | number
@@ -9232,6 +11248,98 @@ export namespace Prisma {
     published?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FbEmbadeCreateInput = {
+    piyority?: number | null
+    embedCode: string
+    createdAt?: Date | string
+  }
+
+  export type FbEmbadeUncheckedCreateInput = {
+    id?: number
+    piyority?: number | null
+    embedCode: string
+    createdAt?: Date | string
+  }
+
+  export type FbEmbadeUpdateInput = {
+    piyority?: NullableIntFieldUpdateOperationsInput | number | null
+    embedCode?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FbEmbadeUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    piyority?: NullableIntFieldUpdateOperationsInput | number | null
+    embedCode?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FbEmbadeCreateManyInput = {
+    id?: number
+    piyority?: number | null
+    embedCode: string
+    createdAt?: Date | string
+  }
+
+  export type FbEmbadeUpdateManyMutationInput = {
+    piyority?: NullableIntFieldUpdateOperationsInput | number | null
+    embedCode?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FbEmbadeUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    piyority?: NullableIntFieldUpdateOperationsInput | number | null
+    embedCode?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TwEmbadeCreateInput = {
+    piyority?: number | null
+    embedCode: string
+    createdAt?: Date | string
+  }
+
+  export type TwEmbadeUncheckedCreateInput = {
+    id?: number
+    piyority?: number | null
+    embedCode: string
+    createdAt?: Date | string
+  }
+
+  export type TwEmbadeUpdateInput = {
+    piyority?: NullableIntFieldUpdateOperationsInput | number | null
+    embedCode?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TwEmbadeUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    piyority?: NullableIntFieldUpdateOperationsInput | number | null
+    embedCode?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TwEmbadeCreateManyInput = {
+    id?: number
+    piyority?: number | null
+    embedCode: string
+    createdAt?: Date | string
+  }
+
+  export type TwEmbadeUpdateManyMutationInput = {
+    piyority?: NullableIntFieldUpdateOperationsInput | number | null
+    embedCode?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TwEmbadeUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    piyority?: NullableIntFieldUpdateOperationsInput | number | null
+    embedCode?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -9731,7 +11839,6 @@ export namespace Prisma {
   }
 
   export type BlogPostAvgOrderByAggregateInput = {
-    id?: SortOrder
     coverImageID?: SortOrder
     views?: SortOrder
     categoryId?: SortOrder
@@ -9762,10 +11869,110 @@ export namespace Prisma {
   }
 
   export type BlogPostSumOrderByAggregateInput = {
-    id?: SortOrder
     coverImageID?: SortOrder
     views?: SortOrder
     categoryId?: SortOrder
+  }
+
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type FbEmbadeOrderByRelevanceInput = {
+    fields: FbEmbadeOrderByRelevanceFieldEnum | FbEmbadeOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type FbEmbadeCountOrderByAggregateInput = {
+    id?: SortOrder
+    piyority?: SortOrder
+    embedCode?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type FbEmbadeAvgOrderByAggregateInput = {
+    id?: SortOrder
+    piyority?: SortOrder
+  }
+
+  export type FbEmbadeMaxOrderByAggregateInput = {
+    id?: SortOrder
+    piyority?: SortOrder
+    embedCode?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type FbEmbadeMinOrderByAggregateInput = {
+    id?: SortOrder
+    piyority?: SortOrder
+    embedCode?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type FbEmbadeSumOrderByAggregateInput = {
+    id?: SortOrder
+    piyority?: SortOrder
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type TwEmbadeOrderByRelevanceInput = {
+    fields: TwEmbadeOrderByRelevanceFieldEnum | TwEmbadeOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type TwEmbadeCountOrderByAggregateInput = {
+    id?: SortOrder
+    piyority?: SortOrder
+    embedCode?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type TwEmbadeAvgOrderByAggregateInput = {
+    id?: SortOrder
+    piyority?: SortOrder
+  }
+
+  export type TwEmbadeMaxOrderByAggregateInput = {
+    id?: SortOrder
+    piyority?: SortOrder
+    embedCode?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type TwEmbadeMinOrderByAggregateInput = {
+    id?: SortOrder
+    piyority?: SortOrder
+    embedCode?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type TwEmbadeSumOrderByAggregateInput = {
+    id?: SortOrder
+    piyority?: SortOrder
   }
 
   export type SessionCreateNestedManyWithoutUserInput = {
@@ -10028,6 +12235,14 @@ export namespace Prisma {
     update?: XOR<XOR<BlogCategoryUpdateToOneWithWhereWithoutBlogPostInput, BlogCategoryUpdateWithoutBlogPostInput>, BlogCategoryUncheckedUpdateWithoutBlogPostInput>
   }
 
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[]
@@ -10238,6 +12453,33 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedEnumFileTypeNullableFilter<$PrismaModel>
     _max?: NestedEnumFileTypeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
   export type SessionCreateWithoutUserInput = {
@@ -10504,6 +12746,7 @@ export namespace Prisma {
   }
 
   export type BlogPostCreateWithoutCoverImageInput = {
+    id?: string
     title: string
     content: string
     views?: number
@@ -10514,7 +12757,7 @@ export namespace Prisma {
   }
 
   export type BlogPostUncheckedCreateWithoutCoverImageInput = {
-    id?: number
+    id?: string
     title: string
     content: string
     views?: number
@@ -10554,7 +12797,7 @@ export namespace Prisma {
     AND?: BlogPostScalarWhereInput | BlogPostScalarWhereInput[]
     OR?: BlogPostScalarWhereInput[]
     NOT?: BlogPostScalarWhereInput | BlogPostScalarWhereInput[]
-    id?: IntFilter<"BlogPost"> | number
+    id?: StringFilter<"BlogPost"> | string
     title?: StringFilter<"BlogPost"> | string
     content?: StringFilter<"BlogPost"> | string
     coverImageID?: IntFilter<"BlogPost"> | number
@@ -10566,6 +12809,7 @@ export namespace Prisma {
   }
 
   export type BlogPostCreateWithoutCategoryInput = {
+    id?: string
     title: string
     content: string
     views?: number
@@ -10576,7 +12820,7 @@ export namespace Prisma {
   }
 
   export type BlogPostUncheckedCreateWithoutCategoryInput = {
-    id?: number
+    id?: string
     title: string
     content: string
     coverImageID: number
@@ -10801,7 +13045,7 @@ export namespace Prisma {
   }
 
   export type BlogPostCreateManyCoverImageInput = {
-    id?: number
+    id?: string
     title: string
     content: string
     views?: number
@@ -10812,6 +13056,7 @@ export namespace Prisma {
   }
 
   export type BlogPostUpdateWithoutCoverImageInput = {
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
@@ -10822,7 +13067,7 @@ export namespace Prisma {
   }
 
   export type BlogPostUncheckedUpdateWithoutCoverImageInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
@@ -10833,7 +13078,7 @@ export namespace Prisma {
   }
 
   export type BlogPostUncheckedUpdateManyWithoutCoverImageInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
@@ -10844,7 +13089,7 @@ export namespace Prisma {
   }
 
   export type BlogPostCreateManyCategoryInput = {
-    id?: number
+    id?: string
     title: string
     content: string
     coverImageID: number
@@ -10855,6 +13100,7 @@ export namespace Prisma {
   }
 
   export type BlogPostUpdateWithoutCategoryInput = {
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
@@ -10865,7 +13111,7 @@ export namespace Prisma {
   }
 
   export type BlogPostUncheckedUpdateWithoutCategoryInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     coverImageID?: IntFieldUpdateOperationsInput | number
@@ -10876,7 +13122,7 @@ export namespace Prisma {
   }
 
   export type BlogPostUncheckedUpdateManyWithoutCategoryInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     coverImageID?: IntFieldUpdateOperationsInput | number

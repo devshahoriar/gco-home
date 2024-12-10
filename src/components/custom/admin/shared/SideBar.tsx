@@ -6,13 +6,16 @@ import { cn } from '@/lib/utils'
 import '@/styles/adminSideBar.css'
 import {
   ChevronLeft,
+  Facebook,
   Globe,
   Home,
   LogOut,
   Moon,
   Notebook,
   NotebookPen,
-  Sun
+  Sun,
+  Twitch,
+  Twitter,
 } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { usePathname, useRouter } from 'next/navigation'
@@ -22,7 +25,7 @@ import { Sidebar } from 'react-pro-sidebar'
 const AdminSideBar = ({ toggled, setToggled }: any) => {
   const path = usePathname()
   const router = useRouter()
-  const { setTheme, themes, theme } = useTheme()
+  const { setTheme, theme } = useTheme()
 
   const [collapsed, setCollapsed] = useState(false)
   return (
@@ -56,15 +59,24 @@ const AdminSideBar = ({ toggled, setToggled }: any) => {
 
               <Notebook className="size-5" />
             </SideBarLinkButton>
-            {/* <SideBarLinkButton
+            <SideBarLinkButton
               setToggled={setToggled}
-              link="/admin/addblog"
-              active={'/admin/addblog' === path}
+              link="/admin/fb"
+              active={'/admin/fb' === path}
             >
-              {!collapsed && 'Add Blog'}
+              {!collapsed && 'Fb Post'}
 
-              <NotebookPen className="size-5" />
-            </SideBarLinkButton> */}
+              <Facebook className="size-5" />
+            </SideBarLinkButton>
+            <SideBarLinkButton
+              setToggled={setToggled}
+              link="/admin/x"
+              active={'/admin/x' === path}
+            >
+              {!collapsed && 'Twitter Post'}
+
+              <Twitter className="size-5" />
+            </SideBarLinkButton>
             <Button
               variant="outline"
               className="w-full flex justify-center gap-4 items-center bg-red-500 text-white"

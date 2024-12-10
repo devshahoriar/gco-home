@@ -4,45 +4,28 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import SiteButton from '@/components/ui/SiteButton'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import ReactMarkdown from 'react-markdown'
 
-const ListBlog = [
-  {
-    title: 'Donate One Tree🌱',
-    img: '/b/b2.png',
-    desc: `🌻 Garden Adventures: Explore the world of gardening with children, teaching them about the growth of plants, flowers, and the importance of pollinators.
-🌊 Ocean Odyssey: Extend their environmental knowledge beyond forests by sharing insights into the importance of oceans and marine life conservation.
-🌸 Nature Scavenger Hunts: Organize fun scavenger hunts in natural settings, fostering curiosity and connection to the environment.
-📚 Eco-Library: Share recommendations for children’s books that promote eco-awareness and environmental stewardship.`,
-  },
-  {
-    title: 'Safe life from the thunderstorms with plants',
-    img: '/b/b3.jpg',
-    desc: 'Many people lost their lives due to lightning. Due to which the Global Community Organization launched a project called Safe. Aminul Islam, Founder President, Global Community Organization at the inauguration. He started a safe zone by planting palm trees in the vacant plot.\n Persawta Binodpur, Bagha, Rajshahi.',
-  },
-  {
-    title: 'The “Shadow” Project !',
-    img: '/b/b4.jpg',
-    desc: 'The “Shadow” project initiated and funded by the Global Community Organization was inaugurated. A RadhaChura tree is planted in Keshabpur market. The plant that will fill the oxygen deficiency by providing beauty enhancement shade in the market. The inauguration was attended by Mr. Aminul Islam , Founder President, Global Community Organization, Bagha, Rajshahi-Bangladesh. Local people and TYAGI Volunteer volunteers were also present.',
-  },
-  {
-    title: 'BRAC ‘s Ultra-Poor Graduation (UPG) program',
-    img: '/b/b5.jpg',
-    desc: 'BRAC ‘s Ultra-Poor Graduation (UPG) program organized a tree sapling distribution campaign in 2024 for the members of Mirganj, Bagha, Rajshahi. The campaign was supported by the Global Community Organization , Bagha, Rajshahi.',
-  },
-  {
-    title: 'Achievements of Global Community Organization🎉',
-    img: '/b/6.png',
-    desc: `অ‌ভিনন্দন Microsoft 365
 
-এটা এক‌টি অ‌বিশ্বাস্য ও অসম্ভব প্রা‌প্তি।
-আমরা অত্যন্ত আনন্দের স‌হিত জানা‌চ্ছি যে, গ্লোবাল ক‌মিউ‌নিটি অরগানাই‌জেশন ও মাই‌ক্রোসফট অ‌ফি‌সিয়া‌লি পার্টনার হি‌সে‌বে যাত্রা শুরু ক‌রেছে । এই যাত্রা শুভ‌হোক ও টেকশই বন্ধন অটুট থাকুক। বাংলা‌দেশের গ‌র্বিত সংস্থা গ্লোবাল ক‌মিউ‌নি‌টি অরগানাই‌জেশন এর পক্ষ থে‌কে Microsoft ও Bill Gates কে অ‌ভিনন্দন ও কৃতজ্ঞতা ।
 
-It is an incredible and impossible achievement. It is with great pleasure that we announce that Global Community Organization and Microsoft have officially started their journey as partners. May this journey be blessed and may the bonds remain strong. Congratulations to Microsoft and Bill Gates on behalf of Global Community Organization, the proud organization of Bangladesh.`,
-  },
-]
+type blogType = {
+  title: string
+  id: string
+  content: string
+  coverImage: {
+    fileUrl: string
+  }
+}
 
-const BlogSection = () => {
+const BlogSection = ({
+  mostViewedBlog,
+  listBlog,
+}: {
+  mostViewedBlog: blogType | null
+  listBlog: blogType[]
+}) => {
   const { push } = useRouter()
   return (
     <section className="w-full relative overflow-hidden border-b border-zinc-600 border-t">
@@ -54,21 +37,21 @@ const BlogSection = () => {
         </div>
         <div className="mt-10 md:flex md:gap-5">
           <BigNews
-            title="A tree can be especially helpful for a child’s healthy development."
-            description="A tree can be especially helpful for a child’s healthy development.
-It teaches the child about the natural environment and encourages his scientific invention.
-It can make medicinal preparations from its health and nutritional point of view, clean and oxygenate its environment, and stimulate further environmental improvement."
-            image="/b/blog1.jpg"
+            title={mostViewedBlog?.title as string}
+            description={mostViewedBlog?.content as string}
+            image={mostViewedBlog?.coverImage.fileUrl as string}
+            id={mostViewedBlog?.id as string}
           />
 
           <ScrollArea className="h-[500px] w-full mt-10 md:mt-0 md:w-1/2 shadow-xl">
             <div className="flex-col flex gap-5 ">
-              {ListBlog.map((item, index) => (
+              {listBlog.map((item, index) => (
                 <ItemNews
                   key={index}
                   title={item.title}
-                  description={item.desc}
-                  image={item.img}
+                  description={item.content}
+                  image={item.coverImage.fileUrl}
+                  id={item.id}
                 />
               ))}
             </div>
@@ -89,10 +72,12 @@ const BigNews = ({
   title,
   description,
   image,
+  id,
 }: {
   title: string
   description: string
   image: string
+  id: string
 }) => {
   return (
     <div className="relative rounded-md p-3 overflow-hidden border  border-opacity-45 shadow-xl backdrop-blur-md md:w-1/2 ">
@@ -109,13 +94,31 @@ const BigNews = ({
         />
       </div>
       <div
-        className="mt-5 flex flex-col gap-5 p-3
+        className="mt-5 flex flex-col gap-3 p-3
       "
       >
-        <h2 className="line-clamp-3 text-2xl font-semibold relative after:absolute after:left-0 w-fit  after:bg-primary after:bottom-1 after:h-[1px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 cursor-pointer">
+        <Link
+          href={`/blog/${id}`}
+          className="text-2xl font-semibold relative after:absolute after:left-0 w-fit  after:bg-primary after:bottom-1 after:h-[1px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 cursor-pointer line-clamp-1"
+        >
           {title}
-        </h2>
-        <p className="line-clamp-4 text-sm font-light">{description}</p>
+        </Link>
+
+        <ReactMarkdown
+          allowedElements={[
+            'p',
+            'h1',
+            'h2',
+            'h3',
+            'h4',
+            'h5',
+            'h6',
+            'blockquote',
+          ]}
+          className="text-gray-600 dark:text-gray-300 text-sm mb-4 [&>*]:inline"
+        >
+          {description.slice(0, 200) + '...'}
+        </ReactMarkdown>
       </div>
     </div>
   )
@@ -125,10 +128,12 @@ const ItemNews = ({
   title,
   description,
   image,
+  id
 }: {
   title: string
   description: string
   image: string
+  id: string
 }) => {
   return (
     <div className="relative rounded-md p-3 overflow-hidden border border-opacity-45 flex backdrop-blur-md shadow-lg">
@@ -148,12 +153,27 @@ const ItemNews = ({
         className="flex flex-col gap-2 ml-3
       "
       >
-        <h2 className="line-clamp-2 text-base sm:text-xl font-semibold relative after:absolute after:left-0 w-fit  after:bg-primary after:bottom-1 after:h-[1px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 cursor-pointer">
+       <Link
+          href={`/blog/${id}`}
+          className="text-2xl font-semibold relative after:absolute after:left-0 w-fit  after:bg-primary after:bottom-1 after:h-[1px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 cursor-pointer line-clamp-1"
+        >
           {title}
-        </h2>
-        <p className="line-clamp-3 text-xs sm:text-base md:text-sm font-light">
-          {description}
-        </p>
+        </Link>
+        <ReactMarkdown
+          allowedElements={[
+            'p',
+            'h1',
+            'h2',
+            'h3',
+            'h4',
+            'h5',
+            'h6',
+            'blockquote',
+          ]}
+          className="text-gray-600 dark:text-gray-300 text-sm mb-4 [&>*]:inline"
+        >
+          {description.slice(0, 150) + '...'}
+        </ReactMarkdown>
       </div>
     </div>
   )
